@@ -18,7 +18,8 @@
          </font></Label>
       <TextField fx:id="txtUsuario" layoutX="121.0" layoutY="137.0" prefHeight="25.0" prefWidth="196.0" />
       <PasswordField fx:id="txtContraseña" layoutX="121.0" layoutY="207.0" prefHeight="25.0" prefWidth="196.0" />
-      <Button fx:id="BotonIngreso" layoutX="147.0" layoutY="275.0" mnemonicParsing="false" onAction="#VIngreso" prefHeight="25.0" prefWidth="111.0" text="Ingresar" />
+      <Button fx:id="BotonIngreso" layoutX="53.0" layoutY="275.0" mnemonicParsing="false" onAction="#VIngresoAlt" prefHeight="25.0" prefWidth="111.0" text="Ingresar" />
+      <Button fx:id="BotonCrear" layoutX="234.0" layoutY="275.0" mnemonicParsing="false" onAction="#VCrear" prefHeight="25.0" prefWidth="101.0" text="Crear" />
       <Label alignment="CENTER" layoutX="-8.0" layoutY="24.0" prefHeight="33.0" prefWidth="259.0" text="Ingreso Auto Partes" textAlignment="CENTER">
          <font>
             <Font name="Calibri Bold Italic" size="27.0" />

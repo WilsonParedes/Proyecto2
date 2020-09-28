@@ -17,8 +17,11 @@ public class MainIngreso extends Application{
         stage.setScene(escene);
         stage.show();
     }
+
     public static void main(String[]args){
         launch(args);
     }
+
+
 }
 

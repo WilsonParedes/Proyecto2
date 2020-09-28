@@ -1,21 +1,35 @@
 package Modulos;
 
 public class Usuarios {
-    private int correlativo;
+    private static int correlativo = 1;
+    public int corr;
+    public String Nombre;
+    public String Apellido;
     public String usuario;
     public String contraseña;
 
     public Usuarios() {
-        this.correlativo = correlativo++;
+
     }
 
-    public Usuarios(String usuario, String contraseña) {
+    public Usuarios(String Nombre, String Apellido, String usuario, String contraseña) {
+        this.corr = correlativo++;
+        this.Nombre = Nombre;
+        this.Apellido = Apellido;
         this.usuario = usuario;
         this.contraseña = contraseña;
     }
 
     public int getCorrelativo() {
         return correlativo;
+    }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public String getApellido() {
+        return Apellido;
     }
 
     public String getUsuario() {
@@ -26,5 +40,14 @@ public class Usuarios {
         return contraseña;
     }
 
-
+    @Override
+    public String toString() {
+        return "Usuarios{" +
+                "correlativo=" + corr +
+                ", Nombre='" + Nombre + '\'' +
+                ", Apellido='" + Apellido + '\'' +
+                ", usuario='" + usuario + '\'' +
+                ", contraseña='" + contraseña + '\'' +
+                '}';
+    }
 }
