@@ -2,13 +2,17 @@ package ControlFormularios;
 
 import Modulos.Usuarios;
 import Vistas.MainIngreso;
+import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -25,8 +29,15 @@ public class ControldeIngreso {
 
 
     public void VIngreso(ActionEvent ingreso) throws IOException {
+        GestionVistaPrincipal gp = new GestionVistaPrincipal();
         if (txtUsuario.getText().equalsIgnoreCase("wilson") && txtContraseña.getText().equals("123456")) {
             JOptionPane.showMessageDialog(null, "BIEVENIDO " + txtUsuario.getText(), "Información", JOptionPane.INFORMATION_MESSAGE);
+
+            Stage StageIngreso= (Stage)txtUsuario.getScene().getWindow();
+            StageIngreso.close();
+
+            //LLAMADA AL FORMULARIO DE VISTA PRINCIPAL, CONTROLFORMULARIOS.GESTIONVISTAPRINCIPAL
+            gp.FormVistaPrincipal();
         } else {
             JOptionPane.showMessageDialog(null, "USUARIO O CONTRASEÑA INCORRECTO, INGRESE NUEVAMENTE O DE CLICK EN LA OPCIÓN CREAR", "ACCESO DENEGADO", JOptionPane.ERROR_MESSAGE);
             txtUsuario.clear();
@@ -62,8 +73,8 @@ public class ControldeIngreso {
          stage.setScene(scene);
          stage.show();
 
-         /*Stage stageLogin = (Stage)txtUsuario.getScene().getWindow();
-         stageLogin.close();*/
+         Stage stageLogin = (Stage)txtUsuario.getScene().getWindow();
+         stageLogin.close();
     }
 
     public void GuardarUsuario(){
@@ -78,11 +89,15 @@ public class ControldeIngreso {
         txtContra.clear();
 
     }
+    public void CerrarTodo(){
+        Platform.exit();
+    }
 
-    public void cerrar(){
-
+    public void cerrar() throws IOException {
         Stage StageCrearUsuario = (Stage)txtUsuar.getScene().getWindow();
         StageCrearUsuario.close();
-        
+
     }
+
+
 }
