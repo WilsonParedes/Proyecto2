@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane fx:id="PaneIngreso" focusTraversable="true" prefHeight="357.0" prefWidth="404.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControlFormularios.ControldeIngreso">
+   <children>
+      <Label layoutX="45.0" layoutY="109.0" prefHeight="26.0" prefWidth="101.0" text="Usuario">
+         <font>
+            <Font name="Calibri Bold" size="19.0" />
+         </font></Label>
+      <Label layoutX="45.0" layoutY="179.0" prefHeight="17.0" prefWidth="126.0" text="Contraseña">
+         <font>
+            <Font name="Calibri Bold" size="19.0" />
+         </font></Label>
+      <TextField fx:id="txtUsuario" layoutX="121.0" layoutY="137.0" prefHeight="25.0" prefWidth="196.0" />
+      <PasswordField fx:id="txtContraseña" layoutX="121.0" layoutY="207.0" prefHeight="25.0" prefWidth="196.0" />
+      <Button fx:id="BotonIngreso" layoutX="147.0" layoutY="275.0" mnemonicParsing="false" onAction="#VIngreso" prefHeight="25.0" prefWidth="111.0" text="Ingresar" />
+      <Label alignment="CENTER" layoutX="-8.0" layoutY="24.0" prefHeight="33.0" prefWidth="259.0" text="Ingreso Auto Partes" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri Bold Italic" size="27.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="94.0" fitWidth="135.0" layoutX="258.0" layoutY="6.0" opacity="0.57" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/Utilerias/Formularios/33f49586c4254503b212thumbnail.jpeg" />
+         </image>
+      </ImageView>
+
+   </children>
+</Pane>
