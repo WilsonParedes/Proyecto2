@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane fx:id="PaneIngreso" focusTraversable="true" prefHeight="335.0" prefWidth="390.0" style="-fx-background-color: #a5001b;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControlFormularios.ControldeIngreso">
+<Pane fx:id="PaneIngreso" focusTraversable="true" prefHeight="335.0" prefWidth="390.0" style="-fx-background-color: #a5001b;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GestionFormularios.GestiondeIngreso">
    <children>
       <Label layoutX="32.0" layoutY="140.0" prefHeight="26.0" prefWidth="101.0" text="Usuario" textFill="WHITE">
          <font>

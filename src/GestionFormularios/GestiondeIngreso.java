@@ -1,24 +1,20 @@
-package ControlFormularios;
+package GestionFormularios;
 
 import Modulos.Usuarios;
-import Vistas.MainIngreso;
-import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 
 import javax.swing.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class ControldeIngreso {
+public class GestiondeIngreso {
     private ArrayList<Usuarios> u = new ArrayList<>();
     public TextField txtUsuario;
     public PasswordField txtContraseña;

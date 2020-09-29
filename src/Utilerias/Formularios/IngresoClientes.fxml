@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane prefHeight="425.0" prefWidth="561.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GestionFormularios.CreacionFormulario">
+   <children>
+      <Label layoutX="56.0" layoutY="45.0" text="NIT" />
+      <Label layoutX="54.0" layoutY="97.0" text="No. DPI" />
+      <Label layoutX="55.0" layoutY="192.0" text="Primer Nombre" />
+      <Label layoutX="330.0" layoutY="192.0" text="Segundo Nombre" />
+      <Label layoutX="55.0" layoutY="247.0" text="Primer Apellido" />
+      <Label layoutX="330.0" layoutY="247.0" text="Segundo Apellido" />
+      <Label layoutX="56.0" layoutY="300.0" text="Fecha de Nacimiento" />
+      <Label layoutX="330.0" layoutY="300.0" text="Estado Civil" />
+      <Label layoutX="330.0" layoutY="73.0" text="Genero" />
+      <TextField fx:id="txtNIT" layoutX="54.0" layoutY="61.0" prefHeight="25.0" prefWidth="122.0" />
+      <TextField fx:id="txtDPI" layoutX="56.0" layoutY="114.0" prefHeight="25.0" prefWidth="180.0" />
+      <RadioButton layoutX="391.0" layoutY="63.0" mnemonicParsing="false" text="Femenino" />
+      <RadioButton layoutX="391.0" layoutY="87.0" mnemonicParsing="false" text="Masculino" />
+      <TextField fx:id="txtPNombre" layoutX="55.0" layoutY="209.0" />
+      <TextField fx:id="txtSNombre" layoutX="330.0" layoutY="209.0" />
+      <TextField fx:id="txtPApellido" layoutX="54.0" layoutY="264.0" />
+      <TextField fx:id="txtSApellido" layoutX="330.0" layoutY="264.0" />
+      <DatePicker fx:id="DateFecha" layoutX="57.0" layoutY="317.0" />
+      <MenuButton fx:id="MenuEstadoCivil" layoutX="328.0" layoutY="317.0" mnemonicParsing="false" text="MenuButton">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Soltero" />
+          <MenuItem mnemonicParsing="false" text="Casado" />
+        </items>
+      </MenuButton>
+      <Button fx:id="BotonGuardarCliente" layoutX="97.0" layoutY="374.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="Guardar" />
+      <Button fx:id="BotonCancelarCliente" layoutX="355.0" layoutY="380.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="Cancelar" />
+      <Label alignment="CENTER" layoutX="51.0" layoutY="162.0" prefHeight="17.0" prefWidth="439.0" text="DATOS PERSONALES DE CLIENTE" />
+   </children>
+</Pane>
