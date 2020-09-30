@@ -1,5 +1,6 @@
 package GestionFormularios;
 
+import Modulos.VariblesFormGlobales;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
@@ -7,7 +8,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class CreacionFormulario {
+public class CreacionFormulario extends VariblesFormGlobales {
 
     public void FormGlobal(String ubicacion, String titulo, int ancho, int alto) throws IOException {
         FXMLLoader in = new FXMLLoader(getClass().getResource(ubicacion));
@@ -21,3 +22,4 @@ public class CreacionFormulario {
 
     }
 }
+
