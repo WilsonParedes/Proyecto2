@@ -22,9 +22,7 @@ public class Usuarios {
         this.contraseña = contraseña;
     }
 
-    public int getCorrelativo() {
-        return correlativo;
-    }
+    public int getCorrelativo() { return correlativo; }
 
     public String getNombre() {
         return Nombre;
