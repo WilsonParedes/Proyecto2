@@ -1,6 +1,8 @@
 package GestionFormularios;
 
+import Modulos.Usuarios;
 import Modulos.VariblesFormGlobales;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
@@ -19,6 +21,24 @@ public class CreacionFormulario extends VariblesFormGlobales {
         stage.setTitle(titulo);
         stage.setScene(scene);
         stage.show();
+
+    }
+
+
+    //EVENTOS PARA TODOS LOS FORMULARIOS
+    /*EVENTOS PARA EL FORMULARIO CREACION.FXML*/
+    /*EVENTO QUE GUARDA LOS DATOS INGRESADOS AL FORMULARIO CREACION.FXML*/
+    public void GuardarUsuario(){
+
+        System.out.println("GUADRA USUARIO A ARRAYLIST DE USUARIOS");
+        txtUsuar.clear();
+        txtContra.clear();
+
+    }
+    /*EVENTO QUE CIERRA EL FORMULARIO*/
+    public void cerrar() throws IOException {
+        Stage StageCrearUsuario = (Stage)txtUsuar.getScene().getWindow();
+        StageCrearUsuario.close();
 
     }
 }

@@ -73,33 +73,14 @@ public class GestiondeIngreso extends GestionVistaPrincipal implements Initializ
         }
     }
 
-    public void VCrear(ActionEvent crear) throws IOException {
-
-        FormGlobal("/Utilerias/Formularios/Creacion.fxml","CREACIÓN DE USUARIO", 400, 500);
-        Stage stageLogin = (Stage)txtUsuario.getScene().getWindow();
-        stageLogin.close();
-    }
-
-    public void GuardarUsuario(){
-
-        u.add(new Usuarios(txtUsuar.getText(),txtContra.getText()));
-
-        System.out.println(u.toString());
 
 
-        txtUsuar.clear();
-        txtContra.clear();
 
-    }
     public void CerrarTodo(){
         Platform.exit();
     }
 
-    public void cerrar() throws IOException {
-        Stage StageCrearUsuario = (Stage)txtUsuar.getScene().getWindow();
-        StageCrearUsuario.close();
 
-    }
 
 
 
