@@ -3,29 +3,43 @@ package GestionFormularios;
 import Modulos.Usuarios;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
+import javafx.fxml.Initializable;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 import javax.swing.*;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
-public class GestiondeIngreso {
+public class GestiondeIngreso extends GestionVistaPrincipal implements Initializable  {
+
+    /*EVENTO QUE SIRVE PARA DESHABILITAR LOS BOTONES AL INICIAR EL FORMULARIO INGRESO */
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+        BotonIngreso.setDisable(true);
+        BotonCrear.setDisable(true);
+
+    }
+
+    /*EVENTO QUE ESTA AMARRADO A LA CELDA TXTUSUARIO, HABILITA EL BOTON INGRESO MEDIA VEZ SE INGRESA CIERTA CANTIDAD
+     * DE CARACTERES EN EL USUARIO*/
+    public void ActivarBotonIngreso(KeyEvent keyEvent) {
+        txtUsuario.setOnKeyTyped(event -> {
+            if(txtUsuario.getLength()>=3){
+                BotonIngreso.setDisable(false);
+            }else{
+                BotonIngreso.setDisable(true);
+            }
+
+        });
+    }
+
     private ArrayList<Usuarios> u = new ArrayList<>();
-    public TextField txtUsuario;
-    public PasswordField txtContraseña;
-    public TextField txtPNombre;
-    public TextField txtPApellido;
-    public TextField txtUsuar;
-    public PasswordField txtContra;
-
-
     public void VIngreso(ActionEvent ingreso) throws IOException {
-        GestionVistaPrincipal gp = new GestionVistaPrincipal();
+
         if (txtUsuario.getText().equalsIgnoreCase("wilson") && txtContraseña.getText().equals("123456")) {
             JOptionPane.showMessageDialog(null, "BIEVENIDO " + txtUsuario.getText(), "Información", JOptionPane.INFORMATION_MESSAGE);
 
@@ -33,7 +47,7 @@ public class GestiondeIngreso {
             StageIngreso.close();
 
             //LLAMADA AL FORMULARIO DE VISTA PRINCIPAL, CONTROLFORMULARIOS.GESTIONVISTAPRINCIPAL
-            gp.FormVistaPrincipal();
+            FormVistaPrincipal();
         } else {
             JOptionPane.showMessageDialog(null, "USUARIO O CONTRASEÑA INCORRECTO, INGRESE NUEVAMENTE O DE CLICK EN LA OPCIÓN CREAR", "ACCESO DENEGADO", JOptionPane.ERROR_MESSAGE);
             txtUsuario.clear();
@@ -60,17 +74,10 @@ public class GestiondeIngreso {
     }
 
     public void VCrear(ActionEvent crear) throws IOException {
-         FXMLLoader creacion = new FXMLLoader(getClass().getResource("/Utilerias/Formularios/creacion.fxml"));
-         Pane cre = (Pane) creacion.load();
 
-         Scene scene = new Scene(cre, 400, 500);
-         Stage stage = new Stage();
-         stage.setTitle("CREACIÓN DE USUARIO");
-         stage.setScene(scene);
-         stage.show();
-
-         Stage stageLogin = (Stage)txtUsuario.getScene().getWindow();
-         stageLogin.close();
+        FormGlobal("/Utilerias/Formularios/Creacion.fxml","CREACIÓN DE USUARIO", 400, 500);
+        Stage stageLogin = (Stage)txtUsuario.getScene().getWindow();
+        stageLogin.close();
     }
 
     public void GuardarUsuario(){
@@ -94,6 +101,7 @@ public class GestiondeIngreso {
         StageCrearUsuario.close();
 
     }
+
 
 
 }

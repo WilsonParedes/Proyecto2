@@ -19,7 +19,7 @@
          <font>
             <Font name="Calibri Bold" size="19.0" />
          </font></Label>
-      <TextField fx:id="txtUsuario" layoutX="160.0" layoutY="141.0" prefHeight="25.0" prefWidth="196.0" />
+      <TextField fx:id="txtUsuario" layoutX="160.0" layoutY="141.0" onKeyTyped="#ActivarBotonIngreso" prefHeight="25.0" prefWidth="196.0" />
       <PasswordField fx:id="txtContraseña" layoutX="160.0" layoutY="194.0" prefHeight="25.0" prefWidth="196.0" />
       <Button fx:id="BotonIngreso" layoutX="32.0" layoutY="247.0" mnemonicParsing="false" onAction="#VIngreso" prefHeight="25.0" prefWidth="126.0" style="-fx-background-color: #988188;" text="Ingresar">
          <font>
