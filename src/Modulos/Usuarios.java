@@ -12,13 +12,13 @@ public class Usuarios {
 
     }
 
-    public Usuarios(String Nombre, String Apellido, String usuario, String contraseña) {
+    public Usuarios(String usuario, String contraseña) {
         this.corr = correlativo++;
         this.usuario = usuario;
         this.contraseña = contraseña;
     }
 
-    public int getCorrelativo() {return correlativo;}
+
 
     public String getUsuario() {
         return usuario;

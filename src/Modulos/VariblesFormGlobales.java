@@ -11,8 +11,6 @@ public class VariblesFormGlobales {
     public Button BotonIngreso;
     public Button BotonCrear;
     /*ATRIBUTOS DE FORMULARIO CREACION*/
-    public TextField txtPNombre;
-    public TextField txtPApellido;
     public TextField txtUsuar;
     public PasswordField txtContra;
     public Button BotonCrearUsuario;

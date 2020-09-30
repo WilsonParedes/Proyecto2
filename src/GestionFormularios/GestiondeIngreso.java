@@ -82,12 +82,11 @@ public class GestiondeIngreso extends GestionVistaPrincipal implements Initializ
 
     public void GuardarUsuario(){
 
-        u.add(new Usuarios(txtPNombre.getText(),txtPApellido.getText(),txtUsuar.getText(),txtContra.getText()));
+        u.add(new Usuarios(txtUsuar.getText(),txtContra.getText()));
 
         System.out.println(u.toString());
 
-        txtPNombre.clear();
-        txtPApellido.clear();
+
         txtUsuar.clear();
         txtContra.clear();
 
