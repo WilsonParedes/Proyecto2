@@ -6,6 +6,7 @@ public class DataSistema {
     public static ArrayList<Productos> ListaProductos= new ArrayList<Productos>(20);
     public static int i=0;
     public static String temp="";
+
     public DataSistema() {
 
     }
