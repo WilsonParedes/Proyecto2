@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class GestionVistaPrincipal {
     public void FormVistaPrincipal() throws IOException {
-        CreacionFormulario cr = new CreacionFormulario() ;
+        CreacionFormulario cr = new CreacionFormulario();
 
         /*SE HACE EL LLAMADO A GESTION.FORMULARIOS.CREACIONFORMULARIO.FORMGLOBAL*/
         cr.FormGlobal("/Utilerias/Formularios/VistaPrincipal.fxml","VISTA PRINCIPAL", 600, 600);
@@ -17,7 +17,7 @@ public class GestionVistaPrincipal {
     }
     /*SE CREA EL MÉTODO PARA CREAR LA OPCION DE INGRESAR CLIENTES*/
     public void OpcionMenuIngresoClientes()throws IOException{
-        CreacionFormulario cr = new CreacionFormulario() ;
+        CreacionFormulario cr = new CreacionFormulario();
 
         /*SE HACE EL LLAMADO A GESTION.FORMULARIOS.CREACIONFORMULARIO.FORMGLOBAL*/
         cr.FormGlobal("/Utilerias/Formularios/IngresoClientes.fxml","INGRESO CLIENTES", 600, 700);

@@ -48,7 +48,7 @@ public class GestiondeIngreso {
         }else {
             for (Usuarios usu : u) {
                 if (txtUsuario.getText().equals(usu.getUsuario().toString()) && txtContraseña.getText().equals(usu.getContraseña().toString())) {
-                    JOptionPane.showMessageDialog(null, "BIEVENIDO " + txtUsuario.getText(), "Información", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "BIEVENIDO " + txtUsuario.getText().toUpperCase(), "Información", JOptionPane.INFORMATION_MESSAGE);
                 } else {
                     JOptionPane.showMessageDialog(null, "USUARIO O CONTRASEÑA INCORRECTO, INGRESE NUEVAMENTE O DE CLICK EN LA OPCIÓN CREAR", "ACCESO DENEGADO", JOptionPane.ERROR_MESSAGE);
                     txtUsuario.clear();
