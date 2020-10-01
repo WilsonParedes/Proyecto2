@@ -5,8 +5,6 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.input.KeyEvent;
-import javafx.stage.Stage;
-
 import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
@@ -38,23 +36,6 @@ public class GestiondeIngreso extends GestionVistaPrincipal implements Initializ
     }
 
     private ArrayList<Usuarios> u = new ArrayList<>();
-    /*public void VIngreso(ActionEvent ingreso) throws IOException {
-
-        if (txtUsuario.getText().equalsIgnoreCase("wilson") && txtContraseña.getText().equals("123456")) {
-            JOptionPane.showMessageDialog(null, "BIEVENIDO " + txtUsuario.getText(), "Información", JOptionPane.INFORMATION_MESSAGE);
-
-            Stage StageIngreso= (Stage)txtUsuario.getScene().getWindow();
-            StageIngreso.close();
-
-            //LLAMADA AL FORMULARIO DE VISTA PRINCIPAL, CONTROLFORMULARIOS.GESTIONVISTAPRINCIPAL
-            FormVistaPrincipal();
-        } else {
-            JOptionPane.showMessageDialog(null, "USUARIO O CONTRASEÑA INCORRECTO, INGRESE NUEVAMENTE O DE CLICK EN LA OPCIÓN CREAR", "ACCESO DENEGADO", JOptionPane.ERROR_MESSAGE);
-            txtUsuario.clear();
-            txtContraseña.clear();
-        }
-    }*/
-
     public void VIngresoAlt(ActionEvent ingreso) throws IOException {
         u = dt.getListaUsuarios();
         if((u.isEmpty())){
@@ -76,9 +57,6 @@ public class GestiondeIngreso extends GestionVistaPrincipal implements Initializ
             }
         }
     }
-
-
-
 
     public void CerrarTodo(){
         Platform.exit();

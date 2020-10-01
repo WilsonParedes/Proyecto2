@@ -3,22 +3,20 @@ package GestionFormularios;
 import Modulos.DataSistema;
 import Modulos.Usuarios;
 import Modulos.VariblesFormGlobales;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import javax.swing.*;
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class CreacionFormulario extends VariblesFormGlobales {
 
     public void FormGlobal(String ubicacion, String titulo, int ancho, int alto) throws IOException {
         FXMLLoader in = new FXMLLoader(getClass().getResource(ubicacion));
         Pane pri = (Pane) in.load();
-
         Scene scene = new Scene(pri, ancho, alto);
         Stage stage = new Stage();
         stage.setTitle(titulo);
