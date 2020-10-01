@@ -38,7 +38,7 @@ public class GestiondeIngreso extends GestionVistaPrincipal implements Initializ
     }
 
     private ArrayList<Usuarios> u = new ArrayList<>();
-    public void VIngreso(ActionEvent ingreso) throws IOException {
+    /*public void VIngreso(ActionEvent ingreso) throws IOException {
 
         if (txtUsuario.getText().equalsIgnoreCase("wilson") && txtContraseña.getText().equals("123456")) {
             JOptionPane.showMessageDialog(null, "BIEVENIDO " + txtUsuario.getText(), "Información", JOptionPane.INFORMATION_MESSAGE);
@@ -53,20 +53,24 @@ public class GestiondeIngreso extends GestionVistaPrincipal implements Initializ
             txtUsuario.clear();
             txtContraseña.clear();
         }
-    }
+    }*/
 
     public void VIngresoAlt(ActionEvent ingreso) throws IOException {
-
-        if((u.isEmpty())==true){
-            JOptionPane.showMessageDialog(null, "NO EXISTE NINGUN USUARIO PARA INICIAR SESIÓN, DEBE CRERA UNO NUEVO", "ACCESO INCORRECTO", JOptionPane.WARNING_MESSAGE);
+        u = dt.getListaUsuarios();
+        if((u.isEmpty())){
+            JOptionPane.showMessageDialog(null, "NO EXISTE NINGUN USUARIO PARA INICIAR SESIÓN, DEBE CREAR UN NUEVO USUARIO EN LA OPCIÓN CREAR" , "ACCESO DENEGADO", JOptionPane.WARNING_MESSAGE);
+            BotonCrear.setDisable(false);
         }else {
             for (Usuarios usu : u) {
-                if (txtUsuario.getText().equals(usu.getUsuario().toString()) && txtContraseña.getText().equals(usu.getContraseña().toString())) {
-                    JOptionPane.showMessageDialog(null, "BIEVENIDO " + txtUsuario.getText().toUpperCase(), "Información", JOptionPane.INFORMATION_MESSAGE);
-                } else {
+                if (!txtUsuario.getText().equals(usu.getUsuario()) || !txtContraseña.getText().equals(usu.getContraseña())) {
                     JOptionPane.showMessageDialog(null, "USUARIO O CONTRASEÑA INCORRECTO, INGRESE NUEVAMENTE O DE CLICK EN LA OPCIÓN CREAR", "ACCESO DENEGADO", JOptionPane.ERROR_MESSAGE);
-                    txtUsuario.clear();
-                    txtContraseña.clear();
+                    BotonCrear.setDisable(false);
+                } else  {
+                    JOptionPane.showMessageDialog(null, "BIEVENIDO " + txtUsuario.getText().toUpperCase(), "Información", JOptionPane.INFORMATION_MESSAGE);
+                    //LLAMADA AL FORMULARIO DE VISTA PRINCIPAL, CONTROLFORMULARIOS.GESTIONVISTAPRINCIPAL
+                    FormVistaPrincipal();
+                    break;
+
                 }
 
             }
@@ -79,9 +83,5 @@ public class GestiondeIngreso extends GestionVistaPrincipal implements Initializ
     public void CerrarTodo(){
         Platform.exit();
     }
-
-
-
-
 
 }

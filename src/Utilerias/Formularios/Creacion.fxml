@@ -1,23 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane prefHeight="400.0" prefWidth="402.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GestionFormularios.CreacionFormulario">
+<Pane prefHeight="243.0" prefWidth="489.0" style="-fx-background-color: #D4141C;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GestionFormularios.CreacionFormulario">
    <children>
-      <Label layoutX="77.0" layoutY="45.0" text="Primer Nombre" />
-      <Label layoutX="77.0" layoutY="114.0" text="Primer Apellido" />
-      <Label layoutX="77.0" layoutY="176.0" text="Usuario" />
-      <Label layoutX="77.0" layoutY="260.0" text="Cree una contraseña" />
-      <TextField fx:id="txtPNombre" layoutX="159.0" layoutY="67.0" prefHeight="25.0" prefWidth="167.0" />
-      <TextField fx:id="txtPApellido" layoutX="159.0" layoutY="136.0" prefHeight="25.0" prefWidth="167.0" />
-      <TextField fx:id="txtUsuar" layoutX="159.0" layoutY="198.0" prefHeight="25.0" prefWidth="167.0" />
-      <PasswordField fx:id="txtContra" layoutX="159.0" layoutY="285.0" prefHeight="25.0" prefWidth="167.0" />
-      <Button fx:id="BotonCrearUsuario" layoutX="47.0" layoutY="344.0" mnemonicParsing="false" onAction="#GuardarUsuario" prefHeight="25.0" prefWidth="100.0" text="Guardar" />
-      <Button layoutX="296.0" layoutY="344.0" mnemonicParsing="false" onAction="#cerrar" prefHeight="25.0" prefWidth="82.0" text="Regresar" />
+      <Pane layoutX="147.0" layoutY="102.0" opacity="0.3" prefHeight="136.0" prefWidth="335.0" style="-fx-background-color: #CFC7C7;">
+         <effect>
+            <Shadow color="#000000cd" />
+         </effect>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Pane>
+      <Label layoutX="156.0" layoutY="113.0" text="Usuario" textFill="#f8f6f6">
+         <font>
+            <Font name="Calibri Bold" size="19.0" />
+         </font></Label>
+      <Label layoutX="156.0" layoutY="157.0" prefHeight="17.0" prefWidth="129.0" text="Contraseña" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="19.0" />
+         </font></Label>
+      <TextField fx:id="txtUsuar" layoutX="307.0" layoutY="113.0" prefHeight="25.0" prefWidth="167.0" />
+      <PasswordField fx:id="txtContra" layoutX="307.0" layoutY="157.0" prefHeight="25.0" prefWidth="167.0" />
+      <Button fx:id="BotonCrearUsuario" layoutX="173.0" layoutY="204.0" mnemonicParsing="false" onAction="#GuardarUsuario" prefHeight="25.0" prefWidth="89.0" style="-fx-background-color: #686363;" text="Guardar" textFill="WHITE">
+         <effect>
+            <Glow level="0.21" />
+         </effect>
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="346.0" layoutY="202.0" mnemonicParsing="false" onAction="#cerrar" prefHeight="25.0" prefWidth="89.0" style="-fx-background-color: #686363;" text="Regresar" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <effect>
+            <Glow level="0.21" />
+         </effect>
+      </Button>
+      <ImageView fitHeight="116.0" fitWidth="123.0" layoutX="14.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/Utilerias/Formularios/unnamed.png" />
+         </image></ImageView>
+      <Label layoutX="20.0" layoutY="23.0" prefHeight="31.0" prefWidth="309.0" text="Creación de Usuario" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold Italic" size="27.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="68.0" fitWidth="102.0" layoutX="379.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/Utilerias/Formularios/33f49586c4254503b212thumbnail.jpeg" />
+         </image>
+         <effect>
+            <Glow />
+         </effect></ImageView>
 
    </children>
 </Pane>

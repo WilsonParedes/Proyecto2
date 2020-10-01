@@ -1,5 +1,6 @@
 package GestionFormularios;
 
+import Modulos.DataSistema;
 import Modulos.Usuarios;
 import Modulos.VariblesFormGlobales;
 import javafx.event.ActionEvent;
@@ -8,7 +9,9 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class CreacionFormulario extends VariblesFormGlobales {
 
@@ -28,8 +31,10 @@ public class CreacionFormulario extends VariblesFormGlobales {
     //EVENTOS PARA TODOS LOS FORMULARIOS
     /*EVENTOS PARA EL FORMULARIO CREACION.FXML*/
     /*EVENTO QUE GUARDA LOS DATOS INGRESADOS AL FORMULARIO CREACION.FXML*/
+    DataSistema dt = new DataSistema();
     public void GuardarUsuario(){
-
+        dt.addUsuarios(new Usuarios(txtUsuar.getText(), txtContra.getText()));
+        JOptionPane.showMessageDialog(null, "USUARIO CREADO CON ÉXITO!", "USUARIO CREADO", JOptionPane.INFORMATION_MESSAGE);
         System.out.println("GUADRA USUARIO A ARRAYLIST DE USUARIOS");
         txtUsuar.clear();
         txtContra.clear();
@@ -37,9 +42,9 @@ public class CreacionFormulario extends VariblesFormGlobales {
     }
     /*EVENTO QUE CIERRA EL FORMULARIO*/
     public void cerrar() throws IOException {
+        System.out.println(dt.getListaUsuarios().toString());
         Stage StageCrearUsuario = (Stage)txtUsuar.getScene().getWindow();
         StageCrearUsuario.close();
-
     }
 }
 

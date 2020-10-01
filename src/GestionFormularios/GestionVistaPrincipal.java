@@ -15,15 +15,15 @@ public class GestionVistaPrincipal extends CreacionFormulario{
 
     public void VCrear() throws IOException {
 
-        FormGlobal("/Utilerias/Formularios/Creacion.fxml","CREACIÓN DE USUARIO", 400, 500);
-        Stage stageLogin = (Stage)txtUsuario.getScene().getWindow();
-        stageLogin.close();
+        FormGlobal("/Utilerias/Formularios/Creacion.fxml","CREACIÓN DE USUARIO", 500, 265);
+
     }
 
 
     public void FormVistaPrincipal() throws IOException {
-
         /*SE HACE EL LLAMADO A GESTION.FORMULARIOS.CREACIONFORMULARIO.FORMGLOBAL*/
+        Stage StageIngresoUsuario = (Stage)txtUsuario.getScene().getWindow();
+        StageIngresoUsuario.close();
         FormGlobal("/Utilerias/Formularios/VistaPrincipal.fxml","VISTA PRINCIPAL", 600, 600);
 
     }
