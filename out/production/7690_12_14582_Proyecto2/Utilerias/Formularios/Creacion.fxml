@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.pannable.*?>
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.text.*?>
@@ -12,7 +15,7 @@
 
 <Pane prefHeight="243.0" prefWidth="489.0" style="-fx-background-color: #D4141C;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GestionFormularios.CreacionFormulario">
    <children>
-      <Pane layoutX="147.0" layoutY="102.0" opacity="0.3" prefHeight="136.0" prefWidth="335.0" style="-fx-background-color: #CFC7C7;">
+      <Pane layoutX="147.0" layoutY="102.0" opacity="0.45" prefHeight="136.0" prefWidth="335.0" style="-fx-background-color: #CFC7C7;">
          <effect>
             <Shadow color="#000000cd" />
          </effect>
@@ -27,41 +30,43 @@
       <Label layoutX="156.0" layoutY="157.0" prefHeight="17.0" prefWidth="129.0" text="Contraseña" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="19.0" />
-         </font></Label>
-      <TextField fx:id="txtUsuar" layoutX="307.0" layoutY="113.0" prefHeight="25.0" prefWidth="167.0" />
-      <PasswordField fx:id="txtContra" layoutX="307.0" layoutY="157.0" prefHeight="25.0" prefWidth="167.0" />
-      <Button fx:id="BotonCrearUsuario" layoutX="173.0" layoutY="204.0" mnemonicParsing="false" onAction="#GuardarUsuario" prefHeight="25.0" prefWidth="89.0" style="-fx-background-color: #686363;" text="Guardar" textFill="WHITE">
-         <effect>
-            <Glow level="0.21" />
-         </effect>
-         <font>
-            <Font name="Calibri Bold" size="14.0" />
          </font>
-      </Button>
-      <Button layoutX="346.0" layoutY="202.0" mnemonicParsing="false" onAction="#cerrar" prefHeight="25.0" prefWidth="89.0" style="-fx-background-color: #686363;" text="Regresar" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-         <effect>
-            <Glow level="0.21" />
-         </effect>
-      </Button>
-      <ImageView fitHeight="116.0" fitWidth="123.0" layoutX="14.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="/Utilerias/Formularios/unnamed.png" />
-         </image></ImageView>
+      </Label>
       <Label layoutX="20.0" layoutY="23.0" prefHeight="31.0" prefWidth="309.0" text="Creación de Usuario" textFill="WHITE">
          <font>
             <Font name="Calibri Bold Italic" size="27.0" />
          </font>
       </Label>
+      <JFXTextField fx:id="txtUsuar" focusColor="#38ae69" layoutX="307.0" layoutY="107.0" prefHeight="25.0" prefWidth="167.0" promptText="Primer Nombre" style="-fx-text-fill: #FFFFFF;" unFocusColor="#4d4d4d">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="txtContra" focusColor="#38ae69" layoutX="307.0" layoutY="144.0" prefHeight="25.0" prefWidth="167.0" promptText="Ingrese Contraseña">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXPasswordField>
+      <ImageView fitHeight="116.0" fitWidth="123.0" layoutX="14.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/Utilerias/Formularios/Logo.png" />
+         </image></ImageView>
       <ImageView fitHeight="68.0" fitWidth="102.0" layoutX="379.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="/Utilerias/Formularios/33f49586c4254503b212thumbnail.jpeg" />
+            <Image url="/Utilerias/Formularios/LogoAutoPartes.jpeg" />
          </image>
          <effect>
             <Glow />
          </effect></ImageView>
-
+      <ImageView fitHeight="50.0" fitWidth="55.0" layoutX="294.0" layoutY="182.0" onMouseClicked="#GuardarUsuario" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/Utilerias/Formularios/Save.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="55.0" layoutX="430.0" layoutY="181.0" onMouseClicked="#cerrar" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/Utilerias/Formularios/Return.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
