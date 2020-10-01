@@ -1,10 +1,16 @@
 package GestionFormularios;
 
+import Modulos.ClienteEmpresa;
 import Modulos.DataSistema;
 import Modulos.Usuarios;
 import Modulos.VariblesFormGlobales;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -44,5 +50,15 @@ public class CreacionFormulario extends VariblesFormGlobales {
         Stage StageCrearUsuario = (Stage)txtUsuar.getScene().getWindow();
         StageCrearUsuario.close();
     }
+
+
+
+
+    /*EVENTOS PARA EL FORMULARIO INGRESOCLIENTES.FXML*/
+    /*EVENTO QUE GUARDA LOS DATOS INGRESADOS AL FORMULARIO INGRESOCLIENTES.FXML*/
+    public void BotonGuardarClientes() {
+        /*dt.addCliente(new ClienteEmpresa());*/
+    }
+
 }
 

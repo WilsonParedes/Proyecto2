@@ -1,8 +1,6 @@
 package Modulos;
 
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class VariblesFormGlobales {
     /*ATRIBUTOS DE FORMULARIO INGRESO*/
@@ -14,6 +12,18 @@ public class VariblesFormGlobales {
     public TextField txtUsuar;
     public PasswordField txtContra;
     public Button BotonCrearUsuario;
+    /*ATRIBUTOS DE FORMULARIO INGRESOCLIENTES*/
+    public TextField txtNIT;
+    public TextField txtDPI;
+    public TextField txtPNombre;
+    public TextField txtSNombre;
+    public TextField txtPApellido;
+    public TextField txtSApellido;
+    public DatePicker DateFecha;
+    public MenuButton MenuEstadoCivil;
+    public Button BotonGuardarCliente;
+    public Button BotonCancelarCliente;
+
 
 
 }
