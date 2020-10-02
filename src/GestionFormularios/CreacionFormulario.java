@@ -64,7 +64,7 @@ public class CreacionFormulario extends VariblesFormGlobales {
                     txtSApellido.getText(), txtNIT.getText(), "String fecha", "String genero", "String estadocivil"));
 
         }
-        JOptionPane.showMessageDialog(null,"EL CLIENTE HA SIDO ALMACENADO CON EXITO" ,"INFORMACION", JOptionPane.INFORMATION_MESSAGE);
+        
         JOptionPane.showMessageDialog(null,"EL CLIENTE HA SIDO ALMACENADO CON EXITO" ,"INFORMACION", JOptionPane.INFORMATION_MESSAGE);
     }
 
