@@ -11,7 +11,7 @@ public class ClienteIndividual extends Clientes {
 
     @Override
     public String toString(){
-        return "["+getNombreClase()+"]"+"\nDPI: "+dpi+"\tNombre: "+primernombre+" "+segundonombre+"\tApellidos: "+primerapellido+" "+segundoapellido+
+        return "["+getNombreClase()+"]"+"\nDPI: "+dpi+"\tNombre: "+ nombre +
                 "\tNit: "+nit+"\tFecha: "+fecha+"\tGenero: "+genero+"\tEstado Civil: "+estadocivil+"\tID:"+id;
     }
 }

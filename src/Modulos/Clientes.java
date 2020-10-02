@@ -7,6 +7,7 @@ public class Clientes implements Utilerias{
     public String segundonombre;
     public String primerapellido;
     public String segundoapellido;
+    public String nombre;
     public String nit;
     public String fecha;
     public String genero;
@@ -24,12 +25,14 @@ public class Clientes implements Utilerias{
         this.segundonombre = segundonombre;
         this.primerapellido = primerapellido;
         this.segundoapellido = segundoapellido;
+        this.nombre = primernombre + " " + segundonombre + " " + primerapellido + " " + segundoapellido;
         this.nit = nit;
         this.fecha = fecha;
         this.genero = genero;
         this.estadocivil = estadocivil;
 
     }
+
 
     public int getId() {
         return id;
@@ -51,6 +54,8 @@ public class Clientes implements Utilerias{
         return segundoapellido;
     }
 
+    public String getNombre(){ return nombre;}
+
     public String getNit() {
         return nit;
     }
@@ -69,8 +74,8 @@ public class Clientes implements Utilerias{
 
     @Override
     public String toString(){
-        return "["+getNombreClase()+"]"+"\nNombre: "+primernombre+" "+segundonombre+"\tApellidos: "+primerapellido+" "+segundoapellido+
-                "\tNit: "+nit+"\tFecha: "+fecha+"\tGenero: "+genero+"\tEstado Civil: "+estadocivil+"\tID:"+id;
+        return "["+getNombreClase()+"]"+"\tID:"+id+"\nNombre Completo:" + nombre +
+                "\tNit: "+nit+"\tFecha: "+fecha+"\tGenero: "+genero+"\tEstado Civil: "+estadocivil;
     }
 
 

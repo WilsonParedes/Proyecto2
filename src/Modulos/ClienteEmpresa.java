@@ -14,7 +14,7 @@ public class ClienteEmpresa extends Clientes {
 
     @Override
     public String toString(){
-        return "["+getNombreClase()+"]"+"\nRazon Social: "+razonsocial+"\tContacto: "+contacto+"\tNombre: "+primernombre+" "+segundonombre+"\nApellidos: "+primerapellido+" "+segundoapellido+
+        return "["+getNombreClase()+"]"+"\nRazon Social: "+razonsocial+"\tContacto: "+contacto+"\tNombre: "+ nombre +
                 "\tNit: "+nit+"\tFecha: "+fecha+"\tGenero: "+genero+"\tEstado Civil: "+estadocivil+"\tID:"+id+"\tDescuento: "+descuento;
     }
 }

@@ -1,10 +1,20 @@
 package GestionFormularios;
 
 import Modulos.Clientes;
+import Modulos.Productos;
+import com.sun.xml.internal.bind.v2.runtime.property.PropertyFactory;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import sun.misc.Cleaner;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.PropertyPermission;
 
 public class GestionVistaPrincipal extends CreacionFormulario{
 
@@ -29,16 +39,26 @@ public class GestionVistaPrincipal extends CreacionFormulario{
     public void OpcionMenuIngresoProducto()throws IOException{
 
         /*SE HACE EL LLAMADO A GESTION.FORMULARIOS.CREACIONFORMULARIO.FORMGLOBAL*/
-        FormGlobal("/Utilerias/Formularios/IngresoProducto.fxml","INGRESO PRODUCTO", 400, 300);
+        FormGlobal("/Utilerias/Formularios/IngresoProducto.fxml","INGRESO PRODUCTO", 525, 284);
     }
 
-    /*SE CREA EL MÉTODO PARA CREAR LA OPCION DE INGRESAR CLIENTES*/
-    private ArrayList<Clientes> clientes = new ArrayList<>();
-    public void OpcionConsultaClientes(){
-        clientes = arrayclientes.getListaClientes();
-        for(Clientes cli : clientes){
 
-            System.out.println(cli.toString());
+    /*SE CREA EL MÉTODO PARA CREAR LA OPCION DE CONSULTA CLIENTES.FXML*/
+
+
+    public void OpcionConsultaClientes()throws IOException{
+
+        FormGlobal("/Utilerias/Formularios/ConsultaClientes.fxml","INGRESO PRODUCTO", 700, 700);
+
+    }
+
+    /*SE CREA EL MÉTODO PARA CREAR LA OPCION DE CONSULTA PRODUCTOS*/
+    private ArrayList<Productos> productos = new ArrayList<>();
+    public void OpcionConsultaProductos(){
+        productos = arrayProductos.getListaProductos();
+        for(Productos prod : productos){
+
+            System.out.println(prod.toString());
         }
 
     }

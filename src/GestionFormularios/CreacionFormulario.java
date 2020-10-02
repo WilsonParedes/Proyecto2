@@ -1,14 +1,20 @@
 package GestionFormularios;
 
 import Modulos.*;
+import com.sun.xml.internal.bind.v2.runtime.property.PropertyFactory;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javax.swing.*;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class CreacionFormulario extends VariblesFormGlobales {
 
@@ -33,6 +39,7 @@ public class CreacionFormulario extends VariblesFormGlobales {
     DataSistema dt = new DataSistema();
     DataSistema arrayclientes = new DataSistema();
     DataSistema arrayempresa = new DataSistema();
+    DataSistema arrayProductos = new DataSistema();
     public void GuardarUsuario(){
         dt.addUsuarios(new Usuarios(txtUsuar.getText(), txtContra.getText()));
         JOptionPane.showMessageDialog(null, "USUARIO CREADO CON ÉXITO!", "USUARIO CREADO", JOptionPane.INFORMATION_MESSAGE);
@@ -79,7 +86,7 @@ public class CreacionFormulario extends VariblesFormGlobales {
             txtContacto.setDisable(true);
         }
     }
-
+    /*EVENTO QUE LIMPIAR EL FORMULARIO CLIENTES*/
     public void BotonLimpiarForm(){
         txtNIT.clear();
         txtDPI.clear();
@@ -92,10 +99,50 @@ public class CreacionFormulario extends VariblesFormGlobales {
         cbEmpresa.selectedProperty().setValue(false);
     }
 
+    /*EVENTO PARA SALIR DEL FORMULARIO CLIENTES*/
     public void SalirFormIngresoClientes(){
         Stage StageCerrarFormIngresoC = (Stage)txtNIT.getScene().getWindow();
         StageCerrarFormIngresoC.close();
     }
 
+
+    /*EVENTOS PARA EL FORMULARIO INGRESOPRODUCTO.FXML*/
+    /*EVENTO QUE GUARDA LOS DATOS INGRESADOS AL FORMULARIO INGRESOPRODUCTO.FXML*/
+    public void OpcionGuardarProducto(ActionEvent actionEvent) {
+        /*CONSTRUCTOR EMPRESAS*/
+        arrayProductos.addProducto(new Productos("LICOR", txtNProducto.getText(),txtMarca.getText(),
+                                    Integer.parseInt(txtPrecio.getText())));
+        JOptionPane.showMessageDialog(null,"EL PRODUCTO HA SIDO ALMACENADO CON EXITO" ,"INFORMACION",JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    /*EVENTO QUE LIMPIAR EL FORMULARIO PRODUCTOS*/
+    public void OpcionLimpiarFormProducto(){
+        txtNProducto.clear();
+        txtMarca.clear();
+        txtPrecio.clear();
+    }
+
+    /*EVENTO PARA SALIR DEL FORMULARIO CLIENTES*/
+    public void OpcionSalirProducto(){
+        Stage StageCerraFormProducto = (Stage)txtNProducto.getScene().getWindow();
+        StageCerraFormProducto.close();
+    }
+
+
+    private ArrayList<Clientes> clientes = new ArrayList<>();
+    /*TableView <Clientes> tablaClientes = new TableView<>();
+    TableColumn <Clientes, String> columNIT = new TableColumn<>();
+    public void MostraContenido(ActionEvent actionEvent) {
+        clientes = arrayclientes.getListaClientes();
+        ObservableList <Clientes> desple = FXCollections.observableArrayList(clientes);
+        columNIT.setCellValueFactory(new PropertyValueFactory<Clientes, String>("nit"));
+        tablaClientes.setItems(desple);
+
+        for(Clientes cl:clientes){
+            System.out.println(cl.toString());
+
+        }
+
+    }*/
 }
 

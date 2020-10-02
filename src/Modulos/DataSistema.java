@@ -28,6 +28,7 @@ public class DataSistema {
     public ArrayList<Usuarios> getListaUsuarios() {
         return ListaUsuarios;
     }
+    public ArrayList<Productos> getListaProductos(){return ListaProductos;}
 
 
     public String toString() {
