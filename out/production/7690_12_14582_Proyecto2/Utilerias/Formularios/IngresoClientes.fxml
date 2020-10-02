@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.svg.*?>
+<?import javafx.scene.media.*?>
 <?import javafx.scene.text.*?>
 <?import com.jfoenix.controls.*?>
 <?import java.lang.*?>
@@ -8,94 +11,130 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane fx:id="PaneIngresoClientes" prefHeight="725.0" prefWidth="511.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GestionFormularios.CreacionFormulario">
+<Pane fx:id="PaneIngresoClientes" prefHeight="588.0" prefWidth="755.0" style="-fx-background-color: #414141;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GestionFormularios.CreacionFormulario">
    <children>
-      <ScrollPane prefHeight="722.0" prefWidth="511.0">
-        <content>
-          <Pane minHeight="0.0" minWidth="0.0" prefHeight="724.0" prefWidth="509.0">
-               <children>
-                  <Label layoutX="22.0" layoutY="73.0" text="NIT" />
-                  <Label layoutX="22.0" layoutY="212.0" text="No. DPI" />
-                  <Label layoutX="21.0" layoutY="273.0" text="Primer Nombre" />
-                  <Label layoutX="292.0" layoutY="273.0" text="Segundo Nombre" />
-                  <Label layoutX="21.0" layoutY="329.0" text="Primer Apellido" />
-                  <Label layoutX="292.0" layoutY="329.0" text="Segundo Apellido" />
-                  <Label layoutX="21.0" layoutY="373.0" text="Fecha de Nacimiento" />
-                  <Label layoutX="293.0" layoutY="373.0" text="Estado Civil" />
-                  <Label layoutX="360.0" layoutY="197.0" text="Genero" />
-                  <Label alignment="CENTER" layoutX="35.0" layoutY="152.0" prefHeight="17.0" prefWidth="439.0" text="DATOS PERSONALES DE CLIENTE" />
-                  <Label layoutX="22.0" layoutY="543.0" text="Razón Social " />
-                  <Label layoutX="12.0" layoutY="98.0" prefHeight="17.0" prefWidth="415.0" text="*Si actua como propietario o representante legal favor marcar la casilla Empresa">
-                     <font>
-                        <Font name="System Bold" size="11.0" />
-                     </font>
-                  </Label>
-                  <JFXTextField fx:id="txtNIT" focusColor="#1a7817" layoutX="22.0" layoutY="45.0">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </JFXTextField>
-                  <JFXTextField fx:id="txtDPI" focusColor="#1a7817" layoutX="22.0" layoutY="183.0" prefHeight="25.0" prefWidth="238.0">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </JFXTextField>
-                  <JFXRadioButton layoutX="409.0" layoutY="182.0" text="Femenino">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </JFXRadioButton>
-                  <JFXRadioButton layoutX="408.0" layoutY="211.0" text="Masculino">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </JFXRadioButton>
-                  <JFXTextField fx:id="txtPNombre" focusColor="#1a7817" layoutX="20.0" layoutY="240.0" prefHeight="25.0" prefWidth="149.0">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </JFXTextField>
-                  <JFXTextField fx:id="txtSNombre" focusColor="#1a7817" layoutX="292.0" layoutY="240.0" prefHeight="25.0" prefWidth="149.0">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </JFXTextField>
-                  <JFXTextField fx:id="txtPApellido" focusColor="#1a7817" layoutX="21.0" layoutY="298.0" prefHeight="25.0" prefWidth="149.0">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </JFXTextField>
-                  <JFXTextField fx:id="txtSApellido" focusColor="#1a7817" layoutX="292.0" layoutY="298.0" prefHeight="25.0" prefWidth="149.0">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </JFXTextField>
-                  <DatePicker fx:id="DateFecha" layoutX="21.0" layoutY="391.0" />
-                  <JFXCheckBox fx:id="cbEmpresa" layoutX="430.0" layoutY="98.0" onAction="#OpcionEmpresa" text="Empresa" />
-                  <JFXTextField fx:id="txtRazonSocial" disable="true" focusColor="#1a7817" layoutX="22.0" layoutY="506.0" prefHeight="29.0" prefWidth="433.0">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </JFXTextField>
-                  <JFXTextField fx:id="txtContacto" disable="true" focusColor="#1a7817" layoutX="22.0" layoutY="579.0" prefHeight="29.0" prefWidth="220.0">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </JFXTextField>
-                  <MenuButton layoutX="293.0" layoutY="391.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="98.0">
-                    <items>
-                      <MenuItem mnemonicParsing="false" text="Soltero" />
-                      <MenuItem mnemonicParsing="false" text="Casado" />
-                    </items>
-                  </MenuButton>
-                  <Label alignment="CENTER" layoutX="35.0" layoutY="477.0" prefHeight="17.0" prefWidth="439.0" text="DATOS DE EMPRESA" />
-                  <Button fx:id="BotonGuardarCliente" layoutX="253.0" layoutY="673.0" mnemonicParsing="false" onAction="#BotonGuardarClientes" prefHeight="25.0" prefWidth="98.0" text="Guardar" />
-                  <Button fx:id="BotonCancelarCliente" layoutX="158.0" layoutY="673.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="Cancelar" />
+      <AnchorPane layoutX="3.0" layoutY="3.0" prefHeight="420.0" prefWidth="675.0" style="-fx-background-color: #EEEEEE;">
+         <children>
+             <JFXTextField fx:id="txtNIT" focusColor="#1a7817" layoutX="18.0" layoutY="64.0">
+                 <font>
+                     <Font size="13.0" />
+                 </font>
+             </JFXTextField>
+            <Label layoutX="17.0" layoutY="208.0" text="No. DPI" />
+            <Label layoutX="16.0" layoutY="269.0" text="Primer Nombre" />
+            <Label layoutX="225.0" layoutY="269.0" text="Segundo Nombre" />
+            <Label layoutX="16.0" layoutY="325.0" text="Primer Apellido" />
+            <Label layoutX="225.0" layoutY="325.0" text="Segundo Apellido" />
+            <Label layoutX="16.0" layoutY="369.0" text="Fecha de Nacimiento" />
+            <Label alignment="CENTER" layoutX="145.0" layoutY="147.0" prefHeight="17.0" prefWidth="386.0" text="DATOS PERSONALES DE CLIENTE" />
+                        <JFXTextField fx:id="txtDPI" focusColor="#1a7817" layoutX="17.0" layoutY="179.0" prefHeight="29.0" prefWidth="149.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txtPNombre" focusColor="#1a7817" layoutX="15.0" layoutY="236.0" prefHeight="25.0" prefWidth="149.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txtSNombre" focusColor="#1a7817" layoutX="225.0" layoutY="236.0" prefHeight="25.0" prefWidth="149.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txtPApellido" focusColor="#1a7817" layoutX="16.0" layoutY="294.0" prefHeight="25.0" prefWidth="149.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txtSApellido" focusColor="#1a7817" layoutX="225.0" layoutY="294.0" prefHeight="25.0" prefWidth="149.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </JFXTextField>
+                        <DatePicker fx:id="DateFecha" layoutX="16.0" layoutY="387.0" />
+            <Label layoutX="470.0" layoutY="289.0" text="Estado Civil" />
+            <Label layoutX="470.0" layoutY="206.0" text="Genero" />
+                        <JFXRadioButton layoutX="551.0" layoutY="191.0" text="Femenino">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </JFXRadioButton>
+                        <JFXRadioButton layoutX="550.0" layoutY="220.0" text="Masculino">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </JFXRadioButton>
+                        <MenuButton layoutX="544.0" layoutY="285.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="98.0">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Soltero" />
+                            <MenuItem mnemonicParsing="false" text="Casado" />
+                          </items>
+                        </MenuButton>
+            <Label layoutX="18.0" layoutY="92.0" text="NIT" />
+                        <Label alignment="CENTER" layoutX="8.0" layoutY="117.0" prefHeight="17.0" prefWidth="415.0" text="*Si actua como propietario o representante legal favor marcar la casilla Empresa">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                        </Label>
+                        <JFXCheckBox fx:id="cbEmpresa" layoutX="452.0" layoutY="117.0" onAction="#OpcionEmpresa" text="Empresa" />
+            <Label alignment="CENTER" layoutX="48.0" layoutY="7.0" prefHeight="25.0" prefWidth="579.0" text="INGRESO DE CLIENTES">
+               <font>
+                  <Font name="Calibri Bold" size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="3.0" layoutY="424.0" prefHeight="161.0" prefWidth="675.0" style="-fx-background-color: #EEEEEE;">
+         <children>
+      
+                              <Label layoutX="14.0" layoutY="85.0" text="Razón Social " />
+                        <JFXTextField fx:id="txtRazonSocial" disable="true" focusColor="#1a7817" layoutX="14.0" layoutY="48.0" prefHeight="29.0" prefWidth="320.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txtContacto" disable="true" focusColor="#1a7817" layoutX="14.0" layoutY="121.0" prefHeight="29.0" prefWidth="220.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </JFXTextField>
+                        <Label alignment="CENTER" layoutX="149.0" layoutY="23.0" prefHeight="17.0" prefWidth="368.0" text="DATOS DE EMPRESA" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="680.0" layoutY="3.0" prefHeight="582.0" prefWidth="71.0" style="-fx-background-color: DADADA;">
+         <children>
+                        <Button fx:id="BotonGuardarCliente" layoutY="100.0" mnemonicParsing="false" onAction="#BotonGuardarClientes" prefHeight="76.0" prefWidth="70.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="53.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Imagenes/Save.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="BotonLimForm" layoutY="227.0" mnemonicParsing="false" onAction="#BotonLimpiarForm" prefHeight="76.0" prefWidth="70.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="53.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Imagenes/Clear.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+                        <Button fx:id="BotonCancelarCliente" layoutX="-1.0" layoutY="360.0" mnemonicParsing="false" onAction="#SalirFormIngresoClientes" prefHeight="76.0" prefWidth="70.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="53.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Imagenes/Exit.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
 
-                  <Label layoutX="22.0" layoutY="616.0" text="Telefono" />
-               </children>
-            </Pane>
-        </content>
-      </ScrollPane>
+
+         
    </children>
 </Pane>

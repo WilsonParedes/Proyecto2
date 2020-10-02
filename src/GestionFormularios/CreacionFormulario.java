@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javax.swing.*;
 import java.io.IOException;
@@ -65,7 +66,6 @@ public class CreacionFormulario extends VariblesFormGlobales {
 
         }
         JOptionPane.showMessageDialog(null,"EL CLIENTE HA SIDO ALMACENADO CON EXITO" ,"INFORMACION", JOptionPane.INFORMATION_MESSAGE);
-        JOptionPane.showMessageDialog(null,"EL CLIENTE HA SIDO ALMACENADO CON EXITO" ,"INFORMACION", JOptionPane.INFORMATION_MESSAGE);
     }
 
     /*EVENTO QUE INHABILITA EL TXTRAZONSOCIAL DEL FORMULARIO INGRESOCLIENTES*/
@@ -78,6 +78,23 @@ public class CreacionFormulario extends VariblesFormGlobales {
             txtRazonSocial.setDisable(true);
             txtContacto.setDisable(true);
         }
+    }
+
+    public void BotonLimpiarForm(){
+        txtNIT.clear();
+        txtDPI.clear();
+        txtPNombre.clear();
+        txtSNombre.clear();
+        txtPApellido.clear();
+        txtSApellido.clear();
+        txtRazonSocial.clear();
+        txtContacto.clear();
+        cbEmpresa.selectedProperty().setValue(false);
+    }
+
+    public void SalirFormIngresoClientes(){
+        Stage StageCerrarFormIngresoC = (Stage)txtNIT.getScene().getWindow();
+        StageCerrarFormIngresoC.close();
     }
 
 }
