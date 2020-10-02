@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
@@ -9,6 +15,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.*?>
+
 <Pane prefHeight="243.0" prefWidth="489.0" style="-fx-background-color: #D4141C;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GestionFormularios.CreacionFormulario">
    <children>
       <Pane layoutX="147.0" layoutY="102.0" opacity="0.45" prefHeight="136.0" prefWidth="335.0" style="-fx-background-color: #CFC7C7;">
@@ -45,23 +52,18 @@
       </JFXPasswordField>
       <ImageView fitHeight="116.0" fitWidth="123.0" layoutX="14.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="/Utilerias/Formularios/Logo.png" />
+            <Image url="/Utilerias/Imagenes/Logo.png" />
          </image></ImageView>
       <ImageView fitHeight="68.0" fitWidth="102.0" layoutX="379.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="/Utilerias/Formularios/LogoAutoPartes.jpeg" />
+            <Image url="/Utilerias/Imagenes/LogoAutoPartes.jpeg" />
          </image>
          <effect>
             <Glow />
          </effect></ImageView>
       <ImageView fitHeight="50.0" fitWidth="55.0" layoutX="294.0" layoutY="182.0" onMouseClicked="#GuardarUsuario" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="/Utilerias/Formularios/Save.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="55.0" layoutX="430.0" layoutY="181.0" onMouseClicked="#cerrar" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="/Utilerias/Formularios/Return.png" />
+            <Image url="/Utilerias/Imagenes/Save.png" />
          </image>
       </ImageView>
    </children>

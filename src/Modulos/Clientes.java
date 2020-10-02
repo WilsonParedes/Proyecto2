@@ -18,7 +18,7 @@ public class Clientes implements Utilerias{
         id= sigIdCliente++;
     }
 
-    public Clientes(int id, String primernombre, String segundonombre, String primerapellido, String segundoapellido, String nit, String fecha, String genero, String estadocivil) {
+    public Clientes(String primernombre, String segundonombre, String primerapellido, String segundoapellido, String nit, String fecha, String genero, String estadocivil) {
         this();
         this.primernombre = primernombre;
         this.segundonombre = segundonombre;

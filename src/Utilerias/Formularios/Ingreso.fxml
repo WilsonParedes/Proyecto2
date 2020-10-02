@@ -51,7 +51,7 @@
       </JFXPasswordField>
       <ImageView fitHeight="95.0" fitWidth="153.0" layoutX="312.0" layoutY="14.0" mouseTransparent="true" pickOnBounds="true">
          <image>
-            <Image url="/Utilerias/Formularios/LogoAutoPartes.jpeg" />
+            <Image url="/Utilerias/Imagenes/LogoAutoPartes.jpeg" />
          </image>
       </ImageView>
       <Button fx:id="BotonIngreso" layoutX="174.0" layoutY="214.0" mnemonicParsing="false" onAction="#VIngresoAlt" prefHeight="25.0" prefWidth="126.0" style="-fx-background-color: #988188;" text="Ingresar">

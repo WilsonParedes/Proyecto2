@@ -1,14 +1,15 @@
 package GestionFormularios;
 
+import Modulos.Clientes;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class GestionVistaPrincipal extends CreacionFormulario{
 
     public void FormCrear() throws IOException {
         FormGlobal("/Utilerias/Formularios/Creacion.fxml","CREACIÓN DE USUARIO", 500, 265);
-
     }
 
     public void FormVistaPrincipal() throws IOException {
@@ -21,7 +22,7 @@ public class GestionVistaPrincipal extends CreacionFormulario{
     /*SE CREA EL MÉTODO PARA CREAR LA OPCION DE INGRESAR CLIENTES*/
     public void OpcionMenuIngresoClientes()throws IOException{
         /*SE HACE EL LLAMADO A GESTION.FORMULARIOS.CREACIONFORMULARIO.FORMGLOBAL*/
-        FormGlobal("/Utilerias/Formularios/IngresoClientes.fxml","INGRESO CLIENTES", 511, 540);
+        FormGlobal("/Utilerias/Formularios/IngresoClientes.fxml","INGRESO CLIENTES", 518, 725);
     }
 
     /*SE CREA EL MÉTODO PARA CREAR LA OPCION DE INGRESAR PRODUCTO*/
@@ -29,5 +30,16 @@ public class GestionVistaPrincipal extends CreacionFormulario{
 
         /*SE HACE EL LLAMADO A GESTION.FORMULARIOS.CREACIONFORMULARIO.FORMGLOBAL*/
         FormGlobal("/Utilerias/Formularios/IngresoProducto.fxml","INGRESO PRODUCTO", 400, 300);
+    }
+
+    /*SE CREA EL MÉTODO PARA CREAR LA OPCION DE INGRESAR CLIENTES*/
+    private ArrayList<Clientes> clientes = new ArrayList<>();
+    public void OpcionConsultaClientes(){
+        clientes = arrayclientes.getListaClientes();
+        for(Clientes cli : clientes){
+
+            System.out.println(cli.toString());
+        }
+
     }
 }

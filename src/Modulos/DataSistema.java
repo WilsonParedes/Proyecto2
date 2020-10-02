@@ -22,9 +22,13 @@ public class DataSistema {
         ListaUsuarios.add(us);
     }
 
+    public ArrayList<Clientes> getListaClientes() {
+        return ListaClientes;
+    }
     public ArrayList<Usuarios> getListaUsuarios() {
         return ListaUsuarios;
     }
+
 
     public String toString() {
         for(Clientes tempclientes: ListaClientes){

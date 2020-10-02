@@ -1,5 +1,7 @@
 package Modulos;
 
+import com.jfoenix.controls.JFXCheckBox;
+import com.jfoenix.controls.JFXTextField;
 import javafx.scene.control.*;
 
 public class VariblesFormGlobales {
@@ -19,10 +21,15 @@ public class VariblesFormGlobales {
     public TextField txtSNombre;
     public TextField txtPApellido;
     public TextField txtSApellido;
+    public JFXTextField txtRazonSocial;
+    public JFXTextField txtContacto;
     public DatePicker DateFecha;
     public MenuButton MenuEstadoCivil;
     public Button BotonGuardarCliente;
     public Button BotonCancelarCliente;
+    public JFXCheckBox cbEmpresa;
+
+
 
 
 
