@@ -1,22 +1,13 @@
 package GestionFormularios;
 
 import Modulos.*;
-import com.jfoenix.controls.JFXCheckBox;
-import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-
 import javax.swing.*;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.logging.Handler;
 
 public class CreacionFormulario extends VariblesFormGlobales {
 
@@ -61,7 +52,6 @@ public class CreacionFormulario extends VariblesFormGlobales {
     /*EVENTOS PARA EL FORMULARIO INGRESOCLIENTES.FXML*/
     /*EVENTO QUE GUARDA LOS DATOS INGRESADOS AL FORMULARIO INGRESOCLIENTES.FXML*/
     public void BotonGuardarClientes() {
-        Clientes c = new Clientes();
         if((cbEmpresa.selectedProperty().getValue())==true){
             /*CONSTRUCTOR EMPRESAS*/
             arrayempresa.addCliente(new ClienteEmpresa(txtPNombre.getText(),txtSNombre.getText(), txtPApellido.getText(),txtSApellido.getText(),
@@ -74,7 +64,8 @@ public class CreacionFormulario extends VariblesFormGlobales {
                     txtSApellido.getText(), txtNIT.getText(), "String fecha", "String genero", "String estadocivil"));
 
         }
-        JOptionPane.showMessageDialog(null,"EL CLIENTE HA SIDO ALMACENADO CON EXITO, ID NO. " + c.getId(),"INFORMACION", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null,"EL CLIENTE HA SIDO ALMACENADO CON EXITO" ,"INFORMACION", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null,"EL CLIENTE HA SIDO ALMACENADO CON EXITO" ,"INFORMACION", JOptionPane.INFORMATION_MESSAGE);
     }
 
     /*EVENTO QUE INHABILITA EL TXTRAZONSOCIAL DEL FORMULARIO INGRESOCLIENTES*/
