@@ -1,21 +1,16 @@
 package GestionFormularios;
 
 import Modulos.*;
-import com.sun.security.ntlm.Client;
-import com.sun.xml.internal.bind.v2.runtime.property.PropertyFactory;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javax.swing.*;
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class CreacionFormulario extends VariblesFormGlobales {
 
@@ -127,8 +122,8 @@ public class CreacionFormulario extends VariblesFormGlobales {
         StageCerraFormProducto.close();
     }
 
-
-    public void MostraContenido() {
+    /*EVENTO QUE MUESTRA TODOS LOS REGISTROS EN TABLEVIEW DE CLIENTES*/
+    public void MostraContenidoClientes() {
         c= arrayclientes.getListaClientes();
         ObservableList<Clientes> clien = FXCollections.observableArrayList(c);
         columid.setCellValueFactory(new PropertyValueFactory<Clientes, Integer>("id"));
@@ -143,6 +138,20 @@ public class CreacionFormulario extends VariblesFormGlobales {
 
         tablaClientes.setItems(clien);
         System.out.println(clien.toString());
+
+    }
+
+    /*EVENTO QUE MUESTRA TODOS LOS REGISTROS EN TABLEVIEW DE CLIENTES*/
+    public void MostrarContenidoProductos() {
+        p = arrayProductos.getListaProductos();
+        ObservableList<Productos> prod = FXCollections.observableArrayList(p);
+        columnIDProducto.setCellValueFactory(new PropertyValueFactory<>("id"));
+        columNProducto.setCellValueFactory(new PropertyValueFactory<>("producto"));
+        columnMarca.setCellValueFactory(new PropertyValueFactory<>("marca"));
+        columnCategoria.setCellValueFactory(new PropertyValueFactory<>("categoria"));
+        columnPrecio.setCellValueFactory(new PropertyValueFactory<>("precio"));
+        tablaProductos.setItems(prod);
+        System.out.println(prod.toString());
 
     }
 }

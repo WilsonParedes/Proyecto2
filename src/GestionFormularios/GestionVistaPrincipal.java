@@ -1,23 +1,9 @@
 package GestionFormularios;
 
-import Modulos.Clientes;
-import Modulos.Productos;
-import com.sun.xml.internal.bind.v2.runtime.property.PropertyFactory;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
-import sun.misc.Cleaner;
 
+import javafx.stage.Stage;
 import java.io.IOException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.PropertyPermission;
-import java.util.ResourceBundle;
+
 
 public class GestionVistaPrincipal extends CreacionFormulario {
 
@@ -49,17 +35,13 @@ public class GestionVistaPrincipal extends CreacionFormulario {
     /*SE CREA EL MÉTODO PARA CREAR LA OPCION DE CONSULTA CLIENTES.FXML*/
 
     public void OpcionConsultaClientes()throws IOException{
-        FormGlobal("/Utilerias/Formularios/ConsultaClientes.fxml","INGRESO PRODUCTO", 1006, 554);
+        FormGlobal("/Utilerias/Formularios/ConsultaClientes.fxml","CONSULTA PRODUCTO", 1006, 554);
     }
 
     /*SE CREA EL MÉTODO PARA CREAR LA OPCION DE CONSULTA PRODUCTOS*/
-    private ArrayList<Productos> productos = new ArrayList<>();
-    public void OpcionConsultaProductos(){
-        productos = arrayProductos.getListaProductos();
-        for(Productos prod : productos){
 
-            System.out.println(prod.toString());
-        }
+    public void OpcionConsultaProductos()throws IOException {
+        FormGlobal("/Utilerias/Formularios/ConsultaProductos.fxml","CONSULTA PRODUCTO", 761, 495);
 
     }
 

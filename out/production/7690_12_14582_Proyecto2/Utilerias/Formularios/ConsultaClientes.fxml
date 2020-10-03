@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane prefHeight="554.0" prefWidth="1006.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GestionFormularios.CreacionFormulario">
+<Pane prefHeight="554.0" prefWidth="1019.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GestionFormularios.CreacionFormulario">
    <children>
-      <AnchorPane layoutX="1.0" layoutY="1.0" prefHeight="550.0" prefWidth="1003.0" style="-fx-background-color: #414141;">
+      <AnchorPane layoutX="1.0" layoutY="1.0" prefHeight="550.0" prefWidth="1013.0" style="-fx-background-color: #414141;">
          <children>
             <Label layoutX="21.0" layoutY="28.0" prefHeight="44.0" prefWidth="171.0" text="Id" textFill="#fcf7f7">
                <font>
@@ -21,7 +18,7 @@
                </font></Label>
             <TextField fx:id="txtIDCliente" layoutX="84.0" layoutY="38.0" />
             <TextField fx:id="txtNITConsulta" layoutX="84.0" layoutY="82.0" />
-            <TableView fx:id="tablaClientes" layoutX="20.0" layoutY="124.0" prefHeight="417.0" prefWidth="976.0">
+            <TableView fx:id="tablaClientes" layoutX="20.0" layoutY="124.0" prefHeight="408.0" prefWidth="973.0">
               <columns>
                 <TableColumn fx:id="columid" prefWidth="75.0" text="ID" />
                   <TableColumn fx:id="columnNIT" prefWidth="75.0" text="NIT" />
@@ -34,7 +31,7 @@
                   <TableColumn fx:id="Telefono" prefWidth="101.0" text="Telefono" />
               </columns>
             </TableView>
-            <Button fx:id="BotonGenerarTabla" layoutX="879.0" layoutY="82.0" mnemonicParsing="false" onAction="#MostraContenido" text="Mostrar Contenido" />
+            <Button fx:id="BotonGenerarTabla" layoutX="876.0" layoutY="82.0" mnemonicParsing="false" onAction="#MostraContenidoClientes" text="Mostrar Contenido" />
          </children>
       </AnchorPane>
    </children>

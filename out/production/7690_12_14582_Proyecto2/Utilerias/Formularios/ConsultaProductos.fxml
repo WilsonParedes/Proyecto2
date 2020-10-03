@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane prefHeight="495.0" prefWidth="761.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GestionFormularios.CreacionFormulario">
+   <children>
+      <AnchorPane layoutX="1.0" layoutY="1.0" prefHeight="492.0" prefWidth="758.0" style="-fx-background-color: #414141;">
+         <children>
+            <TableView fx:id="tablaProductos" layoutX="14.0" layoutY="88.0" prefHeight="385.0" prefWidth="733.0">
+              <columns>
+                <TableColumn fx:id="columnIDProducto" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="columNProducto" prefWidth="300.0" text="Nombre Producto" />
+                  <TableColumn fx:id="columnMarca" minWidth="0.0" prefWidth="135.0" text="Marca" />
+                  <TableColumn fx:id="columnCategoria" prefWidth="136.0" text="Categoria" />
+                  <TableColumn fx:id="columnPrecio" minWidth="0.0" prefWidth="95.0" text="Precio" />
+              </columns>
+            </TableView>
+            <Label layoutX="14.0" layoutY="25.0" prefHeight="17.0" prefWidth="113.0" text="ID" textFill="#f8f7f7">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="55.0" prefHeight="17.0" prefWidth="113.0" text="Nombre Producto" textFill="#f8f7f7">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtIDProducto" layoutX="126.0" layoutY="21.0" promptText="ID Producto" />
+            <TextField fx:id="txtNombreProducto" layoutX="126.0" layoutY="51.0" />
+            <Button fx:id="BotonMostrarContenidoProducto" layoutX="612.0" layoutY="51.0" mnemonicParsing="false" onAction="#MostrarContenidoProductos" prefHeight="25.0" prefWidth="134.0" text="Mostra Contenido" />
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>

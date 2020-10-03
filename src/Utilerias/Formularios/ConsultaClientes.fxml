@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -34,7 +31,7 @@
                   <TableColumn fx:id="Telefono" prefWidth="101.0" text="Telefono" />
               </columns>
             </TableView>
-            <Button fx:id="BotonGenerarTabla" layoutX="876.0" layoutY="82.0" mnemonicParsing="false" onAction="#MostraContenido" text="Mostrar Contenido" />
+            <Button fx:id="BotonGenerarTabla" layoutX="876.0" layoutY="82.0" mnemonicParsing="false" onAction="#MostraContenidoClientes" text="Mostrar Contenido" />
          </children>
       </AnchorPane>
    </children>

@@ -1,44 +1,49 @@
 package Modulos;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 public class Productos implements Utilerias{
-    public int id;
+    public IntegerProperty id;
     private static int sigIdProducto=2000;
-    public String categoria;
-    public String producto;
-    public String marca;
-    public int precio;
+    public StringProperty categoria;
+    public StringProperty producto;
+    public StringProperty marca;
+    public IntegerProperty precio;
 
 
     public Productos(){
-        id= sigIdProducto++;
+        this.id= new SimpleIntegerProperty(sigIdProducto++);
     }
 
     public Productos(String categoria, String producto, String marca, int precio) {
         this();
-        this.categoria = categoria;
-        this.producto = producto;
-        this.marca = marca;
-        this.precio = precio;
+        this.categoria = new SimpleStringProperty(categoria);
+        this.producto = new SimpleStringProperty(producto);
+        this.marca = new SimpleStringProperty(marca);
+        this.precio = new SimpleIntegerProperty(precio);
     }
 
     public int getId() {
-        return id;
+        return id.get();
     }
 
     public String getCategoria() {
-        return categoria;
+        return categoria.get();
     }
 
     public String getProducto() {
-        return producto;
+        return producto.get();
     }
 
     public String getMarca() {
-        return marca;
+        return marca.get();
     }
 
     public int getPrecio() {
-        return precio;
+        return precio.get();
     }
 
     @Override

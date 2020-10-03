@@ -16,7 +16,16 @@ public class DataSistema {
             new ClienteEmpresa("Maria","Rosario","Estrada", "Martinez","34718418","04/02/1972","Femenino","soletro","MeCompilo, S.A","76432153",4),
             new ClienteEmpresa("Francisco","Fredy","Ordoñez", "Vasquez","2341948","12/12/1892","Masculino","casado","Azul, S.A","54765432",2)
     ));
-    public static ArrayList<Productos> ListaProductos= new ArrayList<Productos>(20);
+    public static ArrayList<Productos> ListaProductos= new ArrayList<Productos>(Arrays.asList(
+            new Productos("Llantas","Llanta Rin 14'","Maxxis",450),
+            new Productos("Aceites y Lubricantes","Aceite Sintetico","Castrol",50),
+            new Productos("Aceites y Lubricantes","Aceite Semisintetico","Amalie",35),
+            new Productos("Accesorios","Alfombras","Patito",110),
+            new Productos("Luces","Juego Luces Led","LED Master",45),
+            new Productos("Llantas","Llantas Rin 16'","GoodYear",525),
+            new Productos("Llantas","Llantas Rin 15'","Firestone",350),
+            new Productos("Baterias","Bateria Corolla","Bosch",750)
+    ));
     public static ArrayList<Usuarios> ListaUsuarios = new ArrayList<Usuarios>(20);
     public static int i=0;
     public static String temp="";
@@ -25,9 +34,7 @@ public class DataSistema {
 
     }
 
-    public void addCliente(Clientes cl){
-        ListaClientes.add(cl);}
-
+    public void addCliente(Clientes cl){ ListaClientes.add(cl);}
     public void addProducto(Productos pr){
         ListaProductos.add(pr);
     }

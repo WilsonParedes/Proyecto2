@@ -38,11 +38,8 @@ public class VariblesFormGlobales {
     public JFXTextField txtMarca;
     public JFXTextField txtPrecio;
 
-    /*ATRIBUTOS DE LA TABLEVIEW*/
-
-
+    /*ATRIBUTOS DE LA TABLEVIEW CONSULTACLIENTES.FXML*/
     public ArrayList<Clientes> c = new ArrayList<>();
-
     public TableView <Clientes> tablaClientes = new TableView<>();
     public TableColumn <Clientes, Integer> columid = new TableColumn<Clientes, Integer>("Id");
     public TableColumn <Clientes, String>columnNIT = new TableColumn<Clientes, String>("NIT");
@@ -53,6 +50,14 @@ public class VariblesFormGlobales {
     public TableColumn <Clientes, String>columEstadoCivil = new TableColumn<Clientes, String>("Estado Civil");
     public TableColumn <Clientes, String>columnRazonSocial = new TableColumn<>("Razon Social");
     public TableColumn <Clientes, String>columnContacto = new TableColumn<>("Contacto Empresa");
+
+    public ArrayList<Productos> p = new ArrayList<>();
+    public TableView<Productos> tablaProductos = new TableView<>();
+    public TableColumn <Productos,String> columnIDProducto = new TableColumn<>("ID");
+    public TableColumn <Productos,String> columNProducto = new TableColumn<>("Nombre Produto");
+    public TableColumn <Productos,String> columnMarca = new TableColumn<>("Marca");
+    public TableColumn <Productos,String> columnCategoria = new TableColumn<>("Categoria");
+    public TableColumn <Productos, Integer> columnPrecio = new TableColumn<>("Precio");
 
 
 
