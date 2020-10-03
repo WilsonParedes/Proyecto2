@@ -43,6 +43,7 @@
                   </ImageView>
                </graphic>
             </Button>
+            <Button fx:id="OpcionProductos" layoutX="412.0" layoutY="51.0" mnemonicParsing="false" onAction="#LlamarFormIngresoProducto" prefHeight="25.0" prefWidth="186.0" text="Formulario Agregar Producto" />
          </children>
       </AnchorPane>
    </children>

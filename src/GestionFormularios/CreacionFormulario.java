@@ -140,6 +140,10 @@ public class CreacionFormulario extends VariblesFormGlobales {
         System.out.println(clien.toString());
 
     }
+    public void LlamarFormIngresoClientes() throws IOException{
+        GestionVistaPrincipal gv = new GestionVistaPrincipal();
+        gv.OpcionMenuIngresoClientes();
+    }
     public void SalidaConsultaClientes(){
         Stage StageCerrarFormConsultaClientes = (Stage)txtIDCliente.getScene().getWindow();
         StageCerrarFormConsultaClientes.close();
@@ -157,6 +161,10 @@ public class CreacionFormulario extends VariblesFormGlobales {
         tablaProductos.setItems(prod);
         System.out.println(prod.toString());
 
+    }
+    public void LlamarFormIngresoProducto() throws IOException{
+        GestionVistaPrincipal gv = new GestionVistaPrincipal();
+        gv.OpcionMenuIngresoProducto();
     }
 
     public void SalidaConsultaProducto(){
