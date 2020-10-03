@@ -4,6 +4,7 @@ import java.util.ArrayList;
 public class DataSistema {
     public static ArrayList<Clientes> ListaClientes= new ArrayList<Clientes>(20);
     public static ArrayList<Productos> ListaProductos= new ArrayList<Productos>(20);
+    public static ArrayList<Usuarios> ListaUsuarios = new ArrayList<Usuarios>(20);
     public static int i=0;
     public static String temp="";
 
@@ -17,6 +18,18 @@ public class DataSistema {
     public void addProducto(Productos pr){
         ListaProductos.add(pr);
     }
+    public void addUsuarios(Usuarios us){
+        ListaUsuarios.add(us);
+    }
+
+    public ArrayList<Clientes> getListaClientes() {
+        return ListaClientes;
+    }
+    public ArrayList<Usuarios> getListaUsuarios() {
+        return ListaUsuarios;
+    }
+
+
     public String toString() {
         for(Clientes tempclientes: ListaClientes){
             i++;

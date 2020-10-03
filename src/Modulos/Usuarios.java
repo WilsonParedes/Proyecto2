@@ -1,7 +1,5 @@
 package Modulos;
 
-import java.util.ArrayList;
-
 public class Usuarios {
     private static int correlativo = 1;
     public int corr;
