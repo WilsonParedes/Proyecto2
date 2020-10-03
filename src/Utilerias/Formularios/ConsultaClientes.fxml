@@ -6,7 +6,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <Pane prefHeight="585.0" prefWidth="899.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GestionFormularios.CreacionFormulario">
    <children>
       <AnchorPane layoutX="8.0" prefHeight="585.0" prefWidth="888.0">
@@ -18,14 +17,11 @@
             <TableView fx:id="tablaClientes" layoutX="58.0" layoutY="124.0" prefHeight="424.0" prefWidth="772.0">
               <columns>
                 <TableColumn fx:id="columid" prefWidth="75.0" text="ID" />
-                  <TableColumn fx:id="columDPI" prefWidth="75.0" text="DPI" />
                   <TableColumn fx:id="columnNIT" prefWidth="75.0" text="NIT" />
                   <TableColumn fx:id="columNombre" prefWidth="75.0" text="Nombre" />
                   <TableColumn fx:id="columFechaNac" prefWidth="181.0" text="Fecha Nacimiento" />
                   <TableColumn fx:id="columnGenero" prefWidth="83.0" text="Genero" />
                   <TableColumn fx:id="columEstadoCivil" prefWidth="83.0" text="Estado Civil" />
-                  <TableColumn fx:id="columnRazonSocial" prefWidth="83.0" text="Razon Social" />
-                  <TableColumn fx:id="columnContacto" prefWidth="83.0" text="Contacto Empresa" />
               </columns>
             </TableView>
             <Button fx:id="BotonGenerarTabla" layoutX="641.0" layoutY="51.0" mnemonicParsing="false" onAction="#MostraContenido" text="Generar" />

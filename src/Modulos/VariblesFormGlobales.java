@@ -36,6 +36,23 @@ public class VariblesFormGlobales {
     public JFXTextField txtMarca;
     public JFXTextField txtPrecio;
 
+    /*ATRIBUTOS DE LA TABLEVIEW*/
+
+
+
+    /*public TableColumn <Clientes, String> columDPI = new TableColumn<>("DPI");*/
+    public TableView <Clientes> tablaClientes = new TableView<>();
+    public TableColumn <Clientes, Integer> columid;
+    public TableColumn <Clientes, String>columnNIT ;
+    public TableColumn <Clientes, String>columNombre ;
+    public TableColumn <Clientes, String>columFechaNac ;
+    public TableColumn <Clientes, String>columnGenero ;
+    public TableColumn <Clientes, String>columEstadoCivil ;
+
+    /*public TableColumn <Clientes, String>columnRazonSocial = new TableColumn<>("Razon Social");
+    public TableColumn <Clientes, String>columnContacto = new TableColumn<>("Contacto Empresa");;*/
+
+
 
 
 

@@ -18,9 +18,6 @@ import java.util.ArrayList;
 
 public class CreacionFormulario extends VariblesFormGlobales {
 
-
-
-
     public void FormGlobal(String ubicacion, String titulo, int ancho, int alto) throws IOException {
         FXMLLoader in = new FXMLLoader(getClass().getResource(ubicacion));
         Pane pri = (Pane) in.load();
@@ -129,20 +126,22 @@ public class CreacionFormulario extends VariblesFormGlobales {
     }
 
 
-    private ArrayList<Clientes> clientes = new ArrayList<>();
-    /*TableView <Clientes> tablaClientes = new TableView<>();
-    TableColumn <Clientes, String> columNIT = new TableColumn<>();
+
+
+    private ArrayList<Clientes> c = new ArrayList<>();
     public void MostraContenido(ActionEvent actionEvent) {
-        clientes = arrayclientes.getListaClientes();
-        ObservableList <Clientes> desple = FXCollections.observableArrayList(clientes);
-        columNIT.setCellValueFactory(new PropertyValueFactory<Clientes, String>("nit"));
-        tablaClientes.setItems(desple);
+        c= arrayclientes.getListaClientes();
+        ObservableList<Clientes> clien = FXCollections.observableArrayList(c);
+        columid.setCellValueFactory(new PropertyValueFactory<Clientes, Integer>("id"));
+        /*columDPI.setCellValueFactory(new PropertyValueFactory<>("dpi"));*/
+        columnNIT.setCellValueFactory(new PropertyValueFactory<Clientes, String>("nit"));
+        columNombre.setCellValueFactory(new PropertyValueFactory<Clientes, String>("nombre"));
+        columFechaNac.setCellValueFactory(new PropertyValueFactory<Clientes, String>("fecha"));
+        columnGenero.setCellValueFactory(new PropertyValueFactory<Clientes, String>("genero"));
+        columEstadoCivil.setCellValueFactory(new PropertyValueFactory<Clientes, String>("estadocivil"));
+        tablaClientes.setItems(clien);
+        System.out.println(clien.toString());
 
-        for(Clientes cl:clientes){
-            System.out.println(cl.toString());
-
-        }
-
-    }*/
+    }
 }
 

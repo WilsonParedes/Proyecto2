@@ -12,9 +12,7 @@ public class DataSistema {
 
     }
 
-    public void addCliente(Clientes cl){
-        ListaClientes.add(cl);
-    }
+    public void addCliente(Clientes cl){ListaClientes.add(cl);}
     public void addProducto(Productos pr){
         ListaProductos.add(pr);
     }
