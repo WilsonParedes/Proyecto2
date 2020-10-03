@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -16,7 +18,7 @@
                <font>
                   <Font name="Calibri Bold" size="14.0" />
                </font></Label>
-            <TextField fx:id="txtIDCliente" layoutX="84.0" layoutY="38.0" />
+            <TextField fx:id="txtIDCliente" layoutX="84.0" layoutY="38.0" promptText="ID Cliente" />
             <TextField fx:id="txtNITConsulta" layoutX="84.0" layoutY="82.0" />
             <TableView fx:id="tablaClientes" layoutX="20.0" layoutY="124.0" prefHeight="408.0" prefWidth="973.0">
               <columns>
@@ -32,6 +34,14 @@
               </columns>
             </TableView>
             <Button fx:id="BotonGenerarTabla" layoutX="876.0" layoutY="82.0" mnemonicParsing="false" onAction="#MostraContenidoClientes" text="Mostrar Contenido" />
+            <Button fx:id="BotonSalirFormConsultaCliente" layoutX="900.0" layoutY="17.0" mnemonicParsing="false" onAction="#SalidaConsultaClientes" prefHeight="51.0" prefWidth="59.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="46.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Imagenes/Exit.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
          </children>
       </AnchorPane>
    </children>

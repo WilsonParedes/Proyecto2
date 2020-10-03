@@ -104,7 +104,7 @@ public class CreacionFormulario extends VariblesFormGlobales {
     /*EVENTO QUE GUARDA LOS DATOS INGRESADOS AL FORMULARIO INGRESOPRODUCTO.FXML*/
     public void OpcionGuardarProducto(ActionEvent actionEvent) {
         /*CONSTRUCTOR EMPRESAS*/
-        arrayProductos.addProducto(new Productos("LICOR", txtNProducto.getText(),txtMarca.getText(),
+        arrayProductos.addProducto(new Productos("Categoria", txtNProducto.getText(),txtMarca.getText(),
                                     Integer.parseInt(txtPrecio.getText())));
         JOptionPane.showMessageDialog(null,"EL PRODUCTO HA SIDO ALMACENADO CON EXITO" ,"INFORMACION",JOptionPane.INFORMATION_MESSAGE);
     }
@@ -140,9 +140,13 @@ public class CreacionFormulario extends VariblesFormGlobales {
         System.out.println(clien.toString());
 
     }
+    public void SalidaConsultaClientes(){
+        Stage StageCerrarFormConsultaClientes = (Stage)txtIDCliente.getScene().getWindow();
+        StageCerrarFormConsultaClientes.close();
+    }
 
     /*EVENTO QUE MUESTRA TODOS LOS REGISTROS EN TABLEVIEW DE CLIENTES*/
-    public void MostrarContenidoProductos() {
+    public void MostrarContenidoProducto() {
         p = arrayProductos.getListaProductos();
         ObservableList<Productos> prod = FXCollections.observableArrayList(p);
         columnIDProducto.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -153,6 +157,11 @@ public class CreacionFormulario extends VariblesFormGlobales {
         tablaProductos.setItems(prod);
         System.out.println(prod.toString());
 
+    }
+
+    public void SalidaConsultaProducto(){
+        Stage StageCerrarFormaConsultaProductos = (Stage)txtIDProducto.getScene().getWindow();
+        StageCerrarFormaConsultaProductos.close();
     }
 }
 

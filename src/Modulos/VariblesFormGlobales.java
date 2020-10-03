@@ -39,6 +39,7 @@ public class VariblesFormGlobales {
     public JFXTextField txtPrecio;
 
     /*ATRIBUTOS DE LA TABLEVIEW CONSULTACLIENTES.FXML*/
+    public TextField txtIDCliente;
     public ArrayList<Clientes> c = new ArrayList<>();
     public TableView <Clientes> tablaClientes = new TableView<>();
     public TableColumn <Clientes, Integer> columid = new TableColumn<Clientes, Integer>("Id");
@@ -51,6 +52,8 @@ public class VariblesFormGlobales {
     public TableColumn <Clientes, String>columnRazonSocial = new TableColumn<>("Razon Social");
     public TableColumn <Clientes, String>columnContacto = new TableColumn<>("Contacto Empresa");
 
+    /*ATRIBUTOS DE LA TABLEVIEW CONSULTAPRODUTOS.FXML*/
+    public TextField txtIDProducto;
     public ArrayList<Productos> p = new ArrayList<>();
     public TableView<Productos> tablaProductos = new TableView<>();
     public TableColumn <Productos,String> columnIDProducto = new TableColumn<>("ID");
