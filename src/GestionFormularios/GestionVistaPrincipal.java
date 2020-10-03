@@ -5,6 +5,7 @@ import Modulos.Productos;
 import com.sun.xml.internal.bind.v2.runtime.property.PropertyFactory;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -13,10 +14,12 @@ import javafx.stage.Stage;
 import sun.misc.Cleaner;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.PropertyPermission;
+import java.util.ResourceBundle;
 
-public class GestionVistaPrincipal extends CreacionFormulario{
+public class GestionVistaPrincipal extends CreacionFormulario {
 
     public void FormCrear() throws IOException {
         FormGlobal("/Utilerias/Formularios/Creacion.fxml","CREACIÓN DE USUARIO", 500, 265);
@@ -45,11 +48,8 @@ public class GestionVistaPrincipal extends CreacionFormulario{
 
     /*SE CREA EL MÉTODO PARA CREAR LA OPCION DE CONSULTA CLIENTES.FXML*/
 
-
     public void OpcionConsultaClientes()throws IOException{
-
-        FormGlobal("/Utilerias/Formularios/ConsultaClientes.fxml","INGRESO PRODUCTO", 700, 700);
-
+        FormGlobal("/Utilerias/Formularios/ConsultaClientes.fxml","INGRESO PRODUCTO", 1006, 554);
     }
 
     /*SE CREA EL MÉTODO PARA CREAR LA OPCION DE CONSULTA PRODUCTOS*/
@@ -62,4 +62,5 @@ public class GestionVistaPrincipal extends CreacionFormulario{
         }
 
     }
+
 }

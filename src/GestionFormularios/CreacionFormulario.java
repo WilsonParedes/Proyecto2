@@ -1,6 +1,7 @@
 package GestionFormularios;
 
 import Modulos.*;
+import com.sun.security.ntlm.Client;
 import com.sun.xml.internal.bind.v2.runtime.property.PropertyFactory;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -112,7 +113,7 @@ public class CreacionFormulario extends VariblesFormGlobales {
         JOptionPane.showMessageDialog(null,"EL PRODUCTO HA SIDO ALMACENADO CON EXITO" ,"INFORMACION",JOptionPane.INFORMATION_MESSAGE);
     }
 
-    /*EVENTO QUE LIMPIAR EL FORMULARIO PRODUCTOS*/
+    /*EVENTO QUE LIMPIA EL FORMULARIO PRODUCTOS*/
     public void OpcionLimpiarFormProducto(){
         txtNProducto.clear();
         txtMarca.clear();
@@ -126,19 +127,19 @@ public class CreacionFormulario extends VariblesFormGlobales {
     }
 
 
-
-
-    private ArrayList<Clientes> c = new ArrayList<>();
-    public void MostraContenido(ActionEvent actionEvent) {
+    public void MostraContenido() {
         c= arrayclientes.getListaClientes();
         ObservableList<Clientes> clien = FXCollections.observableArrayList(c);
         columid.setCellValueFactory(new PropertyValueFactory<Clientes, Integer>("id"));
-        /*columDPI.setCellValueFactory(new PropertyValueFactory<>("dpi"));*/
         columnNIT.setCellValueFactory(new PropertyValueFactory<Clientes, String>("nit"));
+        columDPI.setCellValueFactory(new PropertyValueFactory<Clientes, String>("dpi"));
         columNombre.setCellValueFactory(new PropertyValueFactory<Clientes, String>("nombre"));
         columFechaNac.setCellValueFactory(new PropertyValueFactory<Clientes, String>("fecha"));
         columnGenero.setCellValueFactory(new PropertyValueFactory<Clientes, String>("genero"));
         columEstadoCivil.setCellValueFactory(new PropertyValueFactory<Clientes, String>("estadocivil"));
+        columnRazonSocial.setCellValueFactory(new PropertyValueFactory<Clientes, String>("razonsocial"));
+        columnContacto.setCellValueFactory(new PropertyValueFactory<Clientes, String>("contacto"));
+
         tablaClientes.setItems(clien);
         System.out.println(clien.toString());
 

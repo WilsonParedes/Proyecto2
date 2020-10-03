@@ -1,30 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane prefHeight="585.0" prefWidth="899.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GestionFormularios.CreacionFormulario">
+<Pane prefHeight="554.0" prefWidth="1006.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GestionFormularios.CreacionFormulario">
    <children>
-      <AnchorPane layoutX="8.0" prefHeight="585.0" prefWidth="888.0">
+      <AnchorPane layoutX="1.0" layoutY="1.0" prefHeight="550.0" prefWidth="1003.0" style="-fx-background-color: #414141;">
          <children>
-            <Label layoutX="14.0" layoutY="28.0" prefHeight="44.0" prefWidth="171.0" text="Id" />
-            <Label layoutX="14.0" layoutY="72.0" prefHeight="44.0" prefWidth="171.0" text="NIT" />
+            <Label layoutX="21.0" layoutY="28.0" prefHeight="44.0" prefWidth="171.0" text="Id" textFill="#fcf7f7">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font></Label>
+            <Label layoutX="21.0" layoutY="72.0" prefHeight="44.0" prefWidth="171.0" text="NIT" textFill="#fcf7f7">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font></Label>
             <TextField fx:id="txtIDCliente" layoutX="84.0" layoutY="38.0" />
             <TextField fx:id="txtNITConsulta" layoutX="84.0" layoutY="82.0" />
-            <TableView fx:id="tablaClientes" layoutX="58.0" layoutY="124.0" prefHeight="424.0" prefWidth="772.0">
+            <TableView fx:id="tablaClientes" layoutX="20.0" layoutY="124.0" prefHeight="417.0" prefWidth="976.0">
               <columns>
                 <TableColumn fx:id="columid" prefWidth="75.0" text="ID" />
                   <TableColumn fx:id="columnNIT" prefWidth="75.0" text="NIT" />
-                  <TableColumn fx:id="columNombre" prefWidth="75.0" text="Nombre" />
-                  <TableColumn fx:id="columFechaNac" prefWidth="181.0" text="Fecha Nacimiento" />
-                  <TableColumn fx:id="columnGenero" prefWidth="83.0" text="Genero" />
-                  <TableColumn fx:id="columEstadoCivil" prefWidth="83.0" text="Estado Civil" />
+                  <TableColumn fx:id="columDPI" prefWidth="107.0" text="DPI" />
+                  <TableColumn fx:id="columNombre" prefWidth="195.0" text="Nombre" />
+                  <TableColumn fx:id="columFechaNac" prefWidth="117.0" text="Fecha Nacimiento" />
+                  <TableColumn fx:id="columnGenero" minWidth="0.0" prefWidth="64.0" text="Genero" />
+                  <TableColumn fx:id="columEstadoCivil" text="Estado Civil" />
+                  <TableColumn fx:id="columnRazonSocial" prefWidth="163.0" text="Razon Social" />
+                  <TableColumn fx:id="Telefono" prefWidth="101.0" text="Telefono" />
               </columns>
             </TableView>
-            <Button fx:id="BotonGenerarTabla" layoutX="641.0" layoutY="51.0" mnemonicParsing="false" onAction="#MostraContenido" text="Generar" />
+            <Button fx:id="BotonGenerarTabla" layoutX="879.0" layoutY="82.0" mnemonicParsing="false" onAction="#MostraContenido" text="Mostrar Contenido" />
          </children>
       </AnchorPane>
    </children>

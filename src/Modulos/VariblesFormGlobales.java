@@ -4,6 +4,8 @@ import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.scene.control.*;
 
+import java.util.ArrayList;
+
 public class VariblesFormGlobales {
     /*ATRIBUTOS DE FORMULARIO INGRESO.FXML*/
     public TextField txtUsuario;
@@ -39,18 +41,18 @@ public class VariblesFormGlobales {
     /*ATRIBUTOS DE LA TABLEVIEW*/
 
 
+    public ArrayList<Clientes> c = new ArrayList<>();
 
-    /*public TableColumn <Clientes, String> columDPI = new TableColumn<>("DPI");*/
     public TableView <Clientes> tablaClientes = new TableView<>();
-    public TableColumn <Clientes, Integer> columid;
-    public TableColumn <Clientes, String>columnNIT ;
-    public TableColumn <Clientes, String>columNombre ;
-    public TableColumn <Clientes, String>columFechaNac ;
-    public TableColumn <Clientes, String>columnGenero ;
-    public TableColumn <Clientes, String>columEstadoCivil ;
-
-    /*public TableColumn <Clientes, String>columnRazonSocial = new TableColumn<>("Razon Social");
-    public TableColumn <Clientes, String>columnContacto = new TableColumn<>("Contacto Empresa");;*/
+    public TableColumn <Clientes, Integer> columid = new TableColumn<Clientes, Integer>("Id");
+    public TableColumn <Clientes, String>columnNIT = new TableColumn<Clientes, String>("NIT");
+    public TableColumn <Clientes, String> columDPI = new TableColumn<>("DPI");
+    public TableColumn <Clientes, String>columNombre = new TableColumn<Clientes, String>("Nombre");
+    public TableColumn <Clientes, String>columFechaNac = new TableColumn<Clientes, String>("Fecha Nacimiento");
+    public TableColumn <Clientes, String>columnGenero = new TableColumn<Clientes, String>("Genero");
+    public TableColumn <Clientes, String>columEstadoCivil = new TableColumn<Clientes, String>("Estado Civil");
+    public TableColumn <Clientes, String>columnRazonSocial = new TableColumn<>("Razon Social");
+    public TableColumn <Clientes, String>columnContacto = new TableColumn<>("Contacto Empresa");
 
 
 
