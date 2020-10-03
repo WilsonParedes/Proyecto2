@@ -1,82 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane fx:id="PaneIngresoClientes" prefHeight="588.0" prefWidth="755.0" style="-fx-background-color: #414141;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GestionFormularios.CreacionFormulario">
+<Pane fx:id="PaneIngresoClientes" prefHeight="401.0" prefWidth="757.0" style="-fx-background-color: #414141;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GestionFormularios.ControladorDeEventos">
    <children>
-      <AnchorPane layoutX="3.0" layoutY="3.0" prefHeight="130.0" prefWidth="675.0" style="-fx-background-color: #EEEEEE;">
+      <AnchorPane layoutX="3.0" layoutY="4.0" prefHeight="111.0" prefWidth="707.0" style="-fx-background-color: #EEEEEE;">
          <children>
-            <Label alignment="CENTER" layoutX="53.0" layoutY="14.0" prefHeight="25.0" prefWidth="579.0" text="INGRESO DE CLIENTES">
+            <Label alignment="CENTER" layoutX="57.0" layoutY="14.0" prefHeight="25.0" prefWidth="579.0" text="INGRESO DE CLIENTES">
                <font>
                   <Font name="Calibri Bold" size="22.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="txtNIT" focusColor="#1b7717" layoutX="18.0" layoutY="52.0">
+            <JFXTextField fx:id="txtNIT" focusColor="#1b7717" layoutX="43.0" layoutY="49.0">
                <font>
                   <Font size="13.0" />
                </font>
             </JFXTextField>
-            <Label layoutX="18.0" layoutY="80.0" text="NIT" />
-            <Label alignment="CENTER" layoutX="8.0" layoutY="105.0" prefHeight="17.0" prefWidth="415.0" text="*Si actua como propietario o representante legal favor marcar la casilla Empresa">
+            <Label layoutX="18.0" layoutY="63.0" text="NIT" />
+            <Label alignment="CENTER" layoutX="206.0" layoutY="89.0" prefHeight="17.0" prefWidth="415.0" text="*Si actua como propietario o representante legal favor marcar la casilla Empresa">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>
             </Label>
-            <JFXCheckBox fx:id="cbEmpresa" layoutX="452.0" layoutY="105.0" onAction="#OpcionEmpresa" text="Empresa" />
+            <JFXCheckBox fx:id="cbEmpresa" layoutX="629.0" layoutY="88.0" onAction="#OpcionEmpresa" text="Empresa" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="3.0" layoutY="135.0" prefHeight="287.0" prefWidth="675.0" style="-fx-background-color: #EEEEEE;">
+      <AnchorPane layoutX="3.0" layoutY="116.0" prefHeight="169.0" prefWidth="707.0" style="-fx-background-color: #EEEEEE;">
          <children>
-            <Label layoutX="17.0" layoutY="66.0" text="No. DPI" />
-            <Label layoutX="16.0" layoutY="127.0" text="Primer Nombre" />
-            <Label layoutX="225.0" layoutY="127.0" text="Segundo Nombre" />
-            <Label layoutX="16.0" layoutY="183.0" text="Primer Apellido" />
-            <Label layoutX="225.0" layoutY="183.0" text="Segundo Apellido" />
-            <Label layoutX="16.0" layoutY="227.0" text="Fecha de Nacimiento" />
-            <Label alignment="CENTER" layoutX="145.0" layoutY="14.0" prefHeight="17.0" prefWidth="386.0" text="DATOS PERSONALES DE CLIENTE" />
-                        <JFXTextField fx:id="txtDPI" focusColor="#1a7817" layoutX="17.0" layoutY="37.0" prefHeight="29.0" prefWidth="149.0">
+            <Label layoutX="15.0" layoutY="48.0" text="No. DPI" />
+            <Label layoutX="14.0" layoutY="96.0" text="Nombre Completo" />
+            <Label layoutX="16.0" layoutY="132.0" text="Fecha de Nacimiento" />
+            <Label alignment="CENTER" layoutX="154.0" layoutY="10.0" prefHeight="17.0" prefWidth="386.0" text="DATOS PERSONALES DE CLIENTE" />
+                        <JFXTextField fx:id="txtDPI" focusColor="#1a7817" layoutX="143.0" layoutY="35.0" prefHeight="29.0" prefWidth="149.0">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </JFXTextField>
-                        <JFXTextField fx:id="txtPNombre" focusColor="#1a7817" layoutX="15.0" layoutY="94.0" prefHeight="25.0" prefWidth="149.0">
+                        <JFXTextField fx:id="txtNombreCompleto" focusColor="#1a7817" layoutX="142.0" layoutY="82.0" prefHeight="29.0" prefWidth="345.0">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </JFXTextField>
-                        <JFXTextField fx:id="txtSNombre" focusColor="#1a7817" layoutX="225.0" layoutY="94.0" prefHeight="25.0" prefWidth="149.0">
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </JFXTextField>
-                        <JFXTextField fx:id="txtPApellido" focusColor="#1a7817" layoutX="16.0" layoutY="152.0" prefHeight="25.0" prefWidth="149.0">
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </JFXTextField>
-                        <JFXTextField fx:id="txtSApellido" focusColor="#1a7817" layoutX="225.0" layoutY="152.0" prefHeight="25.0" prefWidth="149.0">
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </JFXTextField>
-                        <DatePicker fx:id="DateFecha" layoutX="16.0" layoutY="245.0" />
-            <Label layoutX="470.0" layoutY="171.0" text="Estado Civil" />
-            <Label layoutX="470.0" layoutY="88.0" text="Genero" />
-                        <JFXRadioButton layoutX="551.0" layoutY="73.0" text="Femenino">
+                        <DatePicker fx:id="DateFecha" layoutX="142.0" layoutY="131.0" />
+            <Label layoutX="352.0" layoutY="135.0" text="Estado Civil" />
+            <Label layoutX="531.0" layoutY="56.0" text="Genero" />
+                        <JFXRadioButton layoutX="612.0" layoutY="41.0" text="Femenino">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </JFXRadioButton>
-                        <JFXRadioButton layoutX="551.0" layoutY="102.0" text="Masculino">
+                        <JFXRadioButton layoutX="612.0" layoutY="70.0" text="Masculino">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </JFXRadioButton>
-                        <MenuButton layoutX="544.0" layoutY="167.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="98.0">
+                        <MenuButton layoutX="423.0" layoutY="131.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="98.0">
                           <items>
                             <MenuItem mnemonicParsing="false" text="Soltero" />
                             <MenuItem mnemonicParsing="false" text="Casado" />
@@ -84,47 +67,47 @@
                         </MenuButton>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="3.0" layoutY="424.0" prefHeight="161.0" prefWidth="675.0" style="-fx-background-color: #EEEEEE;">
+      <AnchorPane layoutX="3.0" layoutY="286.0" prefHeight="111.0" prefWidth="707.0" style="-fx-background-color: #EEEEEE;">
          <children>
-            <Label alignment="CENTER" layoutX="154.0" layoutY="14.0" prefHeight="17.0" prefWidth="368.0" text="DATOS DE EMPRESA" />
-            <Label layoutX="4.0" layoutY="81.0" prefHeight="17.0" prefWidth="368.0" text="Razon Social" />
-                        <Label layoutX="7.0" layoutY="139.0" prefHeight="17.0" prefWidth="200.0" text="Contacto Telefonico" />
+            <Label alignment="CENTER" layoutX="160.0" layoutY="14.0" prefHeight="17.0" prefWidth="368.0" text="DATOS DE EMPRESA" />
+            <Label layoutX="14.0" layoutY="52.0" prefHeight="17.0" prefWidth="138.0" text="Razon Social" />
+                        <Label layoutX="15.0" layoutY="84.0" prefHeight="17.0" prefWidth="118.0" text="Contacto Telefonico" />
 
-                        <JFXTextField fx:id="txtRazonSocial" disable="true" focusColor="#1a7817" layoutX="14.0" layoutY="48.0" prefHeight="29.0" prefWidth="564.0">
+                        <JFXTextField fx:id="txtRazonSocial" disable="true" focusColor="#1a7817" layoutX="133.0" layoutY="37.0" prefHeight="29.0" prefWidth="465.0">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </JFXTextField>
-                        <JFXTextField fx:id="txtContacto" disable="true" focusColor="#1a7817" layoutX="14.0" layoutY="103.0" prefHeight="29.0" prefWidth="220.0">
+                        <JFXTextField fx:id="txtContacto" disable="true" focusColor="#1a7817" layoutX="133.0" layoutY="70.0" prefHeight="29.0" prefWidth="220.0">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </JFXTextField>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="680.0" layoutY="3.0" prefHeight="582.0" prefWidth="71.0" style="-fx-background-color: DADADA;">
+      <AnchorPane layoutX="712.0" layoutY="4.0" prefHeight="393.0" prefWidth="41.0" style="-fx-background-color: DADADA;">
          <children>
-                        <Button fx:id="BotonGuardarCliente" layoutY="100.0" mnemonicParsing="false" onAction="#BotonGuardarClientes" prefHeight="76.0" prefWidth="70.0" style="-fx-background-color: transparent;">
+                        <Button fx:id="BotonGuardarCliente" layoutX="-3.0" layoutY="58.0" mnemonicParsing="false" onAction="#BotonGuardarClientes" prefHeight="48.0" prefWidth="41.0" style="-fx-background-color: transparent;">
                <graphic>
-                  <ImageView fitHeight="53.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="36.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Imagenes/Save.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="BotonLimForm" layoutY="227.0" mnemonicParsing="false" onAction="#BotonLimpiarForm" prefHeight="76.0" prefWidth="70.0" style="-fx-background-color: transparent;">
+            <Button fx:id="BotonLimForm" layoutX="-1.0" layoutY="159.0" mnemonicParsing="false" onAction="#BotonLimpiarForm" prefHeight="48.0" prefWidth="41.0" style="-fx-background-color: transparent;">
                <graphic>
-                  <ImageView fitHeight="53.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="36.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Imagenes/Clear.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-                        <Button fx:id="BotonCancelarCliente" layoutX="-1.0" layoutY="360.0" mnemonicParsing="false" onAction="#SalirFormIngresoClientes" prefHeight="76.0" prefWidth="70.0" style="-fx-background-color: transparent;">
+                        <Button fx:id="BotonCancelarCliente" layoutY="267.0" mnemonicParsing="false" onAction="#SalirFormIngresoClientes" prefHeight="48.0" prefWidth="41.0" style="-fx-background-color: transparent;">
                <graphic>
-                  <ImageView fitHeight="53.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="36.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Imagenes/Exit.png" />
                      </image>

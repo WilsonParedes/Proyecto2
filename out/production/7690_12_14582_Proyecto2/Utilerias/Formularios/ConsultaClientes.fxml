@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane prefHeight="554.0" prefWidth="1019.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GestionFormularios.CreacionFormulario">
+<Pane prefHeight="554.0" prefWidth="1019.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GestionFormularios.ControladorDeEventos">
    <children>
       <AnchorPane layoutX="1.0" layoutY="1.0" prefHeight="550.0" prefWidth="1013.0" style="-fx-background-color: #414141;">
          <children>
@@ -33,7 +33,7 @@
                   <TableColumn fx:id="Telefono" prefWidth="101.0" text="Telefono" />
               </columns>
             </TableView>
-            <Button fx:id="BotonGenerarTabla" layoutX="876.0" layoutY="82.0" mnemonicParsing="false" onAction="#MostraContenidoClientes" text="Mostrar Contenido" />
+            <Button fx:id="BotonGenerarTabla" layoutX="876.0" layoutY="82.0" mnemonicParsing="false" text="Mostrar Contenido" />
             <Button fx:id="BotonSalirFormConsultaCliente" layoutX="900.0" layoutY="17.0" mnemonicParsing="false" onAction="#SalidaConsultaClientes" prefHeight="51.0" prefWidth="59.0" style="-fx-background-color: transparent;">
                <graphic>
                   <ImageView fitHeight="46.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">

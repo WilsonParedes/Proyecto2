@@ -7,8 +7,8 @@ public class ClienteIndividual extends Clientes {
     public StringProperty dpi;
 
 
-    public ClienteIndividual(String dpi, String primernombre, String segundonombre, String primerapellido, String segundoapellido, String nit, String fecha, String genero, String estadocivil) {
-        super(primernombre, segundonombre, primerapellido, segundoapellido, nit, fecha, genero, estadocivil);
+    public ClienteIndividual(String dpi, String nombre, String nit, String fecha, String genero, String estadocivil) {
+        super(nombre, nit, fecha, genero, estadocivil);
         this.dpi = new SimpleStringProperty(dpi);
     }
 

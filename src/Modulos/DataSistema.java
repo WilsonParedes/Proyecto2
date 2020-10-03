@@ -7,14 +7,14 @@ import java.util.Arrays;
 
 public class DataSistema {
     public static ArrayList<Clientes> ListaClientes= new ArrayList<Clientes>(Arrays.asList(
-            new ClienteIndividual("2151743990101","Wilson","Alexander", "Paredes","Perez","72792051"," 09/09/1992", "Masculino","Soltero"),
-            new ClienteIndividual("7654986412312","Justin","Alexaner", "Zacarias","Lemus","87654312"," 05/03/1997", "Masculino","Soltero"),
-            new ClienteIndividual("9876312314210","Vinda","Anali", "Solares","Monterroso","314198371"," 18/05/1997", "Femenino","Soltero"),
-            new ClienteIndividual("2154678218271","Marcos","Antonio", "Rodriguez","Perez","98361313"," 04/05/1992", "Masculino","Soltero"),
-            new ClienteEmpresa("Alfredo","Estuardo","Ramirez", "Valenzuela","98764351","04/05/1994","Masculino","casado","Patito, S.A","66543276",3),
-            new ClienteEmpresa("Marta","Julia","Rodriguez", "Pocasangre","38173213","04/04/1989","Femenino","casado","MaestrosdelTrance, S.A","6654986",2),
-            new ClienteEmpresa("Maria","Rosario","Estrada", "Martinez","34718418","04/02/1972","Femenino","soletro","MeCompilo, S.A","76432153",4),
-            new ClienteEmpresa("Francisco","Fredy","Ordoñez", "Vasquez","2341948","12/12/1892","Masculino","casado","Azul, S.A","54765432",2)
+            new ClienteIndividual("2151743990101","Wilson Alexander Paredes Perez","72792051"," 09/09/1992", "Masculino","Soltero"),
+            new ClienteIndividual("7654986412312","Justin Alexaner Zacarias Lemus","87654312"," 05/03/1997", "Masculino","Soltero"),
+            new ClienteIndividual("9876312314210","Vinda Anali Solares Monterroso","314198371"," 18/05/1997", "Femenino","Soltero"),
+            new ClienteIndividual("2154678218271","Marcos Antonio Rodriguez Perez","98361313"," 04/05/1992", "Masculino","Soltero"),
+            new ClienteEmpresa("Alfredo Estuardo Ramirez Valenzuela","98764351","04/05/1994","Masculino","casado","Patito, S.A","66543276",3),
+            new ClienteEmpresa("Marta Julia Rodriguez Pocasangre","38173213","04/04/1989","Femenino","casado","MaestrosdelTrance, S.A","6654986",2),
+            new ClienteEmpresa("Maria Rosario Estrada Martinez","34718418","04/02/1972","Femenino","soletro","MeCompilo, S.A","76432153",4),
+            new ClienteEmpresa("Francisco Fredy Ordoñez Vasquez","2341948","12/12/1892","Masculino","casado","Azul, S.A","54765432",2)
     ));
     public static ArrayList<Productos> ListaProductos= new ArrayList<Productos>(Arrays.asList(
             new Productos("Llantas","Llanta Rin 14'","Maxxis",450),

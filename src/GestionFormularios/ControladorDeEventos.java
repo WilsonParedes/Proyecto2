@@ -1,18 +1,25 @@
 package GestionFormularios;
 
 import Modulos.*;
+import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+
 import javax.swing.*;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class CreacionFormulario extends VariblesFormGlobales {
+public class ControladorDeEventos extends VariblesFormGlobales implements Initializable {
 
     public void FormGlobal(String ubicacion, String titulo, int ancho, int alto) throws IOException {
         FXMLLoader in = new FXMLLoader(getClass().getResource(ubicacion));
@@ -25,14 +32,10 @@ public class CreacionFormulario extends VariblesFormGlobales {
 
     }
 
-
     //EVENTOS PARA TODOS LOS FORMULARIOS
+
     /*EVENTOS PARA EL FORMULARIO CREACION.FXML*/
     /*EVENTO QUE GUARDA LOS DATOS INGRESADOS AL FORMULARIO CREACION.FXML*/
-    DataSistema dt = new DataSistema();
-    DataSistema arrayclientes = new DataSistema();
-    DataSistema arrayempresa = new DataSistema();
-    DataSistema arrayProductos = new DataSistema();
     public void GuardarUsuario(){
         dt.addUsuarios(new Usuarios(txtUsuar.getText(), txtContra.getText()));
         JOptionPane.showMessageDialog(null, "USUARIO CREADO CON ÉXITO!", "USUARIO CREADO", JOptionPane.INFORMATION_MESSAGE);
@@ -40,35 +43,23 @@ public class CreacionFormulario extends VariblesFormGlobales {
         Stage StageCrearUsuario = (Stage)txtUsuar.getScene().getWindow();
         StageCrearUsuario.close();
     }
-    /*EVENTO QUE CIERRA EL FORMULARIO
-    public void cerrar() throws IOException {
-        System.out.println(dt.getListaUsuarios().toString());
-        Stage StageCrearUsuario = (Stage)txtUsuar.getScene().getWindow();
-        StageCrearUsuario.close();
-    }*/
-
-
-
 
     /*EVENTOS PARA EL FORMULARIO INGRESOCLIENTES.FXML*/
     /*EVENTO QUE GUARDA LOS DATOS INGRESADOS AL FORMULARIO INGRESOCLIENTES.FXML*/
     public void BotonGuardarClientes() {
         if((cbEmpresa.selectedProperty().getValue())==true){
             /*CONSTRUCTOR EMPRESAS*/
-            arrayempresa.addCliente(new ClienteEmpresa(txtPNombre.getText(),txtSNombre.getText(), txtPApellido.getText(),txtSApellido.getText(),
-                    txtNIT.getText(), "fecha", "genero", "estado civil", txtRazonSocial.getText(), txtContacto.getText(),
+            arrayempresa.addCliente(new ClienteEmpresa(txtNombreCompleto.getText(),txtNIT.getText(), "fecha", "genero", "estado civil", txtRazonSocial.getText(), txtContacto.getText(),
                     2));
         }else{
 
             /*CONSTRUCTOR CLIENTES INDIVIDUALES*/
-            arrayclientes.addCliente(new ClienteIndividual(txtDPI.getText(), txtPNombre.getText(),txtSNombre.getText(), txtPApellido.getText(),
-                    txtSApellido.getText(), txtNIT.getText(), "String fecha", "String genero", "String estadocivil"));
+            arrayclientes.addCliente(new ClienteIndividual(txtDPI.getText(), txtNombreCompleto.getText(), txtNIT.getText(), "String fecha", "String genero", "String estadocivil"));
 
         }
 
         JOptionPane.showMessageDialog(null,"EL CLIENTE HA SIDO ALMACENADO CON EXITO" ,"INFORMACION", JOptionPane.INFORMATION_MESSAGE);
     }
-
     /*EVENTO QUE INHABILITA EL TXTRAZONSOCIAL DEL FORMULARIO INGRESOCLIENTES*/
     public void OpcionEmpresa(ActionEvent actionEvent) {
         if((cbEmpresa.selectedProperty().getValue())==true){
@@ -84,10 +75,6 @@ public class CreacionFormulario extends VariblesFormGlobales {
     public void BotonLimpiarForm(){
         txtNIT.clear();
         txtDPI.clear();
-        txtPNombre.clear();
-        txtSNombre.clear();
-        txtPApellido.clear();
-        txtSApellido.clear();
         txtRazonSocial.clear();
         txtContacto.clear();
         cbEmpresa.selectedProperty().setValue(false);
@@ -99,7 +86,7 @@ public class CreacionFormulario extends VariblesFormGlobales {
         StageCerrarFormIngresoC.close();
     }
 
-
+    /*********************************************************************************************************************/
     /*EVENTOS PARA EL FORMULARIO INGRESOPRODUCTO.FXML*/
     /*EVENTO QUE GUARDA LOS DATOS INGRESADOS AL FORMULARIO INGRESOPRODUCTO.FXML*/
     public void OpcionGuardarProducto(ActionEvent actionEvent) {
@@ -122,10 +109,13 @@ public class CreacionFormulario extends VariblesFormGlobales {
         StageCerraFormProducto.close();
     }
 
-    /*EVENTO QUE MUESTRA TODOS LOS REGISTROS EN TABLEVIEW DE CLIENTES*/
+
+    /*********************************************************************************************************************/
+    /*EVENTOS PARA EL FORMULARIO CONSULTACLIENTES.FXML*/
+    /*EVENTO QUE MUESTRA LOS DATOS QUE SE INGRESARON AL FORMULARIO INGRESOCLIENTES.FXML*/
     public void MostraContenidoClientes() {
-        c= arrayclientes.getListaClientes();
-        ObservableList<Clientes> clien = FXCollections.observableArrayList(c);
+        ObservableList<Clientes> clien = FXCollections.observableArrayList(arrayclientes.getListaClientes());
+        tablaClientes.setItems(clien);
         columid.setCellValueFactory(new PropertyValueFactory<Clientes, Integer>("id"));
         columnNIT.setCellValueFactory(new PropertyValueFactory<Clientes, String>("nit"));
         columDPI.setCellValueFactory(new PropertyValueFactory<Clientes, String>("dpi"));
@@ -135,41 +125,50 @@ public class CreacionFormulario extends VariblesFormGlobales {
         columEstadoCivil.setCellValueFactory(new PropertyValueFactory<Clientes, String>("estadocivil"));
         columnRazonSocial.setCellValueFactory(new PropertyValueFactory<Clientes, String>("razonsocial"));
         columnContacto.setCellValueFactory(new PropertyValueFactory<Clientes, String>("contacto"));
-
-        tablaClientes.setItems(clien);
-        System.out.println(clien.toString());
-
     }
+
+    /*LLAMAR FORMULARIO INGRESOCLIENTES.FXML*/
     public void LlamarFormIngresoClientes() throws IOException{
         GestionVistaPrincipal gv = new GestionVistaPrincipal();
         gv.OpcionMenuIngresoClientes();
     }
+
+    /*MÉTODO DE CIERRE FORMULARIO INGRESOCLIENTES.FXML*/
     public void SalidaConsultaClientes(){
         Stage StageCerrarFormConsultaClientes = (Stage)txtIDCliente.getScene().getWindow();
         StageCerrarFormConsultaClientes.close();
     }
 
-    /*EVENTO QUE MUESTRA TODOS LOS REGISTROS EN TABLEVIEW DE CLIENTES*/
+    /*********************************************************************************************************************/
+    /*EVENTOS PARA EL FORMULARIO CONSULTAPRODUCTOS.FXML*/
+    /*EVENTO QUE MUESTRA LOS DATOS QUE SE INGRESARON AL FORMULARIO INGRESOPRODUCTO.FXML*/
     public void MostrarContenidoProducto() {
-        p = arrayProductos.getListaProductos();
-        ObservableList<Productos> prod = FXCollections.observableArrayList(p);
+        ObservableList<Productos> prod = FXCollections.observableArrayList(arrayProductos.getListaProductos());
+        tablaProductos.setItems(prod);
         columnIDProducto.setCellValueFactory(new PropertyValueFactory<>("id"));
         columNProducto.setCellValueFactory(new PropertyValueFactory<>("producto"));
         columnMarca.setCellValueFactory(new PropertyValueFactory<>("marca"));
         columnCategoria.setCellValueFactory(new PropertyValueFactory<>("categoria"));
         columnPrecio.setCellValueFactory(new PropertyValueFactory<>("precio"));
-        tablaProductos.setItems(prod);
-        System.out.println(prod.toString());
-
     }
+
+    /*LLAMADA AL FORMULARIO INGRESOPRODUCTO.FXML*/
     public void LlamarFormIngresoProducto() throws IOException{
         GestionVistaPrincipal gv = new GestionVistaPrincipal();
         gv.OpcionMenuIngresoProducto();
     }
 
+    /*SE CIERRA EL FORMULARIO CLIENTE*/
     public void SalidaConsultaProducto(){
         Stage StageCerrarFormaConsultaProductos = (Stage)txtIDProducto.getScene().getWindow();
         StageCerrarFormaConsultaProductos.close();
+    }
+
+    /*********************************************************************************************************************/
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        MostraContenidoClientes();
+        MostrarContenidoProducto();
     }
 }
 

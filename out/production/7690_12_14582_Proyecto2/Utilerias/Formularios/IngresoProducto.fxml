@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane prefHeight="284.0" prefWidth="525.0" style="-fx-background-color: #414141;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GestionFormularios.CreacionFormulario">
+<Pane prefHeight="284.0" prefWidth="525.0" style="-fx-background-color: #414141;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GestionFormularios.ControladorDeEventos">
    <children>
       <AnchorPane layoutX="3.0" layoutY="3.0" prefHeight="269.0" prefWidth="464.0" style="-fx-background-color: #EEEEEE;">
          <children>

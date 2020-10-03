@@ -8,7 +8,6 @@ import javafx.scene.input.KeyEvent;
 import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class GestiondeIngreso extends GestionVistaPrincipal implements Initializable {
@@ -35,15 +34,13 @@ public class GestiondeIngreso extends GestionVistaPrincipal implements Initializ
         });
     }
 
-    private ArrayList<Usuarios> u = new ArrayList<>();
     public void VIngresoAlt(ActionEvent ingreso) throws IOException {
-        u = dt.getListaUsuarios();
         if(!txtUsuario.getText().equals("admin") || !txtContraseña.getText().equals("1234")) {
-            if ((u.isEmpty())) {
+            if ((dt.getListaUsuarios().isEmpty())) {
                 JOptionPane.showMessageDialog(null, "NO EXISTE NINGUN USUARIO PARA INICIAR SESIÓN, DEBE CREAR UN NUEVO USUARIO EN LA OPCIÓN CREAR", "ACCESO DENEGADO", JOptionPane.WARNING_MESSAGE);
                 BotonCrear.setDisable(false);
             } else {
-                for (Usuarios usu : u) {
+                for (Usuarios usu : dt.getListaUsuarios()) {
                     if (!txtUsuario.getText().equals(usu.getUsuario()) || !txtContraseña.getText().equals(usu.getContraseña())) {
                         JOptionPane.showMessageDialog(null, "USUARIO O CONTRASEÑA INCORRECTO, INGRESE NUEVAMENTE O DE CLICK EN LA OPCIÓN CREAR", "ACCESO DENEGADO", JOptionPane.ERROR_MESSAGE);
                         BotonCrear.setDisable(false);

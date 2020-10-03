@@ -19,12 +19,9 @@ public class VariblesFormGlobales {
     public Button BotonCrearUsuario;
 
     /*ATRIBUTOS DE FORMULARIO INGRESOCLIENTES.FXML*/
-    public TextField txtNIT;
-    public TextField txtDPI;
-    public TextField txtPNombre;
-    public TextField txtSNombre;
-    public TextField txtPApellido;
-    public TextField txtSApellido;
+    public JFXTextField txtNIT;
+    public JFXTextField txtDPI;
+    public JFXTextField txtNombreCompleto;
     public JFXTextField txtRazonSocial;
     public JFXTextField txtContacto;
     public DatePicker DateFecha;
@@ -40,7 +37,6 @@ public class VariblesFormGlobales {
 
     /*ATRIBUTOS DE LA TABLEVIEW CONSULTACLIENTES.FXML*/
     public TextField txtIDCliente;
-    public ArrayList<Clientes> c = new ArrayList<>();
     public TableView <Clientes> tablaClientes = new TableView<>();
     public TableColumn <Clientes, Integer> columid = new TableColumn<Clientes, Integer>("Id");
     public TableColumn <Clientes, String>columnNIT = new TableColumn<Clientes, String>("NIT");
@@ -54,13 +50,19 @@ public class VariblesFormGlobales {
 
     /*ATRIBUTOS DE LA TABLEVIEW CONSULTAPRODUTOS.FXML*/
     public TextField txtIDProducto;
-    public ArrayList<Productos> p = new ArrayList<>();
     public TableView<Productos> tablaProductos = new TableView<>();
     public TableColumn <Productos,String> columnIDProducto = new TableColumn<>("ID");
     public TableColumn <Productos,String> columNProducto = new TableColumn<>("Nombre Produto");
     public TableColumn <Productos,String> columnMarca = new TableColumn<>("Marca");
     public TableColumn <Productos,String> columnCategoria = new TableColumn<>("Categoria");
     public TableColumn <Productos, Integer> columnPrecio = new TableColumn<>("Precio");
+
+    /*ARRAY LIST GLOBA DE DATASISTEMA*/
+    public DataSistema dt = new DataSistema();
+    public DataSistema arrayclientes = new DataSistema();
+    public DataSistema arrayempresa = new DataSistema();
+    public DataSistema arrayProductos = new DataSistema();
+
 
 
 
