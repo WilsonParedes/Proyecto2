@@ -1,18 +1,23 @@
 package GestionFormularios;
 
 import Modulos.*;
+import com.sun.security.ntlm.Client;
+import com.sun.xml.internal.bind.v2.runtime.property.PropertyFactory;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javax.swing.*;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class CreacionFormulario extends VariblesFormGlobales {
-
-
-
 
     public void FormGlobal(String ubicacion, String titulo, int ancho, int alto) throws IOException {
         FXMLLoader in = new FXMLLoader(getClass().getResource(ubicacion));
@@ -32,6 +37,7 @@ public class CreacionFormulario extends VariblesFormGlobales {
     DataSistema dt = new DataSistema();
     DataSistema arrayclientes = new DataSistema();
     DataSistema arrayempresa = new DataSistema();
+    DataSistema arrayProductos = new DataSistema();
     public void GuardarUsuario(){
         dt.addUsuarios(new Usuarios(txtUsuar.getText(), txtContra.getText()));
         JOptionPane.showMessageDialog(null, "USUARIO CREADO CON ÉXITO!", "USUARIO CREADO", JOptionPane.INFORMATION_MESSAGE);
@@ -64,7 +70,10 @@ public class CreacionFormulario extends VariblesFormGlobales {
                     txtSApellido.getText(), txtNIT.getText(), "String fecha", "String genero", "String estadocivil"));
 
         }
+<<<<<<< HEAD
         
+=======
+>>>>>>> formularios4
         JOptionPane.showMessageDialog(null,"EL CLIENTE HA SIDO ALMACENADO CON EXITO" ,"INFORMACION", JOptionPane.INFORMATION_MESSAGE);
     }
 
@@ -79,6 +88,65 @@ public class CreacionFormulario extends VariblesFormGlobales {
             txtContacto.setDisable(true);
         }
     }
+    /*EVENTO QUE LIMPIAR EL FORMULARIO CLIENTES*/
+    public void BotonLimpiarForm(){
+        txtNIT.clear();
+        txtDPI.clear();
+        txtPNombre.clear();
+        txtSNombre.clear();
+        txtPApellido.clear();
+        txtSApellido.clear();
+        txtRazonSocial.clear();
+        txtContacto.clear();
+        cbEmpresa.selectedProperty().setValue(false);
+    }
 
+    /*EVENTO PARA SALIR DEL FORMULARIO CLIENTES*/
+    public void SalirFormIngresoClientes(){
+        Stage StageCerrarFormIngresoC = (Stage)txtNIT.getScene().getWindow();
+        StageCerrarFormIngresoC.close();
+    }
+
+
+    /*EVENTOS PARA EL FORMULARIO INGRESOPRODUCTO.FXML*/
+    /*EVENTO QUE GUARDA LOS DATOS INGRESADOS AL FORMULARIO INGRESOPRODUCTO.FXML*/
+    public void OpcionGuardarProducto(ActionEvent actionEvent) {
+        /*CONSTRUCTOR EMPRESAS*/
+        arrayProductos.addProducto(new Productos("LICOR", txtNProducto.getText(),txtMarca.getText(),
+                                    Integer.parseInt(txtPrecio.getText())));
+        JOptionPane.showMessageDialog(null,"EL PRODUCTO HA SIDO ALMACENADO CON EXITO" ,"INFORMACION",JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    /*EVENTO QUE LIMPIA EL FORMULARIO PRODUCTOS*/
+    public void OpcionLimpiarFormProducto(){
+        txtNProducto.clear();
+        txtMarca.clear();
+        txtPrecio.clear();
+    }
+
+    /*EVENTO PARA SALIR DEL FORMULARIO CLIENTES*/
+    public void OpcionSalirProducto(){
+        Stage StageCerraFormProducto = (Stage)txtNProducto.getScene().getWindow();
+        StageCerraFormProducto.close();
+    }
+
+
+    public void MostraContenido() {
+        c= arrayclientes.getListaClientes();
+        ObservableList<Clientes> clien = FXCollections.observableArrayList(c);
+        columid.setCellValueFactory(new PropertyValueFactory<Clientes, Integer>("id"));
+        columnNIT.setCellValueFactory(new PropertyValueFactory<Clientes, String>("nit"));
+        columDPI.setCellValueFactory(new PropertyValueFactory<Clientes, String>("dpi"));
+        columNombre.setCellValueFactory(new PropertyValueFactory<Clientes, String>("nombre"));
+        columFechaNac.setCellValueFactory(new PropertyValueFactory<Clientes, String>("fecha"));
+        columnGenero.setCellValueFactory(new PropertyValueFactory<Clientes, String>("genero"));
+        columEstadoCivil.setCellValueFactory(new PropertyValueFactory<Clientes, String>("estadocivil"));
+        columnRazonSocial.setCellValueFactory(new PropertyValueFactory<Clientes, String>("razonsocial"));
+        columnContacto.setCellValueFactory(new PropertyValueFactory<Clientes, String>("contacto"));
+
+        tablaClientes.setItems(clien);
+        System.out.println(clien.toString());
+
+    }
 }
 

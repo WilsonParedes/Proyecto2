@@ -1,76 +1,86 @@
 package Modulos;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 public class Clientes implements Utilerias{
     private static int sigIdCliente=1;
-    public int id;
-    public String primernombre;
-    public String segundonombre;
-    public String primerapellido;
-    public String segundoapellido;
-    public String nit;
-    public String fecha;
-    public String genero;
-    public String estadocivil;
+    public IntegerProperty id;
+    public StringProperty primernombre;
+    public StringProperty segundonombre;
+    public StringProperty primerapellido;
+    public StringProperty segundoapellido;
+    public StringProperty nombre;
+    public StringProperty nit;
+    public StringProperty fecha;
+    public StringProperty genero;
+    public StringProperty estadocivil;
 
 
 
     public Clientes() {
-        this.id= sigIdCliente++;
+        this.id = new SimpleIntegerProperty(sigIdCliente++);
     }
 
     public Clientes(String primernombre, String segundonombre, String primerapellido, String segundoapellido, String nit, String fecha, String genero, String estadocivil) {
         this();
-        this.primernombre = primernombre;
-        this.segundonombre = segundonombre;
-        this.primerapellido = primerapellido;
-        this.segundoapellido = segundoapellido;
-        this.nit = nit;
-        this.fecha = fecha;
-        this.genero = genero;
-        this.estadocivil = estadocivil;
+        this.primernombre = new SimpleStringProperty(primernombre);
+        this.segundonombre = new SimpleStringProperty(segundonombre);
+        this.primerapellido = new SimpleStringProperty(primerapellido);
+        this.segundoapellido = new SimpleStringProperty(segundoapellido);
+        this.nombre = new SimpleStringProperty(primernombre + " " + segundonombre + " " + primerapellido + " " + segundoapellido);
+        this.nit = new SimpleStringProperty(nit);
+        this.fecha = new SimpleStringProperty(fecha);
+        this.genero = new SimpleStringProperty(genero);
+        this.estadocivil = new SimpleStringProperty(estadocivil);
 
     }
 
+
     public int getId() {
-        return id;
+        return id.get();
     }
 
     public String getPrimernombre() {
-        return primernombre;
+        return primernombre.get();
     }
 
     public String getSegundonombre() {
-        return segundonombre;
+        return segundonombre.get();
     }
 
     public String getPrimerapellido() {
-        return primerapellido;
+        return primerapellido.get();
     }
 
     public String getSegundoapellido() {
-        return segundoapellido;
+        return segundoapellido.get();
     }
 
+    public String getNombre(){ return nombre.get();}
+
     public String getNit() {
-        return nit;
+        return nit.get();
     }
 
     public String getFecha() {
-        return fecha;
+        return fecha.get();
     }
 
     public String getGenero() {
-        return genero;
+        return genero.get();
     }
 
     public String getEstadocivil() {
-        return estadocivil;
+        return estadocivil.get();
     }
 
     @Override
     public String toString(){
-        return "["+getNombreClase()+"]"+"\nNombre: "+primernombre+" "+segundonombre+"\tApellidos: "+primerapellido+" "+segundoapellido+
-                "\tNit: "+nit+"\tFecha: "+fecha+"\tGenero: "+genero+"\tEstado Civil: "+estadocivil+"\tID:"+id;
+        return "["+getNombreClase()+"]"+"\tID:"+id+"\nNombre Completo:" + nombre +
+                "\tNit: "+nit+"\tFecha: "+fecha+"\tGenero: "+genero+"\tEstado Civil: "+estadocivil;
     }
 
 

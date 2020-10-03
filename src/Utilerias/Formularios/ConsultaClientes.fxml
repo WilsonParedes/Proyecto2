@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane prefHeight="554.0" prefWidth="1019.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GestionFormularios.CreacionFormulario">
+   <children>
+      <AnchorPane layoutX="1.0" layoutY="1.0" prefHeight="550.0" prefWidth="1013.0" style="-fx-background-color: #414141;">
+         <children>
+            <Label layoutX="21.0" layoutY="28.0" prefHeight="44.0" prefWidth="171.0" text="Id" textFill="#fcf7f7">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font></Label>
+            <Label layoutX="21.0" layoutY="72.0" prefHeight="44.0" prefWidth="171.0" text="NIT" textFill="#fcf7f7">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font></Label>
+            <TextField fx:id="txtIDCliente" layoutX="84.0" layoutY="38.0" />
+            <TextField fx:id="txtNITConsulta" layoutX="84.0" layoutY="82.0" />
+            <TableView fx:id="tablaClientes" layoutX="20.0" layoutY="124.0" prefHeight="408.0" prefWidth="973.0">
+              <columns>
+                <TableColumn fx:id="columid" prefWidth="75.0" text="ID" />
+                  <TableColumn fx:id="columnNIT" prefWidth="75.0" text="NIT" />
+                  <TableColumn fx:id="columDPI" prefWidth="107.0" text="DPI" />
+                  <TableColumn fx:id="columNombre" prefWidth="195.0" text="Nombre" />
+                  <TableColumn fx:id="columFechaNac" prefWidth="117.0" text="Fecha Nacimiento" />
+                  <TableColumn fx:id="columnGenero" minWidth="0.0" prefWidth="64.0" text="Genero" />
+                  <TableColumn fx:id="columEstadoCivil" text="Estado Civil" />
+                  <TableColumn fx:id="columnRazonSocial" prefWidth="163.0" text="Razon Social" />
+                  <TableColumn fx:id="Telefono" prefWidth="101.0" text="Telefono" />
+              </columns>
+            </TableView>
+            <Button fx:id="BotonGenerarTabla" layoutX="876.0" layoutY="82.0" mnemonicParsing="false" onAction="#MostraContenido" text="Mostrar Contenido" />
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>

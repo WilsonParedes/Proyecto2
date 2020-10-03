@@ -11,7 +11,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class GestiondeIngreso extends GestionVistaPrincipal implements Initializable  {
+public class GestiondeIngreso extends GestionVistaPrincipal implements Initializable {
 
     /*EVENTO QUE SIRVE PARA DESHABILITAR LOS BOTONES AL INICIAR EL FORMULARIO INGRESO */
     @Override
