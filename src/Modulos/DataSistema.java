@@ -29,7 +29,12 @@ public class DataSistema {
         return ListaUsuarios;
     }
 
-
+    public Productos verProducto(int view){
+        return ListaProductos.get(view);
+    }
+    public int verprecio(int view){
+        return ListaProductos.get(view).getPrecio();
+    }
     public String toString() {
         for(Clientes tempclientes: ListaClientes){
             i++;
