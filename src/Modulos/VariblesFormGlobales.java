@@ -38,24 +38,24 @@ public class VariblesFormGlobales {
     /*ATRIBUTOS DE LA TABLEVIEW CONSULTACLIENTES.FXML*/
     public TextField txtIDCliente;
     public TableView <Clientes> tablaClientes = new TableView<>();
-    public TableColumn <Clientes, Integer> columid = new TableColumn<Clientes, Integer>("Id");
-    public TableColumn <Clientes, String>columnNIT = new TableColumn<Clientes, String>("NIT");
-    public TableColumn <Clientes, String> columDPI = new TableColumn<>("DPI");
-    public TableColumn <Clientes, String>columNombre = new TableColumn<Clientes, String>("Nombre");
-    public TableColumn <Clientes, String>columFechaNac = new TableColumn<Clientes, String>("Fecha Nacimiento");
-    public TableColumn <Clientes, String>columnGenero = new TableColumn<Clientes, String>("Genero");
-    public TableColumn <Clientes, String>columEstadoCivil = new TableColumn<Clientes, String>("Estado Civil");
-    public TableColumn <Clientes, String>columnRazonSocial = new TableColumn<>("Razon Social");
-    public TableColumn <Clientes, String>columnContacto = new TableColumn<>("Contacto Empresa");
+    public TableColumn <Clientes, Integer> columid = new TableColumn<Clientes, Integer>(" ");
+    public TableColumn <Clientes, String>columnNIT = new TableColumn<Clientes, String>(" ");
+    public TableColumn <Clientes, String> columDPI = new TableColumn<>(" ");
+    public TableColumn <Clientes, String>columNombre = new TableColumn<Clientes, String>(" ");
+    public TableColumn <Clientes, String>columFechaNac = new TableColumn<Clientes, String>(" ");
+    public TableColumn <Clientes, String>columnGenero = new TableColumn<Clientes, String>(" ");
+    public TableColumn <Clientes, String>columEstadoCivil = new TableColumn<Clientes, String>(" ");
+    public TableColumn <Clientes, String>columnRazonSocial = new TableColumn<>(" ");
+    public TableColumn <Clientes, String>columnContacto = new TableColumn<>(" ");
 
     /*ATRIBUTOS DE LA TABLEVIEW CONSULTAPRODUTOS.FXML*/
     public TextField txtIDProducto;
     public TableView<Productos> tablaProductos = new TableView<>();
-    public TableColumn <Productos,String> columnIDProducto = new TableColumn<>("ID");
-    public TableColumn <Productos,String> columNProducto = new TableColumn<>("Nombre Produto");
-    public TableColumn <Productos,String> columnMarca = new TableColumn<>("Marca");
-    public TableColumn <Productos,String> columnCategoria = new TableColumn<>("Categoria");
-    public TableColumn <Productos, Integer> columnPrecio = new TableColumn<>("Precio");
+    public TableColumn <Productos,String> columnIDProducto = new TableColumn<>(" ");
+    public TableColumn <Productos,String> columNProducto = new TableColumn<>(" ");
+    public TableColumn <Productos,String> columnMarca = new TableColumn<>(" ");
+    public TableColumn <Productos,String> columnCategoria = new TableColumn<>(" ");
+    public TableColumn <Productos, Integer> columnPrecio = new TableColumn<>(" ");
 
     /*ARRAY LIST GLOBA DE DATASISTEMA*/
     public DataSistema dt = new DataSistema();

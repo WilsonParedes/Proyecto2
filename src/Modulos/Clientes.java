@@ -25,15 +25,12 @@ public class Clientes implements Utilerias{
         this.fecha = new SimpleStringProperty(fecha);
         this.genero = new SimpleStringProperty(genero);
         this.estadocivil = new SimpleStringProperty(estadocivil);
-
     }
 
 
     public int getId() {
         return id.get();
     }
-
-    public String getNombre(){ return nombre.get();}
 
     public String getNit() {
         return nit.get();
@@ -53,7 +50,7 @@ public class Clientes implements Utilerias{
 
     @Override
     public String toString(){
-        return "["+getNombreClase()+"]"+"\tID:"+id+"\nNombre Completo:" + nombre +
+        return "\n["+getNombreClase()+"]"+"\tID:"+id+"\nNombre Completo:" + nombre +
                 "\tNit: "+nit+"\tFecha: "+fecha+"\tGenero: "+genero+"\tEstado Civil: "+estadocivil;
     }
 

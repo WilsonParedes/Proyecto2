@@ -1,7 +1,4 @@
 package Modulos;
-
-import com.sun.security.ntlm.Client;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -27,6 +24,8 @@ public class DataSistema {
             new Productos("Baterias","Bateria Corolla","Bosch",750)
     ));
     public static ArrayList<Usuarios> ListaUsuarios = new ArrayList<Usuarios>(20);
+
+
     public static int i=0;
     public static String temp="";
 
@@ -42,20 +41,17 @@ public class DataSistema {
         ListaUsuarios.add(us);
     }
 
-    public ArrayList<Clientes> getListaClientes() {
-        return ListaClientes;
-    }
+    public ArrayList<Clientes> getListaClientes() {return ListaClientes;}
     public ArrayList<Usuarios> getListaUsuarios() {
         return ListaUsuarios;
     }
     public ArrayList<Productos> getListaProductos(){return ListaProductos;}
 
-    public Productos verProducto(int view){
-        return ListaProductos.get(view);
-    }
+    public Productos verProducto(int view){return ListaProductos.get(view);}
     public int verprecio(int view){
         return ListaProductos.get(view).getPrecio();
     }
+
     public String toString() {
         for(Clientes tempclientes: ListaClientes){
             i++;

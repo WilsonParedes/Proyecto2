@@ -17,9 +17,33 @@ public class ClienteEmpresa extends Clientes {
         this.descuento= new SimpleIntegerProperty(descuento);
     }
 
+    public String getRazonsocial() {
+        return razonsocial.get();
+    }
+
+    public StringProperty razonsocialProperty() {
+        return razonsocial;
+    }
+
+    public String getContacto() {
+        return contacto.get();
+    }
+
+    public StringProperty contactoProperty() {
+        return contacto;
+    }
+
+    public int getDescuento() {
+        return descuento.get();
+    }
+
+    public IntegerProperty descuentoProperty() {
+        return descuento;
+    }
+
     @Override
     public String toString(){
-        return "["+getNombreClase()+"]"+"\nRazon Social: "+razonsocial+"\tContacto: "+contacto+"\tNombre: "+ nombre +
-                "\tNit: "+nit+"\tFecha: "+fecha+"\tGenero: "+genero+"\tEstado Civil: "+estadocivil+"\tID:"+id+"\tDescuento: "+descuento;
+        return "["+getNombreClase()+"]"+"\nID:"+id+"\tRazon Social: "+razonsocial+"\tContacto: "+contacto+"\tNombre: "+ nombre +
+                "\tNit: "+nit+"\tFecha: "+fecha+"\tGenero: "+genero+"\tEstado Civil: "+estadocivil+"\tDescuento: "+descuento;
     }
 }

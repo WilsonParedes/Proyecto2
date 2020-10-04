@@ -12,9 +12,17 @@ public class ClienteIndividual extends Clientes {
         this.dpi = new SimpleStringProperty(dpi);
     }
 
+    public String getDpi() {
+        return dpi.get();
+    }
+
+    public StringProperty dpiProperty() {
+        return dpi;
+    }
+
     @Override
     public String toString(){
-        return "["+getNombreClase()+"]"+"\nDPI: "+dpi+"\tNombre: "+ nombre +
-                "\tNit: "+nit+"\tFecha: "+fecha+"\tGenero: "+genero+"\tEstado Civil: "+estadocivil+"\tID:"+id;
+        return "\n["+getNombreClase()+"]"+"\tID:"+id+"\tDPI: "+dpi+"\tNombre: "+ nombre +
+                "\tNit: "+nit+"\tFecha: "+fecha+"\tGenero: "+genero+"\tEstado Civil: "+estadocivil;
     }
 }
