@@ -3,6 +3,7 @@ import Modulos.Herramientas.Usuarios;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 
 public class DataSistema {
@@ -27,8 +28,8 @@ public class DataSistema {
             new Productos("Llantas","Llantas Rin 15'","Firestone",350),
             new Productos("Baterias","Bateria Corolla","Bosch",750)
     ));
-    public static ArrayList<Usuarios> ListaUsuarios = new ArrayList<Usuarios>(20);
 
+    public static ArrayList<Usuarios> ListaUsuarios = new ArrayList<Usuarios>(20);
 
     public static int i=0;
     public static String temp="";

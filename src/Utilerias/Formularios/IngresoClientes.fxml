@@ -52,29 +52,47 @@
                            </font>
                         </JFXTextField>
                         <DatePicker fx:id="DateFecha" layoutX="142.0" layoutY="127.0" />
-            <Label layoutX="352.0" layoutY="131.0" text="Estado Civil" />
-            <Label layoutX="531.0" layoutY="56.0" text="Genero" />
-                        <JFXRadioButton layoutX="612.0" layoutY="41.0" text="Femenino">
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </JFXRadioButton>
-                        <JFXRadioButton layoutX="612.0" layoutY="70.0" text="Masculino">
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </JFXRadioButton>
-                        <MenuButton layoutX="423.0" layoutY="127.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="98.0">
-                          <items>
-                            <MenuItem mnemonicParsing="false" text="Soltero" />
-                            <MenuItem mnemonicParsing="false" text="Casado" />
-                          </items>
-                        </MenuButton>
             <Label fx:id="MensajeAlertaDPI" layoutX="301.0" layoutY="52.0" prefHeight="17.0" prefWidth="112.0">
                <font>
                   <Font size="8.0" />
                </font>
             </Label>
+            <Pane fx:id="paneGenero" layoutX="513.0" layoutY="14.0" prefHeight="69.0" prefWidth="191.0" style="-fx-background-color: E8E7E7;">
+               <children>
+                  <Label layoutX="15.0" layoutY="26.0" text="Genero" />
+                              <JFXRadioButton fx:id="RadioFemenino" layoutX="96.0" layoutY="11.0" onMouseClicked="#RadioButtonFemeninoMasculino" selected="true" text="Femenino">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="Genero" />
+                     </toggleGroup>
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </JFXRadioButton>
+                              <JFXRadioButton fx:id="RadioMasculino" layoutX="96.0" layoutY="40.0" onMouseClicked="#RadioButtonFemeninoMasculino" selected="true" text="Masculino" toggleGroup="$Genero">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </JFXRadioButton>
+               </children>
+            </Pane>
+            <Pane fx:id="paneEstadoCivil" layoutX="514.0" layoutY="90.0" prefHeight="69.0" prefWidth="191.0" style="-fx-background-color: E8E7E7;">
+               <children>
+                  <Label layoutX="17.0" layoutY="30.0" text="Estado Civil" />
+                  <JFXRadioButton fx:id="RadioSoltero" layoutX="97.0" layoutY="10.0" onMouseClicked="#RadioButtonEstadoCivil" selected="true" text="Soltero">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="EstadoCivil" />
+                     </toggleGroup>
+                  </JFXRadioButton>
+                  <JFXRadioButton fx:id="RadioCasado" layoutX="98.0" layoutY="42.0" onMouseClicked="#RadioButtonEstadoCivil" selected="true" text="Casado" toggleGroup="$EstadoCivil">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </JFXRadioButton>
+               </children>
+            </Pane>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="paneDatosEmpresa" layoutX="3.0" layoutY="286.0" prefHeight="111.0" prefWidth="707.0" style="-fx-background-color: #EEEEEE;">

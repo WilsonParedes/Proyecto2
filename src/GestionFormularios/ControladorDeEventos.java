@@ -5,6 +5,8 @@ import Modulos.DataSistema.Clientes;
 import Modulos.DataSistema.ClienteIndividual;
 import Modulos.DataSistema.ClienteEmpresa;
 import Modulos.Herramientas.Usuarios;
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXRadioButton;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -13,8 +15,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
@@ -57,8 +61,9 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
     /*EVENTOS PARA EL FORMULARIO INGRESOCLIENTES.FXML*/
     /*EVENTO QUE GUARDA LOS DATOS INGRESADOS AL FORMULARIO INGRESOCLIENTES.FXML*/
     public void BotonGuardarClientes() {
-        System.out.println(nit);
-        if ((nit.equals("") || (nit.length() <= 1))) {
+        String genero1 = RadioButtonFemeninoMasculino();
+        String EstadoCivil = RadioButtonEstadoCivil();
+        if ((txtNIT.getText().equals("") || (txtNIT.getLength() <= 1))) {
             JOptionPane.showMessageDialog(null,"NO SE PUEDE ALMACENAR CLIENTE, NIT INVALIDO INTENTE NUEVAMENTE");
             txtNIT.clear();
         } else {
@@ -71,7 +76,7 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
                     txtRazonSocial.clear();
                     txtContacto.clear();
                     } else {
-                        arrayempresa.addCliente(new ClienteEmpresa(txtNombreCompleto.getText(), txtNIT.getText(), "fecha", "genero", "estado civil", txtRazonSocial.getText(), txtContacto.getText(), 2));
+                        arrayempresa.addCliente(new ClienteEmpresa(txtNombreCompleto.getText(), txtNIT.getText(), "fecha", genero1, EstadoCivil, txtRazonSocial.getText(), txtContacto.getText(), 2));
                         JOptionPane.showMessageDialog(null, "EL CLIENTE HA SIDO ALMACENADO CON EXITO", "INFORMACION", JOptionPane.INFORMATION_MESSAGE);
                     }
             } else {
@@ -81,7 +86,7 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
                     txtNombreCompleto.clear();
                 } else {
                     /*CONSTRUCTOR CLIENTES INDIVIDUALES*/
-                    arrayclientes.addCliente(new ClienteIndividual(txtDPI.getText(), txtNombreCompleto.getText(), txtNIT.getText(), "String fecha", "String genero", "String estadocivil"));
+                    arrayclientes.addCliente(new ClienteIndividual(txtDPI.getText(), txtNombreCompleto.getText(), txtNIT.getText(), "String fecha", genero1, EstadoCivil));
                     JOptionPane.showMessageDialog(null, "EL CLIENTE HA SIDO ALMACENADO CON EXITO", "INFORMACION", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
@@ -105,6 +110,7 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
     public void BotonLimpiarForm(){
         txtNIT.clear();
         txtDPI.clear();
+        txtNombreCompleto.clear();
         txtRazonSocial.clear();
         txtContacto.clear();
         cbEmpresa.selectedProperty().setValue(false);
@@ -115,14 +121,13 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
         Stage StageCerrarFormIngresoC = (Stage)txtNIT.getScene().getWindow();
         StageCerrarFormIngresoC.close();
     }
-    String nit;
+
     /*EVENTO ENCARGADO DE ACTIVAR LA VALIDACIÓN NIT*/
-    public void ActivadorValidaNIT(KeyEvent keyEvent){
-        nit = (ValidarNit(txtNIT,8));
+    public void ActivadorValidaNIT(KeyEvent keyEvent){ValidarNit(txtNIT,8);
     }
 
     /*VALIDACION NIT*/
-    public String ValidarNit(final TextField NIT, final int MAXIMO) {
+    public void ValidarNit(final TextField NIT, final int MAXIMO) {
         NIT.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(final ObservableValue<? extends String> ov, final String valorAnterior, final String valorActual) {
@@ -143,17 +148,20 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
                         BotonGuardarCliente.setDisable(false);
                         paneDatosClientes.setDisable(false);
                         paneDatosEmpresa.setDisable(false);
+                        paneGenero.setDisable(false);
+                        paneEstadoCivil.setDisable(false);
                         MensajeAdvertenciaNIT.setText("NIT VALIDO");
                     }else{
                         BotonGuardarCliente.setDisable(true);
                         paneDatosClientes.setDisable(true);
                         paneDatosEmpresa.setDisable(true);
+                        paneGenero.setDisable(true);
+                        paneEstadoCivil.setDisable(true);
                         MensajeAdvertenciaNIT.setText("NIT INVALIDO");
                     }
                 }
             }
         });
-        return NIT.getText();
     }
 
     /*EVENTO ENCARGADO DE ACTIVAR LA VALIDACIÓN NIT*/
@@ -183,11 +191,15 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
                         BotonGuardarCliente.setDisable(false);
                         txtNombreCompleto.setDisable(false);
                         paneDatosEmpresa.setDisable(false);
+                        RadioFemenino.setDisable(false);
+                        RadioMasculino.setDisable(false);
                         MensajeAlertaDPI.setText("DPI VALIDO");
                     }else{
                         BotonGuardarCliente.setDisable(true);
                         txtNombreCompleto.setDisable(true);
                         paneDatosEmpresa.setDisable(true);
+                        RadioFemenino.setDisable(true);
+                        RadioMasculino.setDisable(true);
                         MensajeAlertaDPI.setText("DPI INVALIDO");
                     }
                 }
@@ -195,15 +207,39 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
         });
     }
 
+    /*EVENTO QUE CONTROLA LOS RADIO BUTTON FEMENINO Y MASCULINO*/
+    public String RadioButtonFemeninoMasculino(){
+        String genero = "";
+        RadioButton gen = (RadioButton) Genero.getSelectedToggle();
+        genero = gen.getText();
+
+    return genero;
+    }
+
+    /*EVENTO QUE CONTROLA EL ESTADO*/
+    public String RadioButtonEstadoCivil(){
+        String estadocivil = "";
+        RadioButton civil = (RadioButton) EstadoCivil.getSelectedToggle();
+        estadocivil = civil.getText();
+
+        return estadocivil;
+    }
+
+
 
     /*********************************************************************************************************************/
     /*EVENTOS PARA EL FORMULARIO INGRESOPRODUCTO.FXML*/
     /*EVENTO QUE GUARDA LOS DATOS INGRESADOS AL FORMULARIO INGRESOPRODUCTO.FXML*/
     public void OpcionGuardarProducto(ActionEvent actionEvent) {
         /*CONSTRUCTOR EMPRESAS*/
-        arrayProductos.addProducto(new Productos("Categoria", txtNProducto.getText(),txtMarca.getText(),
-                                    Integer.parseInt(txtPrecio.getText())));
-        JOptionPane.showMessageDialog(null,"EL PRODUCTO HA SIDO ALMACENADO CON EXITO" ,"INFORMACION",JOptionPane.INFORMATION_MESSAGE);
+        if(!(txtNProducto.getText().equals("")|| (txtMarca.getText().equals("") || (txtPrecio.getText().equals(""))))){
+            arrayProductos.addProducto(new Productos("Categoria", txtNProducto.getText(),txtMarca.getText(),
+                    Integer.parseInt(txtPrecio.getText())));
+            JOptionPane.showMessageDialog(null,"EL PRODUCTO HA SIDO ALMACENADO CON EXITO" ,"INFORMACION",JOptionPane.INFORMATION_MESSAGE);
+        }else{
+            JOptionPane.showMessageDialog(null,"DEBE LLENAR TODOS LOS CAMPOS PARA PODER GUARDAR EL PRODUCTO" ,"INFORMACION",JOptionPane.INFORMATION_MESSAGE);
+        }
+
     }
 
     /*EVENTO QUE LIMPIA EL FORMULARIO PRODUCTOS*/
@@ -217,6 +253,18 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
     public void OpcionSalirProducto(){
         Stage StageCerraFormProducto = (Stage)txtNProducto.getScene().getWindow();
         StageCerraFormProducto.close();
+    }
+
+    /*RELLEN EL COMBOBOX DE CATEGORIAS*/
+    public String RellenoCategorias(){
+        String catego = "";
+        ObservableList categorias = FXCollections.observableArrayList(categoria);
+        ComboBOXCategoria.setItems(categorias);
+        catego = ComboBOXCategoria.getValue().toString();
+        System.out.println(catego);
+        return catego;
+
+
     }
 
 
@@ -282,6 +330,7 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
     public void initialize(URL location, ResourceBundle resources) {
         MostraContenidoClientes();
         MostrarContenidoProducto();
+
     }
 
 
