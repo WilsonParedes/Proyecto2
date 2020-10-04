@@ -47,14 +47,12 @@ public class DataSistema {
     }
     public ArrayList<Productos> getListaProductos(){return ListaProductos;}
 
-<<<<<<< HEAD
-    public Productos verProducto(int view){return ListaProductos.get(view);}
-=======
+
     public Productos verProducto(int view){
         return ListaProductos.get(view);
     }
     public Clientes verCliente(int view){return ListaClientes.get(view);}
->>>>>>> OrdenClass
+
     public int verprecio(int view){
         return ListaProductos.get(view).getPrecio();
     }
