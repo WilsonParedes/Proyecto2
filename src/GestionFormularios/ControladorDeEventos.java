@@ -1,23 +1,32 @@
 package GestionFormularios;
-
-import Modulos.*;
-import com.jfoenix.controls.JFXTextField;
+import Modulos.Herramientas.VariblesFormGlobales;
+import Modulos.DataSistema.Productos;
+import Modulos.DataSistema.Clientes;
+import Modulos.DataSistema.ClienteIndividual;
+import Modulos.DataSistema.ClienteEmpresa;
+import Modulos.Herramientas.Usuarios;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ControladorDeEventos extends VariblesFormGlobales implements Initializable {
 
@@ -44,31 +53,52 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
         StageCrearUsuario.close();
     }
 
+    /*********************************************************************************************************************/
     /*EVENTOS PARA EL FORMULARIO INGRESOCLIENTES.FXML*/
     /*EVENTO QUE GUARDA LOS DATOS INGRESADOS AL FORMULARIO INGRESOCLIENTES.FXML*/
     public void BotonGuardarClientes() {
-        if((cbEmpresa.selectedProperty().getValue())==true){
-            /*CONSTRUCTOR EMPRESAS*/
-            arrayempresa.addCliente(new ClienteEmpresa(txtNombreCompleto.getText(),txtNIT.getText(), "fecha", "genero", "estado civil", txtRazonSocial.getText(), txtContacto.getText(),
-                    2));
-        }else{
-
-            /*CONSTRUCTOR CLIENTES INDIVIDUALES*/
-            arrayclientes.addCliente(new ClienteIndividual(txtDPI.getText(), txtNombreCompleto.getText(), txtNIT.getText(), "String fecha", "String genero", "String estadocivil"));
-
+        System.out.println(nit);
+        if ((nit.equals("") || (nit.length() <= 1))) {
+            JOptionPane.showMessageDialog(null,"NO SE PUEDE ALMACENAR CLIENTE, NIT INVALIDO INTENTE NUEVAMENTE");
+            txtNIT.clear();
+        } else {
+            if ((cbEmpresa.selectedProperty().getValue())) {
+                /*CONSTRUCTOR EMPRESAS*/
+                if ((txtNombreCompleto.getText().equals("")) || (txtRazonSocial.getText().equals("")) || (txtContacto.getText().equals(""))) {
+                    JOptionPane.showMessageDialog(null,"NO SE PUEDE ALMACENAR CLIENTE,NOMBRE COMPLETO, RAZON SOCIAL Y CONTACTO");
+                    txtDPI.clear();
+                    txtNombreCompleto.clear();
+                    txtRazonSocial.clear();
+                    txtContacto.clear();
+                    } else {
+                        arrayempresa.addCliente(new ClienteEmpresa(txtNombreCompleto.getText(), txtNIT.getText(), "fecha", "genero", "estado civil", txtRazonSocial.getText(), txtContacto.getText(), 2));
+                        JOptionPane.showMessageDialog(null, "EL CLIENTE HA SIDO ALMACENADO CON EXITO", "INFORMACION", JOptionPane.INFORMATION_MESSAGE);
+                    }
+            } else {
+                if ((txtDPI.getText().equals("")) || (txtNombreCompleto.getText().equals(""))) {
+                    JOptionPane.showMessageDialog(null,"NO SE PUEDE ALMACENAR CLIENTE, DEBE LLENAR CAMPO DPI Y NOMBRE COMPLETO");
+                    txtDPI.clear();
+                    txtNombreCompleto.clear();
+                } else {
+                    /*CONSTRUCTOR CLIENTES INDIVIDUALES*/
+                    arrayclientes.addCliente(new ClienteIndividual(txtDPI.getText(), txtNombreCompleto.getText(), txtNIT.getText(), "String fecha", "String genero", "String estadocivil"));
+                    JOptionPane.showMessageDialog(null, "EL CLIENTE HA SIDO ALMACENADO CON EXITO", "INFORMACION", JOptionPane.INFORMATION_MESSAGE);
+                }
+            }
         }
-
-        JOptionPane.showMessageDialog(null,"EL CLIENTE HA SIDO ALMACENADO CON EXITO" ,"INFORMACION", JOptionPane.INFORMATION_MESSAGE);
     }
+
     /*EVENTO QUE INHABILITA EL TXTRAZONSOCIAL DEL FORMULARIO INGRESOCLIENTES*/
     public void OpcionEmpresa(ActionEvent actionEvent) {
-        if((cbEmpresa.selectedProperty().getValue())==true){
+        if((cbEmpresa.selectedProperty().getValue())){
             txtRazonSocial.setDisable(false);
             txtContacto.setDisable(false);
+            txtDPI.setDisable(true);
 
         }else{
             txtRazonSocial.setDisable(true);
             txtContacto.setDisable(true);
+            txtDPI.setDisable(false);
         }
     }
     /*EVENTO QUE LIMPIAR EL FORMULARIO CLIENTES*/
@@ -85,6 +115,86 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
         Stage StageCerrarFormIngresoC = (Stage)txtNIT.getScene().getWindow();
         StageCerrarFormIngresoC.close();
     }
+    String nit;
+    /*EVENTO ENCARGADO DE ACTIVAR LA VALIDACIÓN NIT*/
+    public void ActivadorValidaNIT(KeyEvent keyEvent){
+        nit = (ValidarNit(txtNIT,8));
+    }
+
+    /*VALIDACION NIT*/
+    public String ValidarNit(final TextField NIT, final int MAXIMO) {
+        NIT.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(final ObservableValue<? extends String> ov, final String valorAnterior, final String valorActual) {
+
+                if (valorActual.length() > valorAnterior.length()) {
+                    Pattern permitido = Pattern.compile("[0-9]");
+                    Matcher mpermitido = permitido.matcher(valorActual.substring(valorAnterior.length()));
+                    MensajeAdvertenciaNIT.setText("");
+
+                    if (!mpermitido.find()) {
+                        // caracter no permitido, borrarlo
+                        NIT.setText(valorAnterior);
+                        return;
+                    }
+                    if (NIT.getText().length() > MAXIMO) {
+                        NIT.setText(NIT.getText().substring(0, MAXIMO));
+                    }if((NIT.getLength()>6 && NIT.getLength()<=8)){
+                        BotonGuardarCliente.setDisable(false);
+                        paneDatosClientes.setDisable(false);
+                        paneDatosEmpresa.setDisable(false);
+                        MensajeAdvertenciaNIT.setText("NIT VALIDO");
+                    }else{
+                        BotonGuardarCliente.setDisable(true);
+                        paneDatosClientes.setDisable(true);
+                        paneDatosEmpresa.setDisable(true);
+                        MensajeAdvertenciaNIT.setText("NIT INVALIDO");
+                    }
+                }
+            }
+        });
+        return NIT.getText();
+    }
+
+    /*EVENTO ENCARGADO DE ACTIVAR LA VALIDACIÓN NIT*/
+    public void ActivarValidaDPI(KeyEvent keyEvent){
+        ValidarDPI(txtDPI,13);
+    }
+
+    /*MÉTODO QUE VALIDA EL DPI*/
+    public void ValidarDPI(final @NotNull TextField DPI, final int MAXIMO) {
+        DPI.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(final ObservableValue<? extends String> ov, final String valorAnterior, final String valorActual) {
+
+                if (valorActual.length() > valorAnterior.length()) {
+                    Pattern permitido = Pattern.compile("^[0-9]");
+                    Matcher mpermitido = permitido.matcher(valorActual.substring(valorAnterior.length()));
+                    MensajeAlertaDPI.setText("");
+
+                    if (!mpermitido.find()) {
+                        // caracter no permitido, borrarlo
+                        DPI.setText(valorAnterior);
+                        return;
+                    }
+                    if (DPI.getText().length() > MAXIMO) {
+                        DPI.setText(DPI.getText().substring(0, MAXIMO));
+                    }if((txtDPI.getLength()==13)){
+                        BotonGuardarCliente.setDisable(false);
+                        txtNombreCompleto.setDisable(false);
+                        paneDatosEmpresa.setDisable(false);
+                        MensajeAlertaDPI.setText("DPI VALIDO");
+                    }else{
+                        BotonGuardarCliente.setDisable(true);
+                        txtNombreCompleto.setDisable(true);
+                        paneDatosEmpresa.setDisable(true);
+                        MensajeAlertaDPI.setText("DPI INVALIDO");
+                    }
+                }
+            }
+        });
+    }
+
 
     /*********************************************************************************************************************/
     /*EVENTOS PARA EL FORMULARIO INGRESOPRODUCTO.FXML*/
@@ -165,11 +275,15 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
         StageCerrarFormaConsultaProductos.close();
     }
 
+
+
     /*********************************************************************************************************************/
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         MostraContenidoClientes();
         MostrarContenidoProducto();
     }
+
+
 }
 

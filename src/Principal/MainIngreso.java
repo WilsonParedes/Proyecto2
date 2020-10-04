@@ -1,4 +1,4 @@
-package Vistas;
+package Principal;
 
 import javafx.application.Application;
 import javafx.event.EventHandler;

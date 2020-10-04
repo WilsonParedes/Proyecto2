@@ -1,11 +1,12 @@
-package Modulos;
+package Modulos.DataSistema;
 
+import Modulos.Herramientas.Utilerias;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-public class Productos implements Utilerias{
+public class Productos implements Utilerias {
     public IntegerProperty id;
     private static int sigIdProducto=2000;
     public StringProperty categoria;

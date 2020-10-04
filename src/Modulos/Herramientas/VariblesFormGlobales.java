@@ -1,10 +1,12 @@
-package Modulos;
+package Modulos.Herramientas;
 
+import Modulos.DataSistema.Clientes;
+import Modulos.DataSistema.DataSistema;
+import Modulos.DataSistema.Productos;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.scene.control.*;
-
-import java.util.ArrayList;
+import javafx.scene.layout.AnchorPane;
 
 public class VariblesFormGlobales {
     /*ATRIBUTOS DE FORMULARIO INGRESO.FXML*/
@@ -19,6 +21,11 @@ public class VariblesFormGlobales {
     public Button BotonCrearUsuario;
 
     /*ATRIBUTOS DE FORMULARIO INGRESOCLIENTES.FXML*/
+    public Label MensajeAlertaDPI;
+    public Label MensajeAdvertenciaNIT;
+    public AnchorPane paneDatosClientes;
+    public AnchorPane paneDatosEmpresa;
+    public AnchorPane paneNIT;
     public JFXTextField txtNIT;
     public JFXTextField txtDPI;
     public JFXTextField txtNombreCompleto;

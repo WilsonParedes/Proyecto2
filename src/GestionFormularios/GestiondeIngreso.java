@@ -1,6 +1,6 @@
 package GestionFormularios;
 
-import Modulos.Usuarios;
+import Modulos.Herramientas.Usuarios;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
@@ -25,7 +25,7 @@ public class GestiondeIngreso extends GestionVistaPrincipal implements Initializ
      * DE CARACTERES EN EL USUARIO*/
     public void ActivarBotonIngreso(KeyEvent keyEvent) {
         txtUsuario.setOnKeyTyped(event -> {
-            if(txtUsuario.getLength()>=3){
+            if((txtUsuario.getLength()>=3 && txtUsuario.getLength()<8)){
                 BotonIngreso.setDisable(false);
             }else{
                 BotonIngreso.setDisable(true);

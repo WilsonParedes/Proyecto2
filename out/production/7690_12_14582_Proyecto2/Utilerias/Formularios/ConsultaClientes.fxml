@@ -30,7 +30,7 @@
                   <TableColumn fx:id="columnGenero" minWidth="0.0" prefWidth="64.0" text="Genero" />
                   <TableColumn fx:id="columEstadoCivil" text="Estado Civil" />
                   <TableColumn fx:id="columnRazonSocial" prefWidth="163.0" text="Razon Social" />
-                  <TableColumn fx:id="Telefono" prefWidth="101.0" text="Telefono" />
+                  <TableColumn fx:id="columnContacto" prefWidth="101.0" text="Contacto" />
               </columns>
             </TableView>
             <Button fx:id="BotonGenerarTabla" layoutX="876.0" layoutY="82.0" mnemonicParsing="false" text="Mostrar Contenido" />
