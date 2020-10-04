@@ -13,6 +13,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -20,6 +22,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import org.jetbrains.annotations.NotNull;
+import sun.misc.JavaObjectInputStreamReadString;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -119,88 +122,71 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
     }
 
     /*EVENTO ENCARGADO DE ACTIVAR LA VALIDACIÓN NIT*/
-    public void ActivadorValidaNIT(KeyEvent keyEvent){ValidarNit(txtNIT,8);
-    }
+    public void ActivadorValidaNIT(KeyEvent keyEvent){
+        if(VALIDAR_NIT_DPI_OTRASCOSAS(txtNIT, 7,8)){
+            BotonGuardarCliente.setDisable(false);
+            paneDatosClientes.setDisable(false);
+            paneDatosEmpresa.setDisable(false);
+            paneGenero.setDisable(false);
+            paneEstadoCivil.setDisable(false);
+            MensajeAdvertenciaNIT.setText("NIT VALIDO");
+        }else{
+            BotonGuardarCliente.setDisable(true);
+            paneDatosClientes.setDisable(true);
+            paneDatosEmpresa.setDisable(true);
+            paneGenero.setDisable(true);
+            paneEstadoCivil.setDisable(true);
+            MensajeAdvertenciaNIT.setText("NIT INVALIDO");
 
-    /*VALIDACION NIT*/
-    public void ValidarNit(final TextField NIT, final int MAXIMO) {
-        NIT.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(final ObservableValue<? extends String> ov, final String valorAnterior, final String valorActual) {
-
-                if (valorActual.length() > valorAnterior.length()) {
-                    Pattern permitido = Pattern.compile("[0-9]");
-                    Matcher mpermitido = permitido.matcher(valorActual.substring(valorAnterior.length()));
-                    MensajeAdvertenciaNIT.setText("");
-
-                    if (!mpermitido.find()) {
-                        // caracter no permitido, borrarlo
-                        NIT.setText(valorAnterior);
-                        return;
-                    }
-                    if (NIT.getText().length() > MAXIMO) {
-                        NIT.setText(NIT.getText().substring(0, MAXIMO));
-                    }if((NIT.getLength()>6 && NIT.getLength()<=8)){
-                        BotonGuardarCliente.setDisable(false);
-                        paneDatosClientes.setDisable(false);
-                        paneDatosEmpresa.setDisable(false);
-                        paneGenero.setDisable(false);
-                        paneEstadoCivil.setDisable(false);
-                        MensajeAdvertenciaNIT.setText("NIT VALIDO");
-                    }else{
-                        BotonGuardarCliente.setDisable(true);
-                        paneDatosClientes.setDisable(true);
-                        paneDatosEmpresa.setDisable(true);
-                        paneGenero.setDisable(true);
-                        paneEstadoCivil.setDisable(true);
-                        MensajeAdvertenciaNIT.setText("NIT INVALIDO");
-                    }
-                }
-            }
-        });
+        }
     }
 
     /*EVENTO ENCARGADO DE ACTIVAR LA VALIDACIÓN NIT*/
     public void ActivarValidaDPI(KeyEvent keyEvent){
-        ValidarDPI(txtDPI,13);
+        if(VALIDAR_NIT_DPI_OTRASCOSAS(txtDPI,13,13)){
+            BotonGuardarCliente.setDisable(false);
+            txtNombreCompleto.setDisable(false);
+            paneDatosEmpresa.setDisable(false);
+            paneGenero.setDisable(false);
+            paneEstadoCivil.setDisable(false);
+            MensajeAlertaDPI.setText("DPI VALIDO");
+        }else{
+            BotonGuardarCliente.setDisable(true);
+            txtNombreCompleto.setDisable(true);
+            paneDatosEmpresa.setDisable(true);
+            paneGenero.setDisable(false);
+            paneEstadoCivil.setDisable(false);
+            MensajeAlertaDPI.setText("DPI INVALIDO");
+
+        }
     }
 
-    /*MÉTODO QUE VALIDA EL DPI*/
-    public void ValidarDPI(final @NotNull TextField DPI, final int MAXIMO) {
-        DPI.textProperty().addListener(new ChangeListener<String>() {
+    /*VALIDACION DE TEXTFIELD*/
+    public boolean VALIDAR_NIT_DPI_OTRASCOSAS(final TextField txtValidar, final int MINIMO, final int MAXIMO) {
+
+        txtValidar.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(final ObservableValue<? extends String> ov, final String valorAnterior, final String valorActual) {
-
                 if (valorActual.length() > valorAnterior.length()) {
-                    Pattern permitido = Pattern.compile("^[0-9]");
+                    Pattern permitido = Pattern.compile("[0-9]");
                     Matcher mpermitido = permitido.matcher(valorActual.substring(valorAnterior.length()));
-                    MensajeAlertaDPI.setText("");
 
                     if (!mpermitido.find()) {
                         // caracter no permitido, borrarlo
-                        DPI.setText(valorAnterior);
+                        txtValidar.setText(valorAnterior);
                         return;
                     }
-                    if (DPI.getText().length() > MAXIMO) {
-                        DPI.setText(DPI.getText().substring(0, MAXIMO));
-                    }if((txtDPI.getLength()==13)){
-                        BotonGuardarCliente.setDisable(false);
-                        txtNombreCompleto.setDisable(false);
-                        paneDatosEmpresa.setDisable(false);
-                        paneGenero.setDisable(false);
-                        paneEstadoCivil.setDisable(false);
-                        MensajeAlertaDPI.setText("DPI VALIDO");
+                    if (txtValidar.getText().length() > MAXIMO) {
+                        txtValidar.setText(txtValidar.getText().substring(0, MAXIMO));
+                    }if((txtValidar.getLength()>=MINIMO && txtValidar.getLength()<=MAXIMO)){
+                        Validacion = true;
                     }else{
-                        BotonGuardarCliente.setDisable(true);
-                        txtNombreCompleto.setDisable(true);
-                        paneDatosEmpresa.setDisable(true);
-                        paneGenero.setDisable(false);
-                        paneEstadoCivil.setDisable(false);
-                        MensajeAlertaDPI.setText("DPI INVALIDO");
+                        Validacion = false;
                     }
                 }
             }
         });
+        return Validacion;
     }
 
     /*EVENTO QUE CONTROLA LOS RADIO BUTTON FEMENINO Y MASCULINO*/
@@ -293,17 +279,54 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
         StageCerrarFormConsultaClientes.close();
     }
 
+    /*BUSCAR POR ID CLIENTES*/
+    public void BuscarClientes(ActionEvent actionEvent) {
+        System.out.println(txtIDCliente);
+        int posicion1 = Integer.parseInt(txtIDCliente.getText());
+        try {
+            ObservableList<Clientes> buscarC = FXCollections.observableArrayList(arrayclientes.getListaClientes().get(posicion1 - 1));
+            tablaClientes.setItems(buscarC);
+            columid.setCellValueFactory(new PropertyValueFactory<Clientes, Integer>("id"));
+            columnNIT.setCellValueFactory(new PropertyValueFactory<Clientes, String>("nit"));
+            columDPI.setCellValueFactory(new PropertyValueFactory<Clientes, String>("dpi"));
+            columNombre.setCellValueFactory(new PropertyValueFactory<Clientes, String>("nombre"));
+            columFechaNac.setCellValueFactory(new PropertyValueFactory<Clientes, String>("fecha"));
+            columnGenero.setCellValueFactory(new PropertyValueFactory<Clientes, String>("genero"));
+            columEstadoCivil.setCellValueFactory(new PropertyValueFactory<Clientes, String>("estadocivil"));
+            columnRazonSocial.setCellValueFactory(new PropertyValueFactory<Clientes, String>("razonsocial"));
+            columnContacto.setCellValueFactory(new PropertyValueFactory<Clientes, String>("contacto"));
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"NO EXISTE EL CLIENTE EN LA BDD","INFORMACION",JOptionPane.ERROR_MESSAGE);
+        }
+
+    }
+
+    /*EVENTO ENCARGADO DE ACTIVAR LA VALIDACIÓN PARA INGRESO DE NÚMEROS SOLAMENTE*/
+    public void ActivadorValidarIngresoIDCliente(KeyEvent keyEvent){
+        if(VALIDAR_NIT_DPI_OTRASCOSAS(txtIDCliente, 1,4)){
+            MensajeValidacionIDCliente.setText("ID VALIDO");
+            BotonBuscarCliente.setDisable(false);
+            BotonFormIngresoClientes.setDisable(false);
+        }else{
+        }
+    }
+
+
     /*********************************************************************************************************************/
     /*EVENTOS PARA EL FORMULARIO CONSULTAPRODUCTOS.FXML*/
     /*EVENTO QUE MUESTRA LOS DATOS QUE SE INGRESARON AL FORMULARIO INGRESOPRODUCTO.FXML*/
     public void MostrarContenidoProducto() {
-        ObservableList<Productos> prod = FXCollections.observableArrayList(arrayProductos.getListaProductos());
-        tablaProductos.setItems(prod);
-        columnIDProducto.setCellValueFactory(new PropertyValueFactory<>("id"));
-        columNProducto.setCellValueFactory(new PropertyValueFactory<>("producto"));
-        columnMarca.setCellValueFactory(new PropertyValueFactory<>("marca"));
-        columnCategoria.setCellValueFactory(new PropertyValueFactory<>("categoria"));
-        columnPrecio.setCellValueFactory(new PropertyValueFactory<>("precio"));
+        try {
+            ObservableList<Productos> prod = FXCollections.observableArrayList(arrayProductos.getListaProductos());
+            tablaProductos.setItems(prod);
+            columnIDProducto.setCellValueFactory(new PropertyValueFactory<>("id"));
+            columNProducto.setCellValueFactory(new PropertyValueFactory<>("producto"));
+            columnMarca.setCellValueFactory(new PropertyValueFactory<>("marca"));
+            columnCategoria.setCellValueFactory(new PropertyValueFactory<>("categoria"));
+            columnPrecio.setCellValueFactory(new PropertyValueFactory<>("precio"));
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"NO SE PUEDE CARGAR LA BDD","ERROR",JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     /*LLAMADA AL FORMULARIO INGRESOPRODUCTO.FXML*/
@@ -318,6 +341,35 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
         StageCerrarFormaConsultaProductos.close();
     }
 
+    /*BUSCAR POR ID PRODUCTO*/
+    public void BuscarProducto(ActionEvent actionEvent) {
+        try {
+            int posicion = Integer.parseInt(txtIDProducto.getText());
+            ObservableList<Productos> buscar = FXCollections.observableArrayList(arrayProductos.getListaProductos().get((posicion) - 2000));
+            tablaProductos.setItems(buscar);
+            columnIDProducto.setCellValueFactory(new PropertyValueFactory<>("id"));
+            columNProducto.setCellValueFactory(new PropertyValueFactory<>("producto"));
+            columnMarca.setCellValueFactory(new PropertyValueFactory<>("marca"));
+            columnCategoria.setCellValueFactory(new PropertyValueFactory<>("categoria"));
+            columnPrecio.setCellValueFactory(new PropertyValueFactory<>("precio"));
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"NO EXISTE EL PRODUCTO EN LA BDD","ERROR",JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    /*EVENTO ENCARGADO DE ACTIVAR LA VALIDACIÓN PARA INGRESO DE NÚMEROS SOLAMENTE*/
+    public void ActivadorValidarCodigIngreso(KeyEvent keyEvent){
+        if(VALIDAR_NIT_DPI_OTRASCOSAS(txtIDProducto, 3,4)){
+            MensajeValidacionIDPRod.setText("ID VALIDO");
+            BotonBuscarProducto.setDisable(false);
+            OpcionProductos.setDisable(false);
+        }else{
+            MensajeValidacionIDPRod.setText("ID INVALIDO");
+            BotonBuscarProducto.setDisable(true);
+            OpcionProductos.setDisable(true);
+        }
+    }
+
 
 
     /*********************************************************************************************************************/
@@ -327,6 +379,7 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
         MostrarContenidoProducto();
 
     }
+
 
 
 }

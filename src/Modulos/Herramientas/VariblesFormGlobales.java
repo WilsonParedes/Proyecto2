@@ -14,6 +14,16 @@ import javafx.scene.layout.Pane;
 import java.util.Arrays;
 
 public class VariblesFormGlobales {
+    public boolean Validacion = false;
+
+
+    /*ARRAY LIST GLOBA DE DATASISTEMA*/
+    public DataSistema dt = new DataSistema();
+    public DataSistema arrayclientes = new DataSistema();
+    public DataSistema arrayempresa = new DataSistema();
+    public DataSistema arrayProductos = new DataSistema();
+    public String categoria [] = {"Aceites y Lubricantes", "Llantas","Accesorios"};
+
     /*ATRIBUTOS DE FORMULARIO INGRESO.FXML*/
     public TextField txtUsuario;
     public PasswordField txtContraseña;
@@ -49,14 +59,17 @@ public class VariblesFormGlobales {
     public JFXCheckBox cbEmpresa;
 
     /*ATRIBUTOS DE FORMULARIO INGRESOPRODUCTOS.FXML*/
-    public String categoria [] = {"Aceites y Lubricantes", "Llantas","Accesorios"};
+    public Button BotonBuscarProducto;
     public JFXComboBox ComboBOXCategoria;
     public JFXTextField txtNProducto;
     public JFXTextField txtMarca;
     public JFXTextField txtPrecio;
 
     /*ATRIBUTOS DE LA TABLEVIEW CONSULTACLIENTES.FXML*/
+    public Button BotonBuscarCliente;
+    public Button BotonFormIngresoClientes;
     public TextField txtIDCliente;
+    public Label MensajeValidacionIDCliente;
     public TableView <Clientes> tablaClientes = new TableView<>();
     public TableColumn <Clientes, Integer> columid = new TableColumn<Clientes, Integer>(" ");
     public TableColumn <Clientes, String>columnNIT = new TableColumn<Clientes, String>(" ");
@@ -69,6 +82,8 @@ public class VariblesFormGlobales {
     public TableColumn <Clientes, String>columnContacto = new TableColumn<>(" ");
 
     /*ATRIBUTOS DE LA TABLEVIEW CONSULTAPRODUTOS.FXML*/
+    public Button OpcionProductos;
+    public Label MensajeValidacionIDPRod;
     public TextField txtIDProducto;
     public TableView<Productos> tablaProductos = new TableView<>();
     public TableColumn <Productos,String> columnIDProducto = new TableColumn<>(" ");
@@ -77,11 +92,7 @@ public class VariblesFormGlobales {
     public TableColumn <Productos,String> columnCategoria = new TableColumn<>(" ");
     public TableColumn <Productos, Integer> columnPrecio = new TableColumn<>(" ");
 
-    /*ARRAY LIST GLOBA DE DATASISTEMA*/
-    public DataSistema dt = new DataSistema();
-    public DataSistema arrayclientes = new DataSistema();
-    public DataSistema arrayempresa = new DataSistema();
-    public DataSistema arrayProductos = new DataSistema();
+
 
 
 

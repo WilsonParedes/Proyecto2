@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane prefHeight="789.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GestionFormularios.ControladorDeEventos">
+   <children>
+      <ScrollPane prefHeight="720.0" prefWidth="775.0">
+         <content>
+            <AnchorPane prefHeight="781.0" prefWidth="765.0">
+               <children>
+                  <Label layoutX="516.0" layoutY="14.0" prefHeight="35.0" prefWidth="234.0" text="ORDEN DE COMPRA">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="178.0" fitWidth="234.0" layoutX="14.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Imagenes/LogoAutoPartes.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="14.0" layoutY="172.0" prefHeight="17.0" prefWidth="140.0" text="Lideres en Respuestos">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="189.0" prefHeight="17.0" prefWidth="213.0" text="Los arenales, zona 3 Villa Canales">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="257.0" layoutY="78.0" prefHeight="17.0" prefWidth="160.0" text="AUTOREPUESTOS, S.A.">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutY="255.0" prefHeight="109.0" prefWidth="337.0">
+                     <children>
+                        <Label layoutX="16.0" layoutY="1.0" text="Datos de cliente">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="16.0" layoutY="35.0" prefHeight="17.0" prefWidth="92.0" text="Nombre">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="16.0" layoutY="51.0" prefHeight="17.0" prefWidth="86.0" text="Label">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="16.0" layoutY="18.0" prefHeight="17.0" prefWidth="92.0" text="NIT">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="16.0" layoutY="67.0" prefHeight="17.0" prefWidth="129.0" text="Nombre Empresa">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="16.0" layoutY="83.0" prefHeight="17.0" prefWidth="92.0" text="Contacto">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="142.0" layoutY="21.0" prefHeight="17.0" prefWidth="140.0" text="Label">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="142.0" layoutY="36.0" prefHeight="17.0" prefWidth="140.0" text="Label">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="142.0" layoutY="50.0" prefHeight="17.0" prefWidth="140.0" text="Label">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="142.0" layoutY="67.0" prefHeight="17.0" prefWidth="140.0" text="Label">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="142.0" layoutY="84.0" prefHeight="17.0" prefWidth="140.0" text="Label">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="13.0" layoutY="211.0" prefHeight="44.0" prefWidth="295.0">
+                     <children>
+                        <Label layoutX="4.0" layoutY="14.0" prefHeight="17.0" prefWidth="140.0" text="Ingrese ID Cliente" />
+                        <JFXTextField layoutX="117.0" layoutY="5.0" />
+                     </children>
+                  </Pane>
+                  <Pane layoutY="362.0" prefHeight="71.0" prefWidth="738.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="160.0" text="Fecha de pedido de compra" />
+                        <Label layoutX="14.0" layoutY="40.0" prefHeight="17.0" prefWidth="160.0" text="Fecha de pedido de compra" />
+                        <Label layoutX="208.0" layoutY="14.0" prefHeight="17.0" prefWidth="187.0" text="Medio de Envio" />
+                        <JFXTextField layoutX="209.0" layoutY="30.0" />
+                        <Label layoutX="395.0" layoutY="35.0" prefHeight="17.0" prefWidth="71.0" text="ID Producto" />
+                        <JFXTextField layoutX="477.0" layoutY="31.0" prefHeight="25.0" prefWidth="71.0" />
+                        <JFXTextField layoutX="653.0" layoutY="30.0" prefHeight="25.0" prefWidth="71.0" />
+                        <Label layoutX="571.0" layoutY="37.0" prefHeight="17.0" prefWidth="71.0" text="Cantidad" />
+                     </children>
+                  </Pane>
+                  <TableView layoutX="14.0" layoutY="428.0" prefHeight="235.0" prefWidth="730.0">
+                    <columns>
+                      <TableColumn prefWidth="111.0" text="ID" />
+                      <TableColumn prefWidth="75.0" text="Cantidad" />
+                        <TableColumn prefWidth="293.0" text="Descripcipon Producto" />
+                        <TableColumn prefWidth="150.0" text="Precio Unitario" />
+                        <TableColumn prefWidth="100.0" text="Total" />
+                    </columns>
+                  </TableView>
+                  <Pane layoutX="516.0" layoutY="662.0" prefHeight="119.0" prefWidth="228.0">
+                     <children>
+                        <Label alignment="TOP_RIGHT" layoutX="141.0" layoutY="14.0" prefHeight="19.0" prefWidth="80.0" text="Label">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="TOP_RIGHT" layoutX="17.0" layoutY="14.0" prefHeight="17.0" prefWidth="100.0" text="Sub-Total" textAlignment="RIGHT">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="TOP_RIGHT" layoutX="18.0" layoutY="41.0" prefHeight="17.0" prefWidth="100.0" text="Descuento" textAlignment="RIGHT">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="TOP_RIGHT" layoutX="141.0" layoutY="41.0" prefHeight="19.0" prefWidth="80.0" text="Label">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="TOP_RIGHT" layoutX="142.0" layoutY="66.0" prefHeight="19.0" prefWidth="80.0" text="Label">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="TOP_RIGHT" layoutX="19.0" layoutY="66.0" prefHeight="17.0" prefWidth="100.0" text="Total" textAlignment="RIGHT">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="TOP_RIGHT" layoutX="19.0" layoutY="90.0" prefHeight="17.0" prefWidth="100.0" text="Total" textAlignment="RIGHT">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="TOP_RIGHT" layoutX="142.0" layoutY="90.0" prefHeight="19.0" prefWidth="80.0" text="Label">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+   </children>
+</Pane>
