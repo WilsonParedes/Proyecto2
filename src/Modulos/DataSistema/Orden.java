@@ -2,7 +2,6 @@ package Modulos.DataSistema;
 
 import java.util.Date;
 
-
 public class Orden extends ItemOrder{
 
     public int id;
@@ -14,43 +13,90 @@ public class Orden extends ItemOrder{
     public double total;
     public String tipoenvio;
     public String estado;
-    public static int sigIdOrden;
     public int diasenvio;
     public int pCliente;
 
     public Orden(){
-        id=0;
+        id=id++;
         total= 0.0;
         fechaorden= new Date();
     }
 
-    //CONSTRUCTOR PRINCIPAL
-    public Orden(int pCliente, Date fechaorden, int noLinea, int cantidad, int pIdProducto){
-        super(noLinea, cantidad, pIdProducto);
-        this.pCliente=pCliente;
+    public Orden(Date fechaorden){
+        this();
+    }
+
+    public Orden(int pCliente, Date fechaorden){
+        this.cliente=cliente;
         this.fechaorden=fechaorden;
 
+        System.out.println("El cliente: "+verCliente(pCliente));
+        System.out.println("Carga Orden de Compra: ");
+        getTotalOrden();
+        System.out.print("Indique el tipo de envio: ");
+        tipoenvio=leer.nextLine();
+        System.out.print("Indique el precio del envio: ");
+        precioenvio=leer.nextDouble();
+        System.out.print("Indique los dias que tardara el envio: ");
+        diasenvio=leer.nextInt();
+        System.out.print("Indique el estado de la Orden de Compra: ");
+        estado= leer.nextLine();
+
+    }
+    //METODO ENCARGADO DE HACER EL CALCULO DE LA OC
+    public void getTotalOrden(){
+        boolean salida=false;
+        String resp="";
+        do{
+            getTotalItem();
+            total+= getTotal();
+            String fail=leer.nextLine();
+            System.out.print("¿Desea agregar otro producto? Si/No: ");
+            resp=leer.nextLine();
+            if(resp.equalsIgnoreCase("Si")){
+                salida=false;
+            }else{
+                salida=true;
+                System.out.println("EL total actual es: "+total);
+            }
+        }while(salida!=true);
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setFechaorden(Date fechaorden) {
+        this.fechaorden = fechaorden;
+    }
+
+    public void setPrecioenvio(double precioenvio) {
+        this.precioenvio = precioenvio;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
+    }
+
+    public void setTipoenvio(String tipoenvio) {
+        this.tipoenvio = tipoenvio;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public void setDiasenvio(int diasenvio) {
+        this.diasenvio = diasenvio;
+    }
 
 
-        System.out.println("Datos del cliente: \n"+ verCliente(pCliente));
-        System.out.println("Item seleccionado: \n"+verProducto(pIdProducto));
-        System.out.println("Ingrese la cantidad de producto deseado: ");
-        cantidad=leer.nextInt();
-        //if(item1==null){
-        item1=new ItemOrder(noLinea,cantidad,pIdProducto);//CORRELATIVO, CANTIDAD, NOPRODUCTO
-        System.out.println("Se agrega a la orden de compra item1: "+item1);
-        //}else if(item1!=null){
-        item2=new ItemOrder(noLinea,cantidad,pIdProducto);//CORRELATIVO, CANTIDAD, NOPRODUCTO
-        System.out.println("Se agrega a la orden de compra item2: "+item2);
-        //}
 
-
-        System.out.println("Se agrega a la orden de compra: \n"+item1+"\n"+item2);
-
-        total=total+getTotalItem(noLinea,pIdProducto,cantidad);//TOTAL ORDEN DE COMPRA
-        System.out.println("El total del producto 1 es: \n"+total);
-        System.out.println("Fecha de laorden de Compra: "+fechaorden);
-
-
+    @Override
+    public String toString(){
+        return "Datos Cliente\n"+verCliente(pCliente)+"\nProducto facturado\n"+verProducto(pIdProducto)
+                +"\nFecha Orden de compra: "+fechaorden+"\tPrecio del Envio: Q"+precioenvio+"\tSe enviara  por: "+
+                tipoenvio+"\tEstado Orden de compra: "+estado+"\tRecibira el producto en: "+diasenvio+" dias"+
+                "\nEl total de la Orden de compra sera de: Q"+total;
     }
 }
