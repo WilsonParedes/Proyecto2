@@ -49,7 +49,6 @@ public class GestiondeIngreso extends GestionVistaPrincipal implements Initializ
                         //LLAMADA AL FORMULARIO DE VISTA PRINCIPAL, CONTROLFORMULARIOS.GESTIONVISTAPRINCIPAL
                         FormVistaPrincipal();
                         break;
-
                     }
 
                 }
