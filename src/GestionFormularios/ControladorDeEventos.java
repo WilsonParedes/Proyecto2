@@ -115,7 +115,11 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
     /*EVENTO QUE MUESTRA LOS DATOS QUE SE INGRESARON AL FORMULARIO INGRESOCLIENTES.FXML*/
     public void MostraContenidoClientes() {
         ObservableList<Clientes> clien = FXCollections.observableArrayList(arrayclientes.getListaClientes());
+<<<<<<< HEAD
         System.out.println(clien.toString());
+=======
+
+>>>>>>> OrdenClass
         tablaClientes.setItems(clien);
         columid.setCellValueFactory(new PropertyValueFactory<Clientes, Integer>("id"));
         columnNIT.setCellValueFactory(new PropertyValueFactory<Clientes, String>("nit"));
