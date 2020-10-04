@@ -1,10 +1,17 @@
-package Modulos;
+package Modulos.Herramientas;
 
+import Modulos.DataSistema.Clientes;
+import Modulos.DataSistema.DataSistema;
+import Modulos.DataSistema.Productos;
 import com.jfoenix.controls.JFXCheckBox;
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 
 public class VariblesFormGlobales {
     /*ATRIBUTOS DE FORMULARIO INGRESO.FXML*/
@@ -19,18 +26,31 @@ public class VariblesFormGlobales {
     public Button BotonCrearUsuario;
 
     /*ATRIBUTOS DE FORMULARIO INGRESOCLIENTES.FXML*/
+    public ToggleGroup Genero;
+    public ToggleGroup EstadoCivil;
+    public Pane paneEstadoCivil;
+    public Pane paneGenero;
+    public AnchorPane paneDatosClientes;
+    public AnchorPane paneDatosEmpresa;
+    public AnchorPane paneNIT;
+    public Label MensajeAlertaDPI;
+    public Label MensajeAdvertenciaNIT;
+    public JFXRadioButton RadioFemenino;
+    public JFXRadioButton RadioMasculino;
+    public JFXRadioButton RadioCasado;
     public JFXTextField txtNIT;
     public JFXTextField txtDPI;
     public JFXTextField txtNombreCompleto;
     public JFXTextField txtRazonSocial;
     public JFXTextField txtContacto;
     public DatePicker DateFecha;
-    public MenuButton MenuEstadoCivil;
     public Button BotonGuardarCliente;
     public Button BotonCancelarCliente;
     public JFXCheckBox cbEmpresa;
 
     /*ATRIBUTOS DE FORMULARIO INGRESOPRODUCTOS.FXML*/
+    public String categoria [] = {"Aceites y Lubricantes", "Llantas","Accesorios"};
+    public JFXComboBox ComboBOXCategoria;
     public JFXTextField txtNProducto;
     public JFXTextField txtMarca;
     public JFXTextField txtPrecio;

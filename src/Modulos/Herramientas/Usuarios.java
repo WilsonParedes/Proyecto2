@@ -1,4 +1,4 @@
-package Modulos;
+package Modulos.Herramientas;
 
 public class Usuarios {
     private static int correlativo = 1;

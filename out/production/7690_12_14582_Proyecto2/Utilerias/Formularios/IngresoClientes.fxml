@@ -9,14 +9,14 @@
 
 <Pane fx:id="PaneIngresoClientes" prefHeight="401.0" prefWidth="757.0" style="-fx-background-color: #414141;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GestionFormularios.ControladorDeEventos">
    <children>
-      <AnchorPane layoutX="3.0" layoutY="4.0" prefHeight="111.0" prefWidth="707.0" style="-fx-background-color: #EEEEEE;">
+      <AnchorPane fx:id="paneNIT" layoutX="3.0" layoutY="4.0" prefHeight="111.0" prefWidth="707.0" style="-fx-background-color: #EEEEEE;">
          <children>
             <Label alignment="CENTER" layoutX="57.0" layoutY="14.0" prefHeight="25.0" prefWidth="579.0" text="INGRESO DE CLIENTES">
                <font>
                   <Font name="Calibri Bold" size="22.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="txtNIT" focusColor="#1b7717" layoutX="43.0" layoutY="49.0">
+            <JFXTextField fx:id="txtNIT" focusColor="#1b7717" layoutX="43.0" layoutY="49.0" onKeyTyped="#ActivadorValidaNIT">
                <font>
                   <Font size="13.0" />
                </font>
@@ -28,15 +28,20 @@
                </font>
             </Label>
             <JFXCheckBox fx:id="cbEmpresa" layoutX="629.0" layoutY="88.0" onAction="#OpcionEmpresa" text="Empresa" />
+            <Label fx:id="MensajeAdvertenciaNIT" layoutX="43.0" layoutY="81.0" prefHeight="17.0" prefWidth="146.0">
+               <font>
+                  <Font size="8.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="3.0" layoutY="116.0" prefHeight="169.0" prefWidth="707.0" style="-fx-background-color: #EEEEEE;">
+      <AnchorPane fx:id="paneDatosClientes" layoutX="3.0" layoutY="116.0" prefHeight="169.0" prefWidth="707.0" style="-fx-background-color: #EEEEEE;">
          <children>
             <Label layoutX="15.0" layoutY="48.0" text="No. DPI" />
             <Label layoutX="14.0" layoutY="87.0" text="Nombre Completo" />
             <Label layoutX="16.0" layoutY="128.0" text="Fecha de Nacimiento" />
             <Label alignment="CENTER" layoutX="154.0" layoutY="10.0" prefHeight="17.0" prefWidth="386.0" text="DATOS PERSONALES DE CLIENTE" />
-                        <JFXTextField fx:id="txtDPI" focusColor="#1a7817" layoutX="143.0" layoutY="35.0" prefHeight="29.0" prefWidth="149.0">
+                        <JFXTextField fx:id="txtDPI" focusColor="#1a7817" layoutX="143.0" layoutY="35.0" onKeyTyped="#ActivarValidaDPI" prefHeight="29.0" prefWidth="149.0">
                            <font>
                               <Font size="13.0" />
                            </font>
@@ -47,27 +52,50 @@
                            </font>
                         </JFXTextField>
                         <DatePicker fx:id="DateFecha" layoutX="142.0" layoutY="127.0" />
-            <Label layoutX="352.0" layoutY="131.0" text="Estado Civil" />
-            <Label layoutX="531.0" layoutY="56.0" text="Genero" />
-                        <JFXRadioButton layoutX="612.0" layoutY="41.0" text="Femenino">
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </JFXRadioButton>
-                        <JFXRadioButton layoutX="612.0" layoutY="70.0" text="Masculino">
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </JFXRadioButton>
-                        <MenuButton layoutX="423.0" layoutY="127.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="98.0">
-                          <items>
-                            <MenuItem mnemonicParsing="false" text="Soltero" />
-                            <MenuItem mnemonicParsing="false" text="Casado" />
-                          </items>
-                        </MenuButton>
+            <Label fx:id="MensajeAlertaDPI" layoutX="301.0" layoutY="52.0" prefHeight="17.0" prefWidth="112.0">
+               <font>
+                  <Font size="8.0" />
+               </font>
+            </Label>
+            <Pane fx:id="paneGenero" layoutX="513.0" layoutY="14.0" prefHeight="69.0" prefWidth="191.0" style="-fx-background-color: E8E7E7;">
+               <children>
+                  <Label layoutX="15.0" layoutY="26.0" text="Genero" />
+                              <JFXRadioButton fx:id="RadioFemenino" layoutX="96.0" layoutY="11.0" onMouseClicked="#RadioButtonFemeninoMasculino" selected="true" text="Femenino">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="Genero" />
+                     </toggleGroup>
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </JFXRadioButton>
+                              <JFXRadioButton fx:id="RadioMasculino" layoutX="96.0" layoutY="40.0" onMouseClicked="#RadioButtonFemeninoMasculino" selected="true" text="Masculino" toggleGroup="$Genero">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </JFXRadioButton>
+               </children>
+            </Pane>
+            <Pane fx:id="paneEstadoCivil" layoutX="514.0" layoutY="90.0" prefHeight="69.0" prefWidth="191.0" style="-fx-background-color: E8E7E7;">
+               <children>
+                  <Label layoutX="17.0" layoutY="30.0" text="Estado Civil" />
+                  <JFXRadioButton fx:id="RadioSoltero" layoutX="97.0" layoutY="10.0" onMouseClicked="#RadioButtonEstadoCivil" selected="true" text="Soltero">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="EstadoCivil" />
+                     </toggleGroup>
+                  </JFXRadioButton>
+                  <JFXRadioButton fx:id="RadioCasado" layoutX="98.0" layoutY="42.0" onMouseClicked="#RadioButtonEstadoCivil" selected="true" text="Casado" toggleGroup="$EstadoCivil">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </JFXRadioButton>
+               </children>
+            </Pane>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="3.0" layoutY="286.0" prefHeight="111.0" prefWidth="707.0" style="-fx-background-color: #EEEEEE;">
+      <AnchorPane fx:id="paneDatosEmpresa" layoutX="3.0" layoutY="286.0" prefHeight="111.0" prefWidth="707.0" style="-fx-background-color: #EEEEEE;">
          <children>
             <Label alignment="CENTER" layoutX="160.0" layoutY="14.0" prefHeight="17.0" prefWidth="368.0" text="DATOS DE EMPRESA" />
             <Label layoutX="14.0" layoutY="52.0" prefHeight="17.0" prefWidth="138.0" text="Razon Social" />

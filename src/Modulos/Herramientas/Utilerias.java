@@ -1,4 +1,4 @@
-package Modulos;
+package Modulos.Herramientas;
 
 public interface Utilerias {
 
