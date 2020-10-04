@@ -5,8 +5,6 @@ import Modulos.DataSistema.Clientes;
 import Modulos.DataSistema.ClienteIndividual;
 import Modulos.DataSistema.ClienteEmpresa;
 import Modulos.Herramientas.Usuarios;
-import com.jfoenix.controls.JFXComboBox;
-import com.jfoenix.controls.JFXRadioButton;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -15,10 +13,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.MenuButton;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
@@ -191,15 +187,15 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
                         BotonGuardarCliente.setDisable(false);
                         txtNombreCompleto.setDisable(false);
                         paneDatosEmpresa.setDisable(false);
-                        RadioFemenino.setDisable(false);
-                        RadioMasculino.setDisable(false);
+                        paneGenero.setDisable(false);
+                        paneEstadoCivil.setDisable(false);
                         MensajeAlertaDPI.setText("DPI VALIDO");
                     }else{
                         BotonGuardarCliente.setDisable(true);
                         txtNombreCompleto.setDisable(true);
                         paneDatosEmpresa.setDisable(true);
-                        RadioFemenino.setDisable(true);
-                        RadioMasculino.setDisable(true);
+                        paneGenero.setDisable(false);
+                        paneEstadoCivil.setDisable(false);
                         MensajeAlertaDPI.setText("DPI INVALIDO");
                     }
                 }
@@ -232,8 +228,9 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
     /*EVENTO QUE GUARDA LOS DATOS INGRESADOS AL FORMULARIO INGRESOPRODUCTO.FXML*/
     public void OpcionGuardarProducto(ActionEvent actionEvent) {
         /*CONSTRUCTOR EMPRESAS*/
+        String cate = RellenoCategorias();
         if(!(txtNProducto.getText().equals("")|| (txtMarca.getText().equals("") || (txtPrecio.getText().equals(""))))){
-            arrayProductos.addProducto(new Productos("Categoria", txtNProducto.getText(),txtMarca.getText(),
+            arrayProductos.addProducto(new Productos(cate, txtNProducto.getText(),txtMarca.getText(),
                     Integer.parseInt(txtPrecio.getText())));
             JOptionPane.showMessageDialog(null,"EL PRODUCTO HA SIDO ALMACENADO CON EXITO" ,"INFORMACION",JOptionPane.INFORMATION_MESSAGE);
         }else{
@@ -263,8 +260,6 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
         catego = ComboBOXCategoria.getValue().toString();
         System.out.println(catego);
         return catego;
-
-
     }
 
 

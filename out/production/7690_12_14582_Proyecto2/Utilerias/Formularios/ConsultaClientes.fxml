@@ -33,7 +33,7 @@
                   <TableColumn fx:id="columnContacto" prefWidth="101.0" text="Contacto" />
               </columns>
             </TableView>
-            <Button fx:id="BotonGenerarTabla" layoutX="876.0" layoutY="82.0" mnemonicParsing="false" text="Mostrar Contenido" />
+            <Button fx:id="BotonGenerarTabla" layoutX="822.0" layoutY="95.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="171.0" text="Mostrar Contenido" />
             <Button fx:id="BotonSalirFormConsultaCliente" layoutX="900.0" layoutY="17.0" mnemonicParsing="false" onAction="#SalidaConsultaClientes" prefHeight="51.0" prefWidth="59.0" style="-fx-background-color: transparent;">
                <graphic>
                   <ImageView fitHeight="46.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
@@ -42,7 +42,9 @@
                      </image>
                   </ImageView>
                </graphic></Button>
-            <Button fx:id="BotonFormIngresoClientes" layoutX="678.0" layoutY="82.0" mnemonicParsing="false" onAction="#LlamarFormIngresoClientes" prefHeight="25.0" prefWidth="171.0" text="Formulario Ingreso Clientes" />
+            <Button fx:id="BotonFormIngresoClientes" layoutX="639.0" layoutY="17.0" mnemonicParsing="false" onAction="#LlamarFormIngresoClientes" prefHeight="25.0" prefWidth="171.0" text="Formulario Ingreso Clientes" />
+            <Button layoutX="639.0" layoutY="48.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="171.0" text="Buscar" />
+            <Button layoutX="639.0" layoutY="80.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="171.0" text="Eliminar" />
          </children>
       </AnchorPane>
    </children>
