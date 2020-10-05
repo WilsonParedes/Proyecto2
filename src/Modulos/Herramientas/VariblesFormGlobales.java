@@ -93,11 +93,29 @@ public class VariblesFormGlobales {
     public TableColumn <Productos, Integer> columnPrecio = new TableColumn<>(" ");
 
 
-
-
-
-
-
+    /*ATRIBUTOS DE LA ORDEN DE COMPRA*/
+    public Label LayoutNITOrdeCompra;
+    public Label LayoutNombreOrdenCompra;
+    public Label LayoutNombreEmpresa;
+    public Label LayoutContacto;
+    public Label LayoutFechaOrdenCompra;
+    public Label LayoutSubtotalOrdenCompra;
+    public Label LayoutDescuentoOrdenCompra;
+    public Label LayoutEnvioyOtrosOrdenCompra;
+    public Label LayoutTotalOrdenCompra;
+    public JFXTextField txtIDOrdenCompra;
+    public JFXTextField txtMedioEnvioOrdenCompra;
+    public JFXTextField txtIDProductoOrdenCompra;
+    public JFXTextField txtCantidadOrdenCompra;
+    public JFXTextField txtPrecioEnvioOrdenCompra;
+    public JFXTextField txtDiasEnvioOrdenCompra;
+    public TableView tablaOrdenCompra;
+    public TableColumn columnIDOrdenCompra;
+    public TableColumn columnCantidadOrdenCompra;
+    public TableColumn columnDProductoOrdenCompra;
+    public TableColumn columnPrecioUniOrdenCompra;
+    public TableColumn txtTotalOrdenCompra;
+    public Button BotonCargaInfoClienteOrdenCompra;
 
 
 
