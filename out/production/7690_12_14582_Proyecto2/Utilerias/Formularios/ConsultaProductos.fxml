@@ -31,7 +31,7 @@
                   <Font name="Calibri Bold" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="txtIDProducto" layoutX="126.0" layoutY="21.0" promptText="ID Producto" />
+            <TextField fx:id="txtIDProducto" layoutX="126.0" layoutY="21.0" onKeyTyped="#ActivadorValidarCodigIngreso" promptText="ID Producto" />
             <TextField fx:id="txtNombreProducto" layoutX="126.0" layoutY="51.0" />
             <Button fx:id="BotonMostrarContenidoProducto" layoutX="612.0" layoutY="51.0" mnemonicParsing="false" onAction="#MostrarContenidoProducto" prefHeight="25.0" prefWidth="134.0" text="Mostra Contenido" />
             <Button fx:id="BotonSalidaFormConsultaProducto" layoutX="652.0" layoutY="5.0" mnemonicParsing="false" onAction="#SalidaConsultaProducto" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: transparent;">
@@ -44,6 +44,12 @@
                </graphic>
             </Button>
             <Button fx:id="OpcionProductos" layoutX="412.0" layoutY="51.0" mnemonicParsing="false" onAction="#LlamarFormIngresoProducto" prefHeight="25.0" prefWidth="186.0" text="Formulario Agregar Producto" />
+            <Button fx:id="BotonBuscarProducto" layoutX="412.0" layoutY="21.0" mnemonicParsing="false" onAction="#BuscarProducto" prefHeight="25.0" prefWidth="134.0" text="Buscar" />
+            <Label fx:id="MensajeValidacionIDPRod" layoutX="278.0" layoutY="26.0" prefHeight="17.0" prefWidth="88.0" textFill="#fcf9f9">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>

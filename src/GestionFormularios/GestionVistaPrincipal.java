@@ -1,6 +1,7 @@
 package GestionFormularios;
 
 
+import javafx.event.ActionEvent;
 import javafx.stage.Stage;
 import java.io.IOException;
 
@@ -44,4 +45,7 @@ public class GestionVistaPrincipal extends ControladorDeEventos {
 
     }
 
+    public void OpcionOrdendeCompra() throws IOException {
+        FormGlobal("/Utilerias/Formularios/OrdenCompra.fxml","ORDEN DE COMPRA", 775, 789);
+    }
 }
