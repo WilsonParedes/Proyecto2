@@ -27,7 +27,7 @@ public class Orden extends ItemOrder{
     }
 
     public Orden(int pCliente, Date fechaorden){
-        this.cliente=cliente;
+        this.pCliente=pCliente;
         this.fechaorden=fechaorden;
 
         System.out.println("El cliente: "+verCliente(pCliente));

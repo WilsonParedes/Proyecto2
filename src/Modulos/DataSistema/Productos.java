@@ -7,44 +7,44 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class Productos implements Utilerias {
-    public IntegerProperty id;
+    public int id;
     private static int sigIdProducto=2000;
-    public StringProperty categoria;
-    public StringProperty producto;
-    public StringProperty marca;
-    public IntegerProperty precio;
+    public String categoria;
+    public String producto;
+    public String marca;
+    public int precio;
 
 
     public Productos(){
-        this.id= new SimpleIntegerProperty(sigIdProducto++);
+        this.id= sigIdProducto++;
     }
 
     public Productos(String categoria, String producto, String marca, int precio) {
         this();
-        this.categoria = new SimpleStringProperty(categoria);
-        this.producto = new SimpleStringProperty(producto);
-        this.marca = new SimpleStringProperty(marca);
-        this.precio = new SimpleIntegerProperty(precio);
+        this.categoria = categoria;
+        this.producto = producto;
+        this.marca = marca;
+        this.precio = precio;
     }
 
     public int getId() {
-        return id.get();
+        return id;
     }
 
     public String getCategoria() {
-        return categoria.get();
+        return categoria;
     }
 
     public String getProducto() {
-        return producto.get();
+        return producto;
     }
 
     public String getMarca() {
-        return marca.get();
+        return marca;
     }
 
     public int getPrecio() {
-        return precio.get();
+        return precio;
     }
 
     @Override
