@@ -2,6 +2,7 @@ package Modulos.DataSistema;
 
 
 import Modulos.Herramientas.Utilerias;
+import Modulos.DataSistema.ClienteEmpresa;
 
 public class Clientes implements Utilerias {
     private static int sigIdCliente=1;

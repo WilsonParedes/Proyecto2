@@ -69,6 +69,7 @@ public class VariblesFormGlobales {
     public Button BotonBuscarCliente;
     public Button BotonFormIngresoClientes;
     public TextField txtIDCliente;
+    public TextField txtNITConsulta;
     public Label MensajeValidacionIDCliente;
     public TableView <Clientes> tablaClientes = new TableView<>();
     public TableColumn <Clientes, Integer> columid = new TableColumn<Clientes, Integer>(" ");
@@ -82,6 +83,7 @@ public class VariblesFormGlobales {
     public TableColumn <Clientes, String>columnContacto = new TableColumn<>(" ");
 
     /*ATRIBUTOS DE LA TABLEVIEW CONSULTAPRODUTOS.FXML*/
+    public JFXComboBox ComboBoxCategoriaConsultaProducto;
     public Button OpcionProductos;
     public Label MensajeValidacionIDPRod;
     public TextField txtIDProducto;

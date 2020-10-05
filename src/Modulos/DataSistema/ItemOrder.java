@@ -30,8 +30,8 @@ public class ItemOrder extends DataSistema implements Utilerias {
         pIdProducto=leer.nextInt();
         System.out.print("Ingresar la cantidad del producto requerido: ");
         cantidad=leer.nextInt();
-        total= verprecio(pIdProducto)*cantidad;
-        System.out.println("Producto Seleccionado: "+verProducto(pIdProducto));
+        total= getVerPrecio(pIdProducto)*cantidad;
+        System.out.println("Producto Seleccionado: "+getVerProducto(pIdProducto));
         System.out.print("Total del producto es: "+total+"\n");
     }
     public int getTotal(){

@@ -44,7 +44,7 @@
                </graphic></Button>
             <Button fx:id="BotonFormIngresoClientes" layoutX="715.0" layoutY="16.0" mnemonicParsing="false" onAction="#LlamarFormIngresoClientes" prefHeight="25.0" prefWidth="171.0" text="Opcion para Ingresar Clientes" />
             <Button fx:id="BotonBuscarCliente" layoutX="271.0" layoutY="83.0" mnemonicParsing="false" onAction="#BuscarClientes" prefHeight="25.0" prefWidth="86.0" text="Buscar" />
-            <Button layoutX="715.0" layoutY="80.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="171.0" text="Eliminar" />
+            <Button fx:id="BotoElminarClienteConsulta" layoutX="715.0" layoutY="80.0" mnemonicParsing="false" onAction="#eliminarClientes" prefHeight="25.0" prefWidth="171.0" text="Eliminar" />
             <Label fx:id="MensajeValidacionIDCliente" layoutX="240.0" layoutY="42.0" prefHeight="17.0" prefWidth="62.0" textFill="WHITE">
                <font>
                   <Font size="10.0" />

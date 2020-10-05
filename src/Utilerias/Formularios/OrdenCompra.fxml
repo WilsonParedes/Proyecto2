@@ -72,7 +72,7 @@
                               <Font size="13.0" />
                            </font>
                         </Label>
-                        <Label fx:id="LayoutNombreOrdenCompra" layoutX="142.0" layoutY="36.0" prefHeight="17.0" prefWidth="140.0" text="Label">
+                        <Label fx:id="LayoutNombreOrdenCompra" layoutX="142.0" layoutY="36.0" prefHeight="19.0" prefWidth="189.0" text="Label">
                            <font>
                               <Font size="13.0" />
                            </font>
@@ -164,7 +164,7 @@
                         </Label>
                      </children>
                   </Pane>
-                  <Button fx:id="BotonCargaInfoClienteOrdenCompra" layoutX="556.0" layoutY="233.0" mnemonicParsing="false" text="Cargar Información de Cliente" />
+                  <Button fx:id="BotonCargaInfoClienteOrdenCompra" layoutX="556.0" layoutY="233.0" mnemonicParsing="false" onAction="#MostrarInfoClienteOrdenCompra" text="Cargar Información de Cliente" />
                </children>
             </AnchorPane>
          </content>
