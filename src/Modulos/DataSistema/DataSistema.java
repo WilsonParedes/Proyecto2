@@ -57,15 +57,16 @@ public class DataSistema {
     public ArrayList<Orden>getListaOrden(){return ListaOrden;}
 
 
-    public Productos verProducto(int view){
-        return ListaProductos.get(view);
-    }
-    public Clientes verCliente(int view){return ListaClientes.get(view);}
-    public Orden VerOrden(int view){return ListaOrden.get(view);}
+    public Productos getVerProducto(int view){ return ListaProductos.get(view);}
+    public Clientes getVerCliente(int view){return ListaClientes.get(view);}
+    public int getVerPrecio(int view){
 
-    public int verprecio(int view){
         return ListaProductos.get(view).getPrecio();
     }
+
+    public void getEliminarCliente(int view){ ListaClientes.remove(view); }
+    public void getEliminarProducto(int view){ ListaProductos.remove(view); }
+
 
     public String toString() {
         for(Clientes tempclientes: ListaClientes){

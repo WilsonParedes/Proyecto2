@@ -12,7 +12,7 @@
             <items>
               <MenuItem fx:id="SelectMenuIngresoClientes" mnemonicParsing="false" onAction="#OpcionMenuIngresoClientes" text="Ingreso Clientes" />
                 <MenuItem fx:id="SelectMenuIngresoProductos" mnemonicParsing="false" onAction="#OpcionMenuIngresoProducto" text="Ingreso Productos" />
-                  <MenuItem fx:id="SelectOrdendeCompra" mnemonicParsing="false" onAction="#OpcionOrdendeCompra" text="Orden de Compra" />
+                  <MenuItem fx:id="SelectMenuIngresoProductos1" mnemonicParsing="false" onAction="#OpcionOrdendeCompra" text="Orden de Compra" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Consultas">

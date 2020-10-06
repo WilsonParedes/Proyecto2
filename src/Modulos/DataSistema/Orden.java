@@ -30,7 +30,7 @@ public class Orden extends ItemOrder{
         this.pCliente=pCliente;
         this.fechaorden=fechaorden;
 
-        System.out.println("El cliente: "+verCliente(pCliente));
+        System.out.println("El cliente: "+getVerCliente(pCliente));
         System.out.println("Carga Orden de Compra: ");
         getTotalOrden();
         System.out.print("Indique el tipo de envio: ");
@@ -94,7 +94,7 @@ public class Orden extends ItemOrder{
 
     @Override
     public String toString(){
-        return "Datos Cliente\n"+verCliente(pCliente)+"\nProducto facturado\n"+verProducto(pIdProducto)
+        return "Datos Cliente\n"+getVerCliente(pCliente)+"\nProducto facturado\n"+getVerProducto(pIdProducto)
                 +"\nFecha Orden de compra: "+fechaorden+"\tPrecio del Envio: Q"+precioenvio+"\tSe enviara  por: "+
                 tipoenvio+"\tEstado Orden de compra: "+estado+"\tRecibira el producto en: "+diasenvio+" dias"+
                 "\nEl total de la Orden de compra sera de: Q"+total;
