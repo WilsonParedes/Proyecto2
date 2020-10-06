@@ -1,6 +1,8 @@
 package Modulos.DataSistema;
 
 import Modulos.Herramientas.Utilerias;
+import Modulos.Herramientas.VariblesFormGlobales;
+import com.jfoenix.controls.JFXTextField;
 
 import java.util.Scanner;
 
@@ -25,18 +27,24 @@ public class ItemOrder extends DataSistema implements Utilerias {
         this.pIdProducto=pIdProducto;
     }
 
-    public void getTotalItem(){
-        System.out.print("Ingresar el id del producto deseado: ");
-        pIdProducto=leer.nextInt();
-        System.out.print("Ingresar la cantidad del producto requerido: ");
-        cantidad=leer.nextInt();
+    public int getTotalItem(int idpro, int canti){
+
+        //System.out.print("Ingresar el id del producto deseado: ");
+        pIdProducto = idpro;
+        //pIdProducto=leer.nextInt();
+        //System.out.print("Ingresar la cantidad del producto requerido: ");
+        cantidad = canti;
+        //cantidad=leer.nextInt();
         total= getVerPrecio(pIdProducto)*cantidad;
         System.out.println("Producto Seleccionado: "+getVerProducto(pIdProducto));
+        /*COLOCAR TODA LA INFO DE LOS PRODUCTOS AQUI*/
         System.out.print("Total del producto es: "+total+"\n");
-    }
-    public int getTotal(){
         return total;
     }
+
+    /*public int getTotal(){
+        return total;
+    }*/
 
     @Override
     public String toString(){

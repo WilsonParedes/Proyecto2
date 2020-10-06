@@ -1,5 +1,6 @@
 package Modulos.DataSistema;
 import Modulos.Herramientas.Usuarios;
+import Modulos.Herramientas.VariblesFormGlobales;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -57,6 +58,7 @@ public class DataSistema {
 
     public Productos getVerProducto(int view){ return ListaProductos.get(view);}
     public Clientes getVerCliente(int view){return ListaClientes.get(view);}
+    public Orden getVerOrden(int view){return ListaOrden.get(view);}
     public int getVerPrecio(int view){return ListaProductos.get(view).getPrecio();}
 
     public void getEliminarCliente(int view){ ListaClientes.remove(view); }

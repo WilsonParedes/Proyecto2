@@ -165,7 +165,7 @@
                      </children>
                   </Pane>
                   <Button fx:id="BotonCargaInfoClienteOrdenCompra" layoutX="556.0" layoutY="233.0" mnemonicParsing="false" onAction="#MostrarInfoClienteOrdenCompra" text="Cargar Información de Cliente" />
-                  <Button layoutX="475.0" layoutY="288.0" mnemonicParsing="false" onAction="#MostrarArrayOrden" text="Button" />
+                  <Button layoutX="475.0" layoutY="288.0" mnemonicParsing="false" text="Button" />
                </children>
             </AnchorPane>
          </content>

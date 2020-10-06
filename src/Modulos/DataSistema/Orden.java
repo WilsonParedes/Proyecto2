@@ -1,9 +1,10 @@
 package Modulos.DataSistema;
+import Modulos.Herramientas.VariblesFormGlobales;
+import com.jfoenix.controls.JFXTextField;
 
 import java.util.Date;
 
 public class Orden extends ItemOrder{
-
     public int id;
     public Clientes cliente;
     public ItemOrder item1;
@@ -26,31 +27,32 @@ public class Orden extends ItemOrder{
         this();
     }
 
-    public Orden(int pCliente, Date fechaorden){
+    public Orden(int pCliente, Date fechaorden, int pIdCompra, int cantidad, String envio, int precio, int diasenvio){
         this.pCliente=pCliente;
         this.fechaorden=fechaorden;
 
         System.out.println("El cliente: "+getVerCliente(pCliente));
         System.out.println("Carga Orden de Compra: ");
-        getTotalOrden();
-        System.out.print("Indique el tipo de envio: ");
-        tipoenvio=leer.nextLine();
-        System.out.print("Indique el precio del envio: ");
-        precioenvio=leer.nextDouble();
-        System.out.print("Indique los dias que tardara el envio: ");
-        diasenvio=leer.nextInt();
-        System.out.print("Indique el estado de la Orden de Compra: ");
-        estado= leer.nextLine();
+        getTotalOrden(pIdCompra,cantidad);
+        //System.out.print("Indique el tipo de envio: ");
+        tipoenvio = envio;
+        //tipoenvio=leer.nextLine();
+        //System.out.print("Indique el precio del envio: ");
+        precioenvio = precio;
+        //precioenvio=leer.nextDouble();
+        //System.out.print("Indique los dias que tardara el envio: ");
+        diasenvio = diasenvio;
+        //diasenvio=leer.nextInt();
+        //System.out.print("Indique el estado de la Orden de Compra: ");
+        estado= "En proceso";
 
     }
     //METODO ENCARGADO DE HACER EL CALCULO DE LA OC
-    public void getTotalOrden(){
-        boolean salida=false;
-        String resp="";
-        do{
+    public void getTotalOrden(int idpro,int cantidad){
+        total+= getTotalItem(idpro,cantidad);
+        /*do{
             getTotalItem();
-            total+= getTotal();
-            String fail=leer.nextLine();
+
             System.out.print("¿Desea agregar otro producto? Si/No: ");
             resp=leer.nextLine();
             if(resp.equalsIgnoreCase("Si")){
@@ -59,7 +61,7 @@ public class Orden extends ItemOrder{
                 salida=true;
                 System.out.println("EL total actual es: "+total);
             }
-        }while(salida!=true);
+        }while(salida!=true);*/
     }
 
     public void setId(int id) {
@@ -90,7 +92,9 @@ public class Orden extends ItemOrder{
         this.diasenvio = diasenvio;
     }
 
-
+    public Date getFechaorden() {
+        return fechaorden;
+    }
 
     @Override
     public String toString(){

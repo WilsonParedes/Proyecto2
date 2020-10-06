@@ -464,30 +464,25 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
     /*EVENTOS QUE CONTROLAN LA ORDEN DE COMPRA CARGA INFORMACIÓN DE CLIENTE*/
     public void MostrarInfoClienteOrdenCompra(ActionEvent actionEvent) {
         try{
-
-            int ID = Integer.parseInt(txtIDOrdenCompra.getText());
-            LayoutNITOrdeCompra.setText(arrayclientes.getVerCliente(ID).getNit());
-            LayoutNombreOrdenCompra.setText(arrayclientes.getVerCliente(ID).getNombre());
+            Date FechaSistema = new Date();
+            int idorden = Integer.parseInt(txtIDOrdenCompra.getText());
+            Orden or = new Orden(idorden,FechaSistema,Integer.parseInt(txtIDProductoOrdenCompra.getText()),
+                    Integer.parseInt(txtCantidadOrdenCompra.getText()),txtMedioEnvioOrdenCompra.getText(),
+                    Integer.parseInt(txtPrecioEnvioOrdenCompra.getText()),Integer.parseInt(txtDiasEnvioOrdenCompra.getText()));
+            LayoutNITOrdeCompra.setText(arrayclientes.getVerCliente(idorden).getNit());
+            LayoutNombreOrdenCompra.setText(arrayclientes.getVerCliente(idorden).getNombre());
             LayoutNombreEmpresa.setText("");
             LayoutContacto.setText("");
-
+            //LayoutFechaOrdenCompra.setText(arrayListaOrden.getVerOrden(1).getFechaorden().toString());
+            System.out.println(or.toString());
 
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"EL CLIENTE NO EXISTE EN LA BDD", "ERROR",JOptionPane.ERROR_MESSAGE);
         }
 
     }
-
-    public void MostrarArrayOrden(){
-        Date d = new Date();
-        Orden or = new Orden(1,d);
-        System.out.println(or.toString());
-    }
-
     public void MostrarInformacionProductos(ActionEvent actionEvent) {
         try{
-            Clientes cl = arrayclientes.getListaClientes().get(DevolverPosicionCliente());
-            Productos pr = arrayProductos.getListaProductos().get(DevolverPosicionProducto());
 
 
             int ID = Integer.parseInt(txtIDOrdenCompra.getText());
