@@ -1,9 +1,6 @@
 package GestionFormularios;
+import Modulos.DataSistema.*;
 import Modulos.Herramientas.VariblesFormGlobales;
-import Modulos.DataSistema.Productos;
-import Modulos.DataSistema.Clientes;
-import Modulos.DataSistema.ClienteIndividual;
-import Modulos.DataSistema.ClienteEmpresa;
 import Modulos.Herramientas.Usuarios;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
@@ -26,12 +23,15 @@ import java.io.IOException;
 import java.net.URL;
 import java.security.ProtectionDomain;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ControladorDeEventos extends VariblesFormGlobales implements Initializable {
+
+
 
 
     public void FormGlobal(String ubicacion, String titulo, int ancho, int alto) throws IOException {
@@ -214,6 +214,11 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
     /*EVENTO PARA BUSCAR POR ID CLIENTES*/
     public void BuscarClientes(ActionEvent actionEvent) {
         try {
+            Clientes cl;
+            cl = arrayclientes.getListaClientes().get(DevolverPosicionCliente());
+            txtNuevoNCompletoConsultaCliente.setText(cl.getNombre());
+            txtNuevoGeneroConsultaCliente.setText(cl.getGenero());
+            txtNuevoEstadoCivilConsultaCliente.setText(cl.getEstadocivil());
             ObservableList<Clientes> buscarC = FXCollections.observableArrayList(arrayclientes.getVerCliente(DevolverPosicionCliente()));
             tablaClientes.setItems(buscarC);
             columid.setCellValueFactory(new PropertyValueFactory<Clientes, Integer>("id"));
@@ -273,6 +278,26 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
             }
         }
         return contador;
+    }
+
+    /*EVENTO ENCARGADO DE MODIFICAR UN CLIENTE EN CONSULTACLIENTES*/
+    public void ModificarCliente(ActionEvent actionEvent) {
+        try {
+            Clientes cl;
+            cl = arrayclientes.getListaClientes().get(DevolverPosicionCliente());
+            int n = JOptionPane.showConfirmDialog(null, "DESEA MODIFICAR LOS PARAMETROS?", "CONFIRMAR", JOptionPane.YES_NO_OPTION);
+            if (n == JOptionPane.YES_OPTION) {
+                cl.setNombre(txtNuevoNCompletoConsultaCliente.getText());
+                cl.setGenero(txtNuevoGeneroConsultaCliente.getText());
+                cl.setEstadocivil(txtNuevoEstadoCivilConsultaCliente.getText());
+                JOptionPane.showMessageDialog(null, "SE HAN MODIFICADO LOS DATOS", "INFORMACIÓN", JOptionPane.INFORMATION_MESSAGE);
+                MostraContenidoClientes();
+            } else {
+                JOptionPane.showMessageDialog(null, "NO SE HA MODIFICADO NINGUN DATO", "INFORMACIÓN", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "ANTES DE MODIFICAR, FAVOR BUSCAR AL CLIENTE POR ID O NIT PARA CARGAR PARAMETROS", "INFORMACIÓN", JOptionPane.INFORMATION_MESSAGE);
+        }
     }
 
     /*********************************************************************************************************************/
@@ -415,17 +440,21 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
 
     /*EVENTO ENCARGADO DE MODIFICAR UN PRODUCTO EN CONSULTAPRODUCTO*/
     public void ModificarProducto(ActionEvent actionEvent) {
-        Productos pr;
-        pr = arrayProductos.getListaProductos().get(DevolverPosicionProducto());
-        int n = JOptionPane.showConfirmDialog(null,"DESEA MODIFICAR LOS PARAMETROS?","CONFIRMAR",JOptionPane.YES_NO_OPTION);
-        if(n == JOptionPane.YES_OPTION){
-            pr.setNombreProducto(txtNProductoNuevoFormProd.getText());
-            pr.setMarca(txtNuevaMarcaConsultaProducto.getText());
-            pr.setPrecio(Integer.parseInt(txtNuevoPrecioConsultaProducto.getText()));
-            JOptionPane.showMessageDialog(null, "SE HAN MODIFICADO LOS DATOS","INFORMACIÓN",JOptionPane.INFORMATION_MESSAGE);
-            MostrarContenidoProducto();
-        }else{
-            JOptionPane.showMessageDialog(null, "NO SE HA MODIFICADO NINGUN DATO","INFORMACIÓN",JOptionPane.INFORMATION_MESSAGE);
+        try {
+            Productos pr;
+            pr = arrayProductos.getListaProductos().get(DevolverPosicionProducto());
+            int n = JOptionPane.showConfirmDialog(null, "DESEA MODIFICAR LOS PARAMETROS?", "CONFIRMAR", JOptionPane.YES_NO_OPTION);
+            if (n == JOptionPane.YES_OPTION) {
+                pr.setNombreProducto(txtNProductoNuevoFormProd.getText());
+                pr.setMarca(txtNuevaMarcaConsultaProducto.getText());
+                pr.setPrecio(Integer.parseInt(txtNuevoPrecioConsultaProducto.getText()));
+                JOptionPane.showMessageDialog(null, "SE HAN MODIFICADO LOS DATOS", "INFORMACIÓN", JOptionPane.INFORMATION_MESSAGE);
+                MostrarContenidoProducto();
+            } else {
+                JOptionPane.showMessageDialog(null, "NO SE HA MODIFICADO NINGUN DATO", "INFORMACIÓN", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "ANTES DE MODIFICAR UN PRODUCTO, BUSCAR POR ID EN LA OPCIÓN BUSQUEDA Y ESPERE A QUE CARGUEN LOS PARAMETROS", "INFORMACIÓN", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 
@@ -441,14 +470,25 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
             LayoutNombreOrdenCompra.setText(arrayclientes.getVerCliente(ID).getNombre());
             LayoutNombreEmpresa.setText("");
             LayoutContacto.setText("");
+
+
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"EL CLIENTE NO EXISTE EN LA BDD", "ERROR",JOptionPane.ERROR_MESSAGE);
         }
 
     }
 
+    public void MostrarArrayOrden(){
+        Date d = new Date();
+        Orden or = new Orden(1,d);
+        System.out.println(or.toString());
+    }
+
     public void MostrarInformacionProductos(ActionEvent actionEvent) {
         try{
+            Clientes cl = arrayclientes.getListaClientes().get(DevolverPosicionCliente());
+            Productos pr = arrayProductos.getListaProductos().get(DevolverPosicionProducto());
+
 
             int ID = Integer.parseInt(txtIDOrdenCompra.getText());
             LayoutNITOrdeCompra.setText(arrayclientes.getVerCliente(ID).getNit());

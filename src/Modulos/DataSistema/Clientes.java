@@ -26,6 +26,17 @@ public class Clientes implements Utilerias {
         this.estadocivil = estadocivil;
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public void setEstadocivil(String estadocivil) {
+        this.estadocivil = estadocivil;
+    }
 
     public int getId() {
         return id;

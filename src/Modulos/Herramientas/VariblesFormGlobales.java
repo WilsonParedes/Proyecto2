@@ -22,6 +22,7 @@ public class VariblesFormGlobales {
     public DataSistema arrayclientes = new DataSistema();
     public DataSistema arrayempresa = new DataSistema();
     public DataSistema arrayProductos = new DataSistema();
+    public DataSistema arrayListaOrden = new DataSistema();
     public String categoria [] = {"Aceites y Lubricantes", "Llantas","Accesorios"};
 
     /*ATRIBUTOS DE FORMULARIO INGRESO.FXML*/
@@ -59,6 +60,9 @@ public class VariblesFormGlobales {
     public JFXCheckBox cbEmpresa;
 
     /*ATRIBUTOS DE LA TABLEVIEW CONSULTACLIENTES.FXML*/
+    public JFXTextField txtNuevoGeneroConsultaCliente;
+    public JFXTextField txtNuevoNCompletoConsultaCliente;
+    public JFXTextField txtNuevoEstadoCivilConsultaCliente;
     public Button BotonBuscarCliente;
     public Button BotonFormIngresoClientes;
     public TextField txtIDCliente;

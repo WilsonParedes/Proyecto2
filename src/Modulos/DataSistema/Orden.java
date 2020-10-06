@@ -94,7 +94,7 @@ public class Orden extends ItemOrder{
 
     @Override
     public String toString(){
-        return "Datos Cliente\n"+getVerCliente(pCliente)+"\nProducto facturado\n"+getVerProducto(pIdProducto)
+        return "\nID " + id + " Datos Cliente\n"+getVerCliente(pCliente)+"\nProducto facturado\n"+getVerProducto(pIdProducto)
                 +"\nFecha Orden de compra: "+fechaorden+"\tPrecio del Envio: Q"+precioenvio+"\tSe enviara  por: "+
                 tipoenvio+"\tEstado Orden de compra: "+estado+"\tRecibira el producto en: "+diasenvio+" dias"+
                 "\nEl total de la Orden de compra sera de: Q"+total;

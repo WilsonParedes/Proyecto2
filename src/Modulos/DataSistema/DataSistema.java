@@ -50,19 +50,14 @@ public class DataSistema {
     public void addOrden(Orden oc){ListaOrden.add(oc);}
 
     public ArrayList<Clientes> getListaClientes() {return ListaClientes;}
-    public ArrayList<Usuarios> getListaUsuarios() {
-        return ListaUsuarios;
-    }
+    public ArrayList<Usuarios> getListaUsuarios() {return ListaUsuarios;}
     public ArrayList<Productos> getListaProductos(){return ListaProductos;}
     public ArrayList<Orden>getListaOrden(){return ListaOrden;}
 
 
     public Productos getVerProducto(int view){ return ListaProductos.get(view);}
     public Clientes getVerCliente(int view){return ListaClientes.get(view);}
-    public int getVerPrecio(int view){
-
-        return ListaProductos.get(view).getPrecio();
-    }
+    public int getVerPrecio(int view){return ListaProductos.get(view).getPrecio();}
 
     public void getEliminarCliente(int view){ ListaClientes.remove(view); }
     public void getEliminarProducto(int view){ ListaProductos.remove(view); }
