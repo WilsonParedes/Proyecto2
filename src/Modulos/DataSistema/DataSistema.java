@@ -30,6 +30,7 @@ public class DataSistema {
     ));
 
     public static ArrayList<Usuarios> ListaUsuarios = new ArrayList<Usuarios>(20);
+    public static ArrayList<Orden>ListaOrden=new ArrayList<Orden>(20);
 
     public static int i=0;
     public static String temp="";
@@ -46,17 +47,21 @@ public class DataSistema {
         ListaUsuarios.add(us);
     }
 
+    public void addOrden(Orden oc){ListaOrden.add(oc);}
+
     public ArrayList<Clientes> getListaClientes() {return ListaClientes;}
     public ArrayList<Usuarios> getListaUsuarios() {
         return ListaUsuarios;
     }
     public ArrayList<Productos> getListaProductos(){return ListaProductos;}
+    public ArrayList<Orden>getListaOrden(){return ListaOrden;}
 
 
     public Productos verProducto(int view){
         return ListaProductos.get(view);
     }
     public Clientes verCliente(int view){return ListaClientes.get(view);}
+    public Orden VerOrden(int view){return ListaOrden.get(view);}
 
     public int verprecio(int view){
         return ListaProductos.get(view).getPrecio();
@@ -77,6 +82,13 @@ public class DataSistema {
             i++;
             temp+=temproducto.toString();
 
+        }
+        return temp;
+    }
+    public String toStringOc(){
+        for(Orden temporden: ListaOrden){
+            i++;
+            temp+=temporden.toString();
         }
         return temp;
     }
