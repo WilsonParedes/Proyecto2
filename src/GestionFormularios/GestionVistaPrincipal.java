@@ -41,7 +41,7 @@ public class GestionVistaPrincipal extends ControladorDeEventos {
     /*SE CREA EL MÉTODO PARA CREAR LA OPCION DE CONSULTA PRODUCTOS*/
 
     public void OpcionConsultaProductos()throws IOException {
-        FormGlobal("/Utilerias/Formularios/ConsultaProductos.fxml","CONSULTA PRODUCTO", 761, 495);
+        FormGlobal("/Utilerias/Formularios/ConsultaProductos.fxml","CONSULTA PRODUCTO", 761, 558);
 
     }
 

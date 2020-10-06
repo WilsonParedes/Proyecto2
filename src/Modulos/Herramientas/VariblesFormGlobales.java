@@ -58,13 +58,6 @@ public class VariblesFormGlobales {
     public Button BotonCancelarCliente;
     public JFXCheckBox cbEmpresa;
 
-    /*ATRIBUTOS DE FORMULARIO INGRESOPRODUCTOS.FXML*/
-    public Button BotonBuscarProducto;
-    public JFXComboBox ComboBOXCategoria;
-    public JFXTextField txtNProducto;
-    public JFXTextField txtMarca;
-    public JFXTextField txtPrecio;
-
     /*ATRIBUTOS DE LA TABLEVIEW CONSULTACLIENTES.FXML*/
     public Button BotonBuscarCliente;
     public Button BotonFormIngresoClientes;
@@ -82,7 +75,17 @@ public class VariblesFormGlobales {
     public TableColumn <Clientes, String>columnRazonSocial = new TableColumn<>(" ");
     public TableColumn <Clientes, String>columnContacto = new TableColumn<>(" ");
 
+    /*ATRIBUTOS DE FORMULARIO INGRESOPRODUCTOS.FXML*/
+    public Button BotonBuscarProducto;
+    public JFXComboBox ComboBOXCategoria;
+    public JFXTextField txtNProducto;
+    public JFXTextField txtMarca;
+    public JFXTextField txtPrecio;
+
     /*ATRIBUTOS DE LA TABLEVIEW CONSULTAPRODUTOS.FXML*/
+    public JFXTextField txtNProductoNuevoFormProd;
+    public JFXTextField txtNuevaMarcaConsultaProducto;
+    public JFXTextField txtNuevoPrecioConsultaProducto;
     public JFXComboBox ComboBoxCategoriaConsultaProducto;
     public Button OpcionProductos;
     public Label MensajeValidacionIDPRod;

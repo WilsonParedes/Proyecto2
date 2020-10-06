@@ -31,6 +31,16 @@ public class Productos implements Utilerias {
         return id;
     }
 
+    public void setNombreProducto(String producto){this.producto = producto; }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public void setPrecio(int precio) {
+        this.precio = precio;
+    }
+
     public String getCategoria() {
         return categoria;
     }

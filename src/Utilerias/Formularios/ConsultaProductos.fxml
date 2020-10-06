@@ -9,11 +9,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane prefHeight="495.0" prefWidth="761.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GestionFormularios.ControladorDeEventos">
+<Pane prefHeight="558.0" prefWidth="761.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GestionFormularios.ControladorDeEventos">
    <children>
-      <AnchorPane layoutX="1.0" layoutY="1.0" prefHeight="492.0" prefWidth="758.0" style="-fx-background-color: #414141;">
+      <AnchorPane layoutX="1.0" layoutY="1.0" prefHeight="552.0" prefWidth="758.0" style="-fx-background-color: #414141;">
          <children>
-            <TableView fx:id="tablaProductos" layoutX="14.0" layoutY="88.0" prefHeight="385.0" prefWidth="733.0">
+            <TableView fx:id="tablaProductos" layoutX="14.0" layoutY="203.0" prefHeight="338.0" prefWidth="733.0">
               <columns>
                 <TableColumn fx:id="columnIDProducto" prefWidth="75.0" text="ID" />
                 <TableColumn fx:id="columNProducto" prefWidth="300.0" text="Nombre Producto" />
@@ -27,14 +27,9 @@
                   <Font name="Calibri Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="14.0" layoutY="55.0" prefHeight="17.0" prefWidth="113.0" text="Nombre Producto" textFill="#f8f7f7">
-               <font>
-                  <Font name="Calibri Bold" size="14.0" />
-               </font>
-            </Label>
             <TextField fx:id="txtIDProducto" layoutX="126.0" layoutY="21.0" onKeyTyped="#ActivadorValidarCodigIngreso" promptText="ID Producto" />
-            <Button fx:id="BotonMostrarContenidoProducto" layoutX="499.0" layoutY="51.0" mnemonicParsing="false" onAction="#MostrarContenidoProducto" prefHeight="25.0" prefWidth="134.0" text="Mostra Contenido" />
-            <Button fx:id="BotonSalidaFormConsultaProducto" layoutX="677.0" layoutY="29.0" mnemonicParsing="false" onAction="#SalidaConsultaProducto" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: transparent;">
+            <Button fx:id="BotonMostrarContenidoProducto" layoutX="611.0" layoutY="111.0" mnemonicParsing="false" onAction="#MostrarContenidoProducto" prefHeight="25.0" prefWidth="134.0" text="Mostra Contenido" />
+            <Button fx:id="BotonSalidaFormConsultaProducto" layoutX="637.0" layoutY="20.0" mnemonicParsing="false" onAction="#SalidaConsultaProducto" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: transparent;">
                <graphic>
                   <ImageView fitHeight="37.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -43,15 +38,45 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="OpcionProductos" layoutX="466.0" layoutY="13.0" mnemonicParsing="false" onAction="#LlamarFormIngresoProducto" prefHeight="25.0" prefWidth="186.0" text="Formulario Agregar Producto" />
-            <Button fx:id="BotonBuscarProducto" layoutX="286.0" layoutY="60.0" mnemonicParsing="false" onAction="#BuscarProducto" prefHeight="25.0" prefWidth="62.0" text="Buscar" />
-            <Label fx:id="MensajeValidacionIDPRod" layoutX="278.0" layoutY="26.0" prefHeight="17.0" prefWidth="88.0" textFill="#fcf9f9">
+            <Button fx:id="OpcionProductos" layoutX="561.0" layoutY="70.0" mnemonicParsing="false" onAction="#LlamarFormIngresoProducto" prefHeight="25.0" prefWidth="186.0" text="Formulario Agregar Producto" />
+            <Button fx:id="BotonBuscarProducto" layoutX="73.0" layoutY="10.0" mnemonicParsing="false" onAction="#BuscarProducto" prefHeight="32.0" prefWidth="54.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="39.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Imagenes/Search.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Label fx:id="MensajeValidacionIDPRod" layoutX="276.0" layoutY="25.0" prefHeight="17.0" prefWidth="88.0" textFill="#fcf9f9">
                <font>
                   <Font size="10.0" />
                </font>
             </Label>
-            <JFXComboBox fx:id="ComboBoxCategoriaConsultaProducto" focusColor="#36da4e" layoutX="126.0" layoutY="51.0" onMouseClicked="#RellenoCategoriasConsulta" prefHeight="25.0" prefWidth="149.0" style="-fx-text-fill: #ffffff;" unFocusColor="WHITE" />
-            <Button fx:id="BotonEliminarProducto" layoutX="350.0" layoutY="60.0" mnemonicParsing="false" onAction="#eliminarProducto" prefHeight="25.0" prefWidth="75.0" text="Eliminar" />
+            <Button fx:id="BotonEliminarProducto" layoutX="671.0" layoutY="148.0" mnemonicParsing="false" onAction="#eliminarProducto" prefHeight="25.0" prefWidth="75.0" text="Eliminar" />
+            <Button fx:id="BotonModificarProductoConsultaProducto" layoutX="387.0" layoutY="132.0" mnemonicParsing="false" onAction="#ModificarProducto" prefHeight="25.0" prefWidth="69.0" text="Modificar" />
+            <Label layoutX="14.0" layoutY="102.0" prefHeight="17.0" prefWidth="113.0" text="Nombre Producto" textFill="#f8f7f7">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtNProductoNuevoFormProd" focusColor="WHITE" layoutX="126.0" layoutY="93.0" prefHeight="25.0" prefWidth="149.0" style="-fx-text-fill: #ffffff;" unFocusColor="WHITE" />
+            <Label alignment="TOP_LEFT" layoutX="13.0" layoutY="74.0" prefHeight="17.0" prefWidth="447.0" text="DATOS PARA MODIFICAR" textFill="#f8f7f7">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtNuevaMarcaConsultaProducto" focusColor="WHITE" layoutX="126.0" layoutY="126.0" prefHeight="25.0" prefWidth="149.0" style="-fx-text-fill: #ffffff;" unFocusColor="WHITE" />
+            <Label layoutX="14.0" layoutY="137.0" prefHeight="17.0" prefWidth="54.0" text="Marca" textFill="#f8f7f7">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="169.0" prefHeight="17.0" prefWidth="54.0" text="Precio" textFill="#f8f7f7">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtNuevoPrecioConsultaProducto" focusColor="WHITE" layoutX="127.0" layoutY="158.0" prefHeight="25.0" prefWidth="95.0" style="-fx-text-fill: #ffffff;" unFocusColor="WHITE" />
          </children>
       </AnchorPane>
    </children>

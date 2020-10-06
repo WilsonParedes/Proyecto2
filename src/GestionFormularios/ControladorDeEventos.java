@@ -6,6 +6,7 @@ import Modulos.DataSistema.ClienteIndividual;
 import Modulos.DataSistema.ClienteEmpresa;
 import Modulos.Herramientas.Usuarios;
 import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXTextField;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -31,6 +32,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ControladorDeEventos extends VariblesFormGlobales implements Initializable {
+
 
     public void FormGlobal(String ubicacion, String titulo, int ancho, int alto) throws IOException {
         FXMLLoader in = new FXMLLoader(getClass().getResource(ubicacion));
@@ -346,9 +348,15 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
     }
 
     /*EVENTO ENCARGADO DE BUSCAR POR ID PRODUCTO*/
-    public void BuscarProducto(ActionEvent actionEvent) {
+    public void BuscarProducto() {
         try {
-            ObservableList<Productos> buscar = FXCollections.observableArrayList(arrayProductos.getListaProductos().get((DevolverPosicionProducto())));
+            Productos pr;
+            pr = arrayProductos.getListaProductos().get(DevolverPosicionProducto());
+            txtNProductoNuevoFormProd.setText(pr.getProducto());
+            txtNuevaMarcaConsultaProducto.setText(pr.getMarca());
+            txtNuevoPrecioConsultaProducto.setText(Integer.toString(pr.getPrecio()));
+            ObservableList<Productos> buscar = FXCollections.observableArrayList(pr);
+            txtNProductoNuevoFormProd.setText(pr.getProducto());
             tablaProductos.setItems(buscar);
             columnIDProducto.setCellValueFactory(new PropertyValueFactory<>("id"));
             columNProducto.setCellValueFactory(new PropertyValueFactory<>("producto"));
@@ -373,25 +381,12 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
         }
     }
 
-    /*EVENTO QUE RELLNEA EL COMBOBOX DE CATEGORIASENCONSULTAPRODUCTOS*/
-    public String RellenoCategoriasConsulta() {
-        String catego = "";
-        try {
-            ObservableList categorias = FXCollections.observableArrayList(categoria);
-            ComboBoxCategoriaConsultaProducto.setItems(categorias);
-            catego = ComboBoxCategoriaConsultaProducto.getValue().toString();
-            System.out.println(catego);
-        }catch(Exception e){
-
-        }
-        return catego;
-    }
-
-    /*EVENTO QUE ELIMINA UN PRODUCTO DEL ARRAY*/
+   /*EVENTO QUE ELIMINA UN PRODUCTO DEL ARRAY*/
     public void eliminarProducto() {
         try {
             arrayProductos.getEliminarProducto(DevolverPosicionProducto());
             JOptionPane.showMessageDialog(null, "PRODUCTO ELIMINADO CON ÉXTIO", "INFORMACION", JOptionPane.INFORMATION_MESSAGE);
+            MostrarContenidoProducto();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "NO EXISTE EL PRODUCTO EN LA BDD", "INFORMACION", JOptionPane.ERROR_MESSAGE);
         }
@@ -417,6 +412,23 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
         }
         return contador;
     }
+
+    /*EVENTO ENCARGADO DE MODIFICAR UN PRODUCTO EN CONSULTAPRODUCTO*/
+    public void ModificarProducto(ActionEvent actionEvent) {
+        Productos pr;
+        pr = arrayProductos.getListaProductos().get(DevolverPosicionProducto());
+        int n = JOptionPane.showConfirmDialog(null,"DESEA MODIFICAR LOS PARAMETROS?","CONFIRMAR",JOptionPane.YES_NO_OPTION);
+        if(n == JOptionPane.YES_OPTION){
+            pr.setNombreProducto(txtNProductoNuevoFormProd.getText());
+            pr.setMarca(txtNuevaMarcaConsultaProducto.getText());
+            pr.setPrecio(Integer.parseInt(txtNuevoPrecioConsultaProducto.getText()));
+            JOptionPane.showMessageDialog(null, "SE HAN MODIFICADO LOS DATOS","INFORMACIÓN",JOptionPane.INFORMATION_MESSAGE);
+            MostrarContenidoProducto();
+        }else{
+            JOptionPane.showMessageDialog(null, "NO SE HA MODIFICADO NINGUN DATO","INFORMACIÓN",JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+
 
     /*********************************************************************************************************************/
     /*EVENTOS PARA EL FORMULARIO ORDENCOMPRA.FXML*/
