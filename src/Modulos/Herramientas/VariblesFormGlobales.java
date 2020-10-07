@@ -27,7 +27,7 @@ public class VariblesFormGlobales {
 
     /*ATRIBUTOS DE FORMULARIO INGRESO.FXML*/
     public TextField txtUsuario;
-    public PasswordField txtContraseña;
+    public PasswordField txtContrasenia;
     public Button BotonIngreso;
     public Button BotonCrear;
 

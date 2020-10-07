@@ -35,13 +35,13 @@ public class GestiondeIngreso extends GestionVistaPrincipal implements Initializ
     }
 
     public void VIngresoAlt(ActionEvent ingreso) throws IOException {
-        if(!txtUsuario.getText().equals("admin") || !txtContraseña.getText().equals("1234")) {
+        if(!txtUsuario.getText().equals("admin") || !txtContrasenia.getText().equals("1234")) {
             if ((dt.getListaUsuarios().isEmpty())) {
                 JOptionPane.showMessageDialog(null, "NO EXISTE NINGUN USUARIO PARA INICIAR SESIÓN, DEBE CREAR UN NUEVO USUARIO EN LA OPCIÓN CREAR", "ACCESO DENEGADO", JOptionPane.WARNING_MESSAGE);
                 BotonCrear.setDisable(false);
             } else {
                 for (Usuarios usu : dt.getListaUsuarios()) {
-                    if (!txtUsuario.getText().equals(usu.getUsuario()) || !txtContraseña.getText().equals(usu.getContraseña())) {
+                    if (!txtUsuario.getText().equals(usu.getUsuario()) || !txtContrasenia.getText().equals(usu.getContraseña())) {
                         JOptionPane.showMessageDialog(null, "USUARIO O CONTRASEÑA INCORRECTO, INGRESE NUEVAMENTE O DE CLICK EN LA OPCIÓN CREAR", "ACCESO DENEGADO", JOptionPane.ERROR_MESSAGE);
                         BotonCrear.setDisable(false);
                     } else {

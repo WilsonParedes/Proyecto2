@@ -32,7 +32,7 @@
             <Font size="14.0" />
          </font>
       </JFXTextField>
-      <JFXPasswordField fx:id="txtContraseña" focusColor="#38ae69" layoutX="139.0" layoutY="170.0" prefHeight="30.0" prefWidth="196.0" promptText="Contraseña" style="-fx-text-fill: #FFFFFF;">
+      <JFXPasswordField fx:id="txtContrasenia" focusColor="#38ae69" layoutX="139.0" layoutY="170.0" prefHeight="30.0" prefWidth="196.0" promptText="Contraseña" style="-fx-text-fill: #FFFFFF;">
          <font>
             <Font size="14.0" />
          </font>
