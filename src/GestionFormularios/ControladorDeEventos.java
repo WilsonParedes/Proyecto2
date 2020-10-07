@@ -35,7 +35,6 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
 
 
 
-
     public void FormGlobal(String ubicacion, String titulo, int ancho, int alto) throws IOException {
         FXMLLoader in = new FXMLLoader(getClass().getResource(ubicacion));
         Pane pri = (Pane) in.load();
