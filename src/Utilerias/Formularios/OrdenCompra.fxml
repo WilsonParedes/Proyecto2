@@ -9,11 +9,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane prefHeight="789.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GestionFormularios.ControladorDeEventos">
+<Pane prefHeight="725.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GestionFormularios.ControladorDeEventos">
    <children>
       <ScrollPane prefHeight="720.0" prefWidth="775.0">
          <content>
-            <AnchorPane fx:id="LayoutEnvioOrdenCompra" prefHeight="781.0" prefWidth="765.0">
+            <AnchorPane fx:id="LayoutEnvioOrdenCompra" prefHeight="733.0" prefWidth="765.0">
                <children>
                   <Label layoutX="516.0" layoutY="14.0" prefHeight="35.0" prefWidth="234.0" text="ORDEN DE COMPRA">
                      <font>
@@ -57,32 +57,12 @@
                               <Font size="13.0" />
                            </font>
                         </Label>
-                        <Label layoutX="16.0" layoutY="51.0" prefHeight="17.0" prefWidth="129.0" text="Nombre Empresa">
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="16.0" layoutY="67.0" prefHeight="17.0" prefWidth="92.0" text="Contacto">
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </Label>
                         <Label fx:id="LayoutNITOrdeCompra" layoutX="142.0" layoutY="21.0" prefHeight="17.0" prefWidth="140.0" text="Label">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </Label>
                         <Label fx:id="LayoutNombreOrdenCompra" layoutX="142.0" layoutY="36.0" prefHeight="19.0" prefWidth="189.0" text="Label">
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="LayoutNombreEmpresa" layoutX="142.0" layoutY="51.0" prefHeight="17.0" prefWidth="140.0" text="Label">
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="LayoutContacto" layoutX="142.0" layoutY="68.0" prefHeight="17.0" prefWidth="140.0" text="Label">
                            <font>
                               <Font size="13.0" />
                            </font>
@@ -95,7 +75,7 @@
                         <JFXTextField fx:id="txtIDOrdenCompra" layoutX="117.0" layoutY="5.0" />
                      </children>
                   </Pane>
-                  <Pane layoutY="362.0" prefHeight="71.0" prefWidth="738.0">
+                  <Pane layoutX="11.0" layoutY="328.0" prefHeight="71.0" prefWidth="738.0">
                      <children>
                         <Label layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="100.0" text="Fecha de pedido" />
                         <Label fx:id="LayoutFechaOrdenCompra" layoutX="14.0" layoutY="40.0" prefHeight="17.0" prefWidth="95.0" text="Fecha de pedido de compra" />
@@ -111,16 +91,7 @@
                         <JFXTextField fx:id="txtDiasEnvioOrdenCompra" layoutX="314.0" layoutY="31.0" prefHeight="25.0" prefWidth="88.0" />
                      </children>
                   </Pane>
-                  <TableView fx:id="tablaOrdenCompra" layoutX="14.0" layoutY="428.0" prefHeight="235.0" prefWidth="730.0">
-                    <columns>
-                      <TableColumn fx:id="columnIDOrdenCompra" prefWidth="111.0" text="ID" />
-                      <TableColumn fx:id="columnCantidadOrdenCompra" prefWidth="75.0" text="Cantidad" />
-                        <TableColumn fx:id="columnDProductoOrdenCompra" prefWidth="293.0" text="Descripcipon Producto" />
-                        <TableColumn fx:id="columnPrecioUniOrdenCompra" prefWidth="150.0" text="Precio Unitario" />
-                        <TableColumn fx:id="txtTotalOrdenCompra" prefWidth="100.0" text="Total" />
-                    </columns>
-                  </TableView>
-                  <Pane layoutX="516.0" layoutY="662.0" prefHeight="119.0" prefWidth="228.0">
+                  <Pane layoutX="519.0" layoutY="568.0" prefHeight="119.0" prefWidth="228.0" style="-fx-background-color: E5E5E5;">
                      <children>
                         <Label fx:id="LayoutSubtotalOrdenCompra" alignment="TOP_RIGHT" layoutX="141.0" layoutY="14.0" prefHeight="19.0" prefWidth="80.0" text="Label">
                            <font>
@@ -164,8 +135,71 @@
                         </Label>
                      </children>
                   </Pane>
-                  <Button fx:id="BotonCargaInfoClienteOrdenCompra" layoutX="556.0" layoutY="233.0" mnemonicParsing="false" onAction="#MostrarInfoClienteOrdenCompra" text="Cargar Información de Cliente" />
-                  <Button layoutX="475.0" layoutY="288.0" mnemonicParsing="false" text="Button" />
+                  <Button fx:id="BotonCargaInfoClienteOrdenCompra" layoutX="601.0" layoutY="206.0" mnemonicParsing="false" onAction="#MostrarInfoClienteOrdenCompra" text="Cargar Orden de Compra" />
+                  <Pane layoutX="14.0" layoutY="399.0" prefHeight="169.0" prefWidth="733.0" style="-fx-background-color: E5E5E5;">
+                     <children>
+                        <Label layoutY="12.0" prefHeight="20.0" prefWidth="74.0" text="ID">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="TOP_RIGHT" layoutX="84.0" layoutY="11.0" prefHeight="25.0" prefWidth="119.0" text="Precio Unitario">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="228.0" layoutY="13.0" prefHeight="20.0" prefWidth="240.0" text="Nombre Producto">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="487.0" layoutY="13.0" prefHeight="17.0" prefWidth="91.0" text="Cantidad">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="TOP_RIGHT" layoutX="646.0" layoutY="13.0" prefHeight="21.0" prefWidth="77.0" text="Total">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="LayoutSubtotalOrdenCompra1" alignment="TOP_RIGHT" layoutX="646.0" layoutY="35.0" prefHeight="20.0" prefWidth="78.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="LayoutCantidadOrdenCompra" alignment="TOP_RIGHT" layoutX="487.0" layoutY="35.0" prefHeight="17.0" prefWidth="91.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="LayouNProductoOrdenCompra" layoutX="228.0" layoutY="35.0" prefHeight="20.0" prefWidth="240.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="LayoutPreUnitarioOrdenCompra" alignment="TOP_RIGHT" layoutX="84.0" layoutY="32.0" prefHeight="25.0" prefWidth="119.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="LayoutIDProductoOrdenCompra" layoutY="34.0" prefHeight="20.0" prefWidth="74.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Label layoutX="516.0" layoutY="49.0" prefHeight="17.0" prefWidth="110.0" text="NO.">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="LayoutNoOrdenCompra" alignment="TOP_RIGHT" layoutX="628.0" layoutY="49.0" prefHeight="17.0" prefWidth="110.0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
          </content>

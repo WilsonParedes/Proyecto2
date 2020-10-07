@@ -41,7 +41,7 @@ public class GestiondeIngreso extends GestionVistaPrincipal implements Initializ
                 BotonCrear.setDisable(false);
             } else {
                 for (Usuarios usu : dt.getListaUsuarios()) {
-                    if (!txtUsuario.getText().equals(usu.getUsuario()) || !txtContrasenia.getText().equals(usu.getContraseña())) {
+                    if (!txtUsuario.getText().equals(usu.getUsuario()) || !txtContrasenia.getText().equals(usu.getContrasenia())) {
                         JOptionPane.showMessageDialog(null, "USUARIO O CONTRASEÑA INCORRECTO, INGRESE NUEVAMENTE O DE CLICK EN LA OPCIÓN CREAR", "ACCESO DENEGADO", JOptionPane.ERROR_MESSAGE);
                         BotonCrear.setDisable(false);
                     } else {

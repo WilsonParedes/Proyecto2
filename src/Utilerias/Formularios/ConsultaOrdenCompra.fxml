@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane prefHeight="582.0" prefWidth="1019.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GestionFormularios.ControladorDeEventos">
+   <children>
+      <AnchorPane layoutX="1.0" layoutY="1.0" prefHeight="577.0" prefWidth="1013.0" style="-fx-background-color: #414141;">
+         <children>
+            <Label layoutX="21.0" layoutY="28.0" prefHeight="44.0" prefWidth="62.0" text="Id Orden" textFill="#fcf7f7">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtIDConsultaOrdenCompra" layoutX="128.0" layoutY="38.0" promptText="ID Cliente" />
+            <TableView fx:id="tablaOrdenCompra" layoutX="20.0" layoutY="209.0" prefHeight="353.0" prefWidth="973.0">
+               <columns>
+                  <TableColumn fx:id="columnidOrdenCompra" prefWidth="75.0" text="ID" />
+                  <TableColumn fx:id="columnFechaOrden" prefWidth="101.0" text="Fecha Orden" />
+                  <TableColumn fx:id="columMEnvioOrdenCompra" prefWidth="230.0" text="Metodo Envio" />
+                  <TableColumn fx:id="columPrecioEnvio" prefWidth="155.0" text="Precio Envio" />
+                  <TableColumn fx:id="columDiasEnvio" prefWidth="163.0" text="Dias Envio" />
+                  <TableColumn fx:id="columnSubTotal" minWidth="0.0" prefWidth="135.0" text="Subtotal" />
+                  <TableColumn fx:id="columTotalOrdenCompra" prefWidth="113.0" text="Total Orden" />
+               </columns>
+            </TableView>
+            <Button fx:id="BotonSalirFormConsultaOrdenCompra" layoutX="922.0" layoutY="46.0" mnemonicParsing="false" onAction="#SalidaConsultaOrdenCompra" prefHeight="110.0" prefWidth="88.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="96.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Imagenes/Exit.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="BotonBuscarOrdenCompra" layoutX="73.0" layoutY="23.0" mnemonicParsing="false" onAction="#BuscarOrdenCompra" prefHeight="44.0" prefWidth="56.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="47.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Imagenes/Search.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label fx:id="MensajeValidacionIDCliente" layoutX="284.0" layoutY="42.0" prefHeight="17.0" prefWidth="62.0" textFill="WHITE">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="BotonModificarClienteConsultaOrdenCompra" layoutX="437.0" layoutY="120.0" onAction="#ModificarOrden" prefHeight="68.0" prefWidth="88.0" style="-fx-text-fill: #ffffff; -fx-border-color: #3fc260;" text="Modificar">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <ripplerFill>
+                  <RadialGradient centerX="0.17222222222222228" centerY="0.8142857142857143" radius="0.6046511627906976">
+                     <stops>
+                        <Stop color="#1c5e2d" />
+                        <Stop color="#26bc1a" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </ripplerFill>
+            </JFXButton>
+            <JFXButton fx:id="BotoElminarOrdenCompra" layoutX="736.0" layoutY="144.0" onAction="#eliminarORden" prefHeight="44.0" prefWidth="130.0" style="-fx-text-fill: #ffffff; -fx-border-color: #bf1a1a;" text="Eliminar">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <ripplerFill>
+                  <RadialGradient centerX="0.17222222222222228" centerY="0.8142857142857143" radius="0.6046511627906976">
+                     <stops>
+                        <Stop color="#1c5e2d" />
+                        <Stop color="#bf1a1a" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </ripplerFill>
+            </JFXButton>
+            <JFXButton fx:id="BotonFormIngresoOrdenCompra" layoutX="720.0" layoutY="37.0" onAction="#LlamarFormOrdenCompra" prefHeight="44.0" prefWidth="162.0" style="-fx-text-fill: #ffffff; -fx-border-color: #2572b1;" text="Nueva Orden Compra">
+               <ripplerFill>
+                  <RadialGradient centerX="0.17222222222222228" centerY="0.8142857142857143" radius="0.6046511627906976">
+                     <stops>
+                        <Stop color="#1c5e2d" />
+                        <Stop color="#2572b1" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </ripplerFill>
+            </JFXButton>
+            <JFXButton fx:id="BotonGenerarTablaOrdenCompra" layoutX="736.0" layoutY="90.0" onAction="#MostrarContenidoOrdenCompra" prefHeight="44.0" prefWidth="130.0" style="-fx-text-fill: #ffffff; -fx-border-color: #3fc260;" text="Mostrar Contenido">
+               <ripplerFill>
+                  <RadialGradient centerX="0.17222222222222228" centerY="0.8142857142857143" radius="0.6046511627906976">
+                     <stops>
+                        <Stop color="#1c5e2d" />
+                        <Stop color="#26bc1a" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </ripplerFill>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <Label alignment="TOP_LEFT" layoutX="25.0" layoutY="117.0" prefHeight="17.0" prefWidth="377.0" text="DATOS PARA MODIFICAR" textFill="#f8f7f7">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="24.0" layoutY="171.0" prefHeight="17.0" prefWidth="95.0" text="Dias Envio" textFill="#f8f7f7">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtNuevoDiasEnvio" focusColor="WHITE" layoutX="172.0" layoutY="160.0" prefHeight="25.0" prefWidth="113.0" style="-fx-text-fill: #ffffff;" unFocusColor="WHITE" />
+      <JFXTextField fx:id="txtNuevoMetodoEnvio" focusColor="WHITE" layoutX="172.0" layoutY="132.0" prefHeight="25.0" prefWidth="230.0" style="-fx-text-fill: #ffffff;" unFocusColor="WHITE" />
+      <Label layoutX="24.0" layoutY="141.0" prefHeight="17.0" prefWidth="113.0" text="Metodo Envio" textFill="#f8f7f7">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

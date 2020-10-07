@@ -3,10 +3,7 @@ package Modulos.Herramientas;
 import Modulos.DataSistema.Clientes;
 import Modulos.DataSistema.DataSistema;
 import Modulos.DataSistema.Productos;
-import com.jfoenix.controls.JFXCheckBox;
-import com.jfoenix.controls.JFXComboBox;
-import com.jfoenix.controls.JFXRadioButton;
-import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.controls.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -90,7 +87,6 @@ public class VariblesFormGlobales {
     public JFXTextField txtNProductoNuevoFormProd;
     public JFXTextField txtNuevaMarcaConsultaProducto;
     public JFXTextField txtNuevoPrecioConsultaProducto;
-    public JFXComboBox ComboBoxCategoriaConsultaProducto;
     public Button OpcionProductos;
     public Label MensajeValidacionIDPRod;
     public TextField txtIDProducto;
@@ -103,6 +99,12 @@ public class VariblesFormGlobales {
 
 
     /*ATRIBUTOS DE LA ORDEN DE COMPRA*/
+    public Label LayoutSubtotalOrdenCompra1;
+    public Label LayoutCantidadOrdenCompra;
+    public Label LayouNProductoOrdenCompra;
+    public Label LayoutPreUnitarioOrdenCompra;
+    public Label LayoutIDProductoOrdenCompra;
+    public Label LayoutNoOrdenCompra;
     public Label LayoutNITOrdeCompra;
     public Label LayoutNombreOrdenCompra;
     public Label LayoutNombreEmpresa;
@@ -113,18 +115,32 @@ public class VariblesFormGlobales {
     public Label LayoutEnvioyOtrosOrdenCompra;
     public Label LayoutTotalOrdenCompra;
     public JFXTextField txtIDOrdenCompra;
+    public TextField txtIDConsultaOrdenCompra;
     public JFXTextField txtMedioEnvioOrdenCompra;
     public JFXTextField txtIDProductoOrdenCompra;
     public JFXTextField txtCantidadOrdenCompra;
     public JFXTextField txtPrecioEnvioOrdenCompra;
     public JFXTextField txtDiasEnvioOrdenCompra;
-    public TableView tablaOrdenCompra;
-    public TableColumn columnIDOrdenCompra;
-    public TableColumn columnCantidadOrdenCompra;
-    public TableColumn columnDProductoOrdenCompra;
-    public TableColumn columnPrecioUniOrdenCompra;
-    public TableColumn txtTotalOrdenCompra;
     public Button BotonCargaInfoClienteOrdenCompra;
+
+    /*ATRIBUTOS CONSULTA ORDENCOMPRA*/
+    public TableView tablaOrdenCompra = new TableView();
+    public TableColumn columnidOrdenCompra = new TableColumn(" ");
+    public TableColumn columnFechaOrden = new TableColumn(" ");
+    public TableColumn columMEnvioOrdenCompra = new TableColumn(" ");
+    public TableColumn columPrecioEnvio = new TableColumn(" ");
+    public TableColumn columDiasEnvio = new TableColumn(" ");
+    public TableColumn columnSubTotal = new TableColumn(" ");
+    public TableColumn columTotalOrdenCompra = new TableColumn(" ");
+    public Button BotonSalirFormConsultaOrdenCompra;
+    public Button BotonBuscarOrdenCompra;
+    public JFXButton BotonModificarClienteConsultaOrdenCompra;
+    public JFXButton BotoElminarOrdenCompra;
+    public JFXButton BotonFormIngresoOrdenCompra;
+    public JFXButton BotonGenerarTablaOrdenCompra;
+    public JFXTextField txtNuevoDiasEnvio;
+    public JFXTextField txtNuevoMetodoEnvio;
+
 
 
 

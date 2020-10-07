@@ -38,6 +38,7 @@ public class Clientes implements Utilerias {
         this.estadocivil = estadocivil;
     }
 
+
     public int getId() {
         return id;
     }

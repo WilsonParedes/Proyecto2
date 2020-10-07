@@ -4,16 +4,16 @@ public class Usuarios {
     private static int correlativo = 1;
     public int corr;
     public String usuario;
-    public String contraseña;
+    public String contrasenia;
 
     public Usuarios() {
 
     }
 
-    public Usuarios(String usuario, String contraseña) {
+    public Usuarios(String usuario, String contrasenia) {
         this.corr = correlativo++;
         this.usuario = usuario;
-        this.contraseña = contraseña;
+        this.contrasenia = contrasenia;
     }
 
 
@@ -22,8 +22,8 @@ public class Usuarios {
         return usuario;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasenia() {
+        return contrasenia;
     }
 
     @Override
@@ -31,7 +31,7 @@ public class Usuarios {
         return "Usuarios{" +
                 "corr=" + corr +
                 ", usuario='" + usuario + '\'' +
-                ", contraseña='" + contraseña + '\'' +
+                ", contraseña='" + contrasenia + '\'' +
                 '}';
     }
 }

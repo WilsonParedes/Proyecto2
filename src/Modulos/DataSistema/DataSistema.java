@@ -47,7 +47,6 @@ public class DataSistema {
     public void addUsuarios(Usuarios us){
         ListaUsuarios.add(us);
     }
-
     public void addOrden(Orden oc){ListaOrden.add(oc);}
 
     public ArrayList<Clientes> getListaClientes() {return ListaClientes;}
@@ -63,6 +62,7 @@ public class DataSistema {
 
     public void getEliminarCliente(int view){ ListaClientes.remove(view); }
     public void getEliminarProducto(int view){ ListaProductos.remove(view); }
+    public void getEliminarOrden(int view){ ListaOrden.remove(view); }
 
 
     public String toString() {

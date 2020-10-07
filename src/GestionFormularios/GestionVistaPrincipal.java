@@ -35,7 +35,7 @@ public class GestionVistaPrincipal extends ControladorDeEventos {
     /*SE CREA EL MÉTODO PARA CREAR LA OPCION DE CONSULTA CLIENTES.FXML*/
 
     public void OpcionConsultaClientes()throws IOException{
-        FormGlobal("/Utilerias/Formularios/ConsultaClientes.fxml","CONSULTA PRODUCTO", 1019, 582);
+        FormGlobal("/Utilerias/Formularios/ConsultaClientes.fxml","CONSULTA CLIENTES", 1019, 582);
     }
 
     /*SE CREA EL MÉTODO PARA CREAR LA OPCION DE CONSULTA PRODUCTOS*/
@@ -46,6 +46,10 @@ public class GestionVistaPrincipal extends ControladorDeEventos {
     }
 
     public void OpcionOrdendeCompra() throws IOException {
-        FormGlobal("/Utilerias/Formularios/OrdenCompra.fxml","ORDEN DE COMPRA", 775, 789);
+        FormGlobal("/Utilerias/Formularios/OrdenCompra.fxml","ORDEN DE COMPRA", 775, 725);
+    }
+
+    public void OpcionConsultaOrdenCompra()throws IOException{
+        FormGlobal("/Utilerias/Formularios/ConsultaOrdenCompra.fxml","CONSULTA ORDEN COMPRA", 1019, 582);
     }
 }

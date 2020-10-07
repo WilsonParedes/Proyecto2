@@ -13,6 +13,8 @@ public class ClienteEmpresa extends Clientes {
         this.descuento= descuento;
     }
 
+
+
     public String getRazonsocial() {
         return razonsocial;
     }
