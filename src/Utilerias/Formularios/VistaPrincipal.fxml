@@ -19,7 +19,7 @@
             <items>
               <MenuItem fx:id="consultaClientes" mnemonicParsing="false" onAction="#OpcionConsultaClientes" text="Consultar Clientes" />
                   <MenuItem fx:id="ConsultaProductos" mnemonicParsing="false" onAction="#OpcionConsultaProductos" text="Consultar Productos" />
-                  <MenuItem fx:id="ConsultaOrdenCompra" mnemonicParsing="false" onAction="#OpcionConsultaOrdenCompra" text="Consultar Productos" />
+                  <MenuItem fx:id="ConsultaOrdenCompra" mnemonicParsing="false" onAction="#OpcionConsultaOrdenCompra" text="Consultar Orden Compra" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">

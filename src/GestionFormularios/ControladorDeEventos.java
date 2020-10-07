@@ -51,11 +51,15 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
     /*EVENTOS PARA EL FORMULARIO CREACION.FXML*/
     /*EVENTO QUE GUARDA LOS DATOS INGRESADOS AL FORMULARIO CREACION.FXML*/
     public void GuardarUsuario() {
-        dt.addUsuarios(new Usuarios(txtUsuar.getText(), txtContra.getText()));
-        JOptionPane.showMessageDialog(null, "USUARIO CREADO CON ÉXITO!", "USUARIO CREADO", JOptionPane.INFORMATION_MESSAGE);
-        System.out.println("GUADRA USUARIO A ARRAYLIST DE USUARIOS");
-        Stage StageCrearUsuario = (Stage) txtUsuar.getScene().getWindow();
-        StageCrearUsuario.close();
+        try {
+            dt.addUsuarios(new Usuarios(txtUsuar.getText(), txtContra.getText()));
+            JOptionPane.showMessageDialog(null, "USUARIO CREADO CON ÉXITO!", "USUARIO CREADO", JOptionPane.INFORMATION_MESSAGE);
+            System.out.println("GUARDA USUARIO A ARRAYLIST DE USUARIOS");
+            Stage StageCrearUsuario = (Stage) txtUsuar.getScene().getWindow();
+            StageCrearUsuario.close();
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "NO SE PUDO GUARDAR EL USUARIO!", "ERROR CREADO", JOptionPane.ERROR_MESSAGE);
+            }
     }
 
     /*********************************************************************************************************************/
@@ -186,18 +190,22 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
     /*EVENTOS PARA EL FORMULARIO CONSULTACLIENTES.FXML*/
     /*EVENTO QUE MUESTRA LOS DATOS QUE SE INGRESARON AL FORMULARIO INGRESOCLIENTES.FXML*/
     public void MostraContenidoClientes() {
-        ObservableList<Clientes> clien = FXCollections.observableArrayList(arrayclientes.getListaClientes());
-        System.out.println(clien.toString());
-        tablaClientes.setItems(clien);
-        columid.setCellValueFactory(new PropertyValueFactory<Clientes, Integer>("id"));
-        columnNIT.setCellValueFactory(new PropertyValueFactory<Clientes, String>("nit"));
-        columDPI.setCellValueFactory(new PropertyValueFactory<Clientes, String>("dpi"));
-        columNombre.setCellValueFactory(new PropertyValueFactory<Clientes, String>("nombre"));
-        columFechaNac.setCellValueFactory(new PropertyValueFactory<Clientes, String>("fecha"));
-        columnGenero.setCellValueFactory(new PropertyValueFactory<Clientes, String>("genero"));
-        columEstadoCivil.setCellValueFactory(new PropertyValueFactory<Clientes, String>("estadocivil"));
-        columnRazonSocial.setCellValueFactory(new PropertyValueFactory<Clientes, String>("razonsocial"));
-        columnContacto.setCellValueFactory(new PropertyValueFactory<Clientes, String>("contacto"));
+        try {
+            ObservableList<Clientes> clien = FXCollections.observableArrayList(arrayclientes.getListaClientes());
+            System.out.println(clien.toString());
+            tablaClientes.setItems(clien);
+            columid.setCellValueFactory(new PropertyValueFactory<Clientes, Integer>("id"));
+            columnNIT.setCellValueFactory(new PropertyValueFactory<Clientes, String>("nit"));
+            columDPI.setCellValueFactory(new PropertyValueFactory<Clientes, String>("dpi"));
+            columNombre.setCellValueFactory(new PropertyValueFactory<Clientes, String>("nombre"));
+            columFechaNac.setCellValueFactory(new PropertyValueFactory<Clientes, String>("fecha"));
+            columnGenero.setCellValueFactory(new PropertyValueFactory<Clientes, String>("genero"));
+            columEstadoCivil.setCellValueFactory(new PropertyValueFactory<Clientes, String>("estadocivil"));
+            columnRazonSocial.setCellValueFactory(new PropertyValueFactory<Clientes, String>("razonsocial"));
+            columnContacto.setCellValueFactory(new PropertyValueFactory<Clientes, String>("contacto"));
+        }catch(Exception e){
+
+        }
     }
 
     /*EVENTO PARA LLAMAR FORMULARIO INGRESOCLIENTES.FXML*/
@@ -306,13 +314,17 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
     /*EVENTO QUE GUARDA LOS DATOS INGRESADOS AL FORMULARIO INGRESOPRODUCTO.FXML*/
     public void OpcionGuardarProducto() {
         /*CONSTRUCTOR EMPRESAS*/
-        String cate = RellenoCategorias();
-        if (!(txtNProducto.getText().equals("") || (txtMarca.getText().equals("") || (txtPrecio.getText().equals(""))))) {
-            arrayProductos.addProducto(new Productos(cate, txtNProducto.getText(), txtMarca.getText(),
-                    Integer.parseInt(txtPrecio.getText())));
-            JOptionPane.showMessageDialog(null, "EL PRODUCTO HA SIDO ALMACENADO CON EXITO", "INFORMACION", JOptionPane.INFORMATION_MESSAGE);
-        } else {
-            JOptionPane.showMessageDialog(null, "DEBE LLENAR TODOS LOS CAMPOS PARA PODER GUARDAR EL PRODUCTO", "INFORMACION", JOptionPane.INFORMATION_MESSAGE);
+        try {
+            String cate = RellenoCategorias();
+            if (!(txtNProducto.getText().equals("") || (txtMarca.getText().equals("") || (txtPrecio.getText().equals(""))))) {
+                arrayProductos.addProducto(new Productos(cate, txtNProducto.getText(), txtMarca.getText(),
+                        Integer.parseInt(txtPrecio.getText())));
+                JOptionPane.showMessageDialog(null, "EL PRODUCTO HA SIDO ALMACENADO CON EXITO", "INFORMACION", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "DEBE LLENAR TODOS LOS CAMPOS PARA PODER GUARDAR EL PRODUCTO", "INFORMACION", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "HUBO UN ERROR INESPERADO AL GUARDAR PRODUCTO, PUEDE SER QUE EL PRECIO ESTE INCORRECTO", "ERROR", JOptionPane.ERROR_MESSAGE);
         }
 
     }
@@ -474,7 +486,6 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
                     Integer.parseInt(txtPrecioEnvioOrdenCompra.getText()),Integer.parseInt(txtDiasEnvioOrdenCompra.getText()));
 
             arrayListaOrden.addOrden(o);
-
             LayoutNITOrdeCompra.setText(arrayclientes.getVerCliente(idcliente).getNit());
             LayoutNombreOrdenCompra.setText(arrayclientes.getVerCliente(idcliente).getNombre());
             LayoutIDProductoOrdenCompra.setText(Integer.toString(arrayProductos.getVerProducto(idproducto).getId()));
@@ -486,10 +497,7 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
             LayoutSubtotalOrdenCompra.setText(Double.toString(o.getSubtotal()));
             LayoutEnvioyOtrosOrdenCompra.setText(Double.toString(o.getPrecioenvio()));
             LayoutTotalOrdenCompra.setText(Double.toString(o.getTotal()));
-
             System.out.println(arrayListaOrden.getListaOrden());
-
-
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"EL CLIENTE NO EXISTE EN LA BDD", "ERROR",JOptionPane.ERROR_MESSAGE);
         }
@@ -504,13 +512,13 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
         try {
             ObservableList<Orden> orden = FXCollections.observableArrayList(arrayListaOrden.getListaOrden());
             tablaOrdenCompra.setItems(orden);
-            columnidOrdenCompra.setCellValueFactory(new PropertyValueFactory<>("idOrden"));
-            columnFechaOrden.setCellValueFactory(new PropertyValueFactory<>("fechaorden"));
-            columMEnvioOrdenCompra.setCellValueFactory(new PropertyValueFactory<>("tipoenvio"));
-            columPrecioEnvio.setCellValueFactory(new PropertyValueFactory<>("precioenvio"));
-            columDiasEnvio.setCellValueFactory(new PropertyValueFactory<>("diasenvio"));
-            columnSubTotal.setCellValueFactory(new PropertyValueFactory<>("subtotal"));
-            columTotalOrdenCompra.setCellValueFactory(new PropertyValueFactory<>("total"));
+            columnidOrdenCompra.setCellValueFactory(new PropertyValueFactory<Orden,Integer>("idOrden"));
+            columnFechaOrden.setCellValueFactory(new PropertyValueFactory<Orden,Date>("fechaorden"));
+            columMEnvioOrdenCompra.setCellValueFactory(new PropertyValueFactory<Orden,String>("tipoenvio"));
+            columPrecioEnvio.setCellValueFactory(new PropertyValueFactory<Orden,Double>("precioenvio"));
+            columDiasEnvio.setCellValueFactory(new PropertyValueFactory<Orden,Integer>("diasenvio"));
+            columnSubTotal.setCellValueFactory(new PropertyValueFactory<Orden,Double>("subtotal"));
+            columTotalOrdenCompra.setCellValueFactory(new PropertyValueFactory<Orden,Double>("total"));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "NO SE PUEDE CARGAR LA BDD", "ERROR", JOptionPane.ERROR_MESSAGE);
         }
