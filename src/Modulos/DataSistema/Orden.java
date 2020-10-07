@@ -2,6 +2,7 @@ package Modulos.DataSistema;
 
 import java.util.Date;
 
+//CLASE ENCARGADA DE LA ELABORACION DE ORDEN DE COMPRA
 public class Orden extends ItemOrder{
 
     public int id;
@@ -16,16 +17,19 @@ public class Orden extends ItemOrder{
     public int diasenvio;
     public int pCliente;
 
+    //CONSTRUCTOR VACIO QUE INICIALIZA LOS 3 ATRIBUTOS PRINCIPALES DE LA ORDEN
     public Orden(){
         id=id++;
         total= 0.0;
         fechaorden= new Date();
     }
 
+    //CONSTRUCTOR EL CUAL MANDA A LLAMAR AL CONSTRUCTOR VACIO PARA OBTENER LA FECHA ACTUAL
     public Orden(Date fechaorden){
         this();
     }
 
+    //CONSTRUCTOR PRINCIPAL QUE SE ENCARGA DE OBTENER TODOS LOS DATOS DE LA ORDEN
     public Orden(int pCliente, Date fechaorden){
         this.pCliente=pCliente;
         this.fechaorden=fechaorden;
@@ -41,8 +45,8 @@ public class Orden extends ItemOrder{
         diasenvio=leer.nextInt();
         System.out.print("Indique el estado de la Orden de Compra: ");
         estado= leer.nextLine();
-
     }
+
     //METODO ENCARGADO DE HACER EL CALCULO DE LA OC
     public void getTotalOrden(){
         boolean salida=false;
@@ -62,36 +66,30 @@ public class Orden extends ItemOrder{
         }while(salida!=true);
     }
 
+    //METODOS SET
     public void setId(int id) {
         this.id = id;
     }
-
     public void setFechaorden(Date fechaorden) {
         this.fechaorden = fechaorden;
     }
-
     public void setPrecioenvio(double precioenvio) {
         this.precioenvio = precioenvio;
     }
-
     public void setTotal(double total) {
         this.total = total;
     }
-
     public void setTipoenvio(String tipoenvio) {
         this.tipoenvio = tipoenvio;
     }
-
     public void setEstado(String estado) {
         this.estado = estado;
     }
-
     public void setDiasenvio(int diasenvio) {
         this.diasenvio = diasenvio;
     }
 
-
-
+    //TO STRING ENCARGADO DE MOSTRAR EN CONSOLA FORMATO DE LOS DATOS DE LA CLASE ORDEN
     @Override
     public String toString(){
         return "Datos Cliente\n"+getVerCliente(pCliente)+"\nProducto facturado\n"+getVerProducto(pIdProducto)

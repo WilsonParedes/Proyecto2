@@ -1,9 +1,8 @@
 package Modulos.DataSistema;
-
-
 import Modulos.Herramientas.Utilerias;
 import Modulos.DataSistema.ClienteEmpresa;
 
+//CLASE PADRE LA CUAL ADMINISTRA LA INFORMACION DE LOS CLIENTES REGISTRADOS
 public class Clientes implements Utilerias {
     private static int sigIdCliente=1;
     public int id;
@@ -13,12 +12,14 @@ public class Clientes implements Utilerias {
     public String genero;
     public String estadocivil;
 
+//CONSTRUCTOR VACIO ENCARGADO DE LLEVAR EL CONTADOR DE LOS CLIENTES AGREGADOS
     public Clientes() {
         this.id = sigIdCliente++;
     }
 
+//CONSTRUCTOR PRINCIPAL QUE RECIBE LOS ATRIBUTOS DE LOS CLIENTES
     public Clientes(String nombre, String nit, String fecha, String genero, String estadocivil){
-        this();
+        this();//MANDA A LLAMAR EL CONSTRUCTOR VACIO PARA RECIBIR EL CONTADOR ID
         this.nombre = nombre;
         this.nit = nit;
         this.fecha = fecha;
@@ -26,7 +27,7 @@ public class Clientes implements Utilerias {
         this.estadocivil = estadocivil;
     }
 
-
+//METODOS GETTER
     public int getId() {
         return id;
     }
@@ -49,6 +50,7 @@ public class Clientes implements Utilerias {
         return estadocivil;
     }
 
+//METODO TOSTRING QUE MUESTRA LOS DATOS DEL CLIENTE EN CONSOLA Y SU CLASE
     @Override
     public String toString(){
         return "\n["+getNombreClase()+"]"+"\tID:"+id+"\nNombre Completo:" + nombre +
