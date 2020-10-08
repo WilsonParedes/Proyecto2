@@ -81,7 +81,7 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
                     txtRazonSocial.clear();
                     txtContacto.clear();
                 } else {
-                    arrayempresa.addCliente(new ClienteEmpresa(txtNombreCompleto.getText(), txtNIT.getText(), "fecha", genero1, EstadoCivil, txtRazonSocial.getText(), txtContacto.getText(), 2));
+                    arrayempresa.addCliente(new ClienteEmpresa(txtNombreCompleto.getText(), txtNIT.getText(), "fecha", genero1, EstadoCivil, txtRazonSocial.getText(), txtContacto.getText(), 2,0));
                     JOptionPane.showMessageDialog(null, "EL CLIENTE HA SIDO ALMACENADO CON EXITO", "INFORMACION", JOptionPane.INFORMATION_MESSAGE);
                 }
             } else {
@@ -91,7 +91,7 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
                     txtNombreCompleto.clear();
                 } else {
                     /*CONSTRUCTOR CLIENTES INDIVIDUALES*/
-                    arrayclientes.addCliente(new ClienteIndividual(txtDPI.getText(), txtNombreCompleto.getText(), txtNIT.getText(), "String fecha", genero1, EstadoCivil));
+                    arrayclientes.addCliente(new ClienteIndividual(txtDPI.getText(), txtNombreCompleto.getText(), txtNIT.getText(), "String fecha", genero1, EstadoCivil,1));
                     JOptionPane.showMessageDialog(null, "EL CLIENTE HA SIDO ALMACENADO CON EXITO", "INFORMACION", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
@@ -654,6 +654,68 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
             }
         });
         return Validacion;
+    }
+    
+    /*EVENTO QUE FILTRA POR CLIENTE INDIVIDUAL*/
+    public void BuscarClienteIndividual() {
+        try {
+            ArrayList <Clientes> deposito = new ArrayList<>();
+            ObservableList<Clientes> buscarC = FXCollections.observableArrayList(arrayclientes.getListaClientes());
+            System.out.println(buscarC.toString());
+            int contador=0;
+            for(Clientes c: buscarC ){
+                if(c.getTipo()==1){
+                    deposito.add(arrayclientes.getVerCliente(contador));
+                    contador++;
+                }else{
+                    contador++;
+                }
+            }
+            ObservableList<Clientes> contenedor = FXCollections.observableArrayList(deposito);
+            tablaClientes.setItems(contenedor);
+            columid.setCellValueFactory(new PropertyValueFactory<Clientes, Integer>("id"));
+            columnNIT.setCellValueFactory(new PropertyValueFactory<Clientes, String>("nit"));
+            columDPI.setCellValueFactory(new PropertyValueFactory<Clientes, String>("dpi"));
+            columNombre.setCellValueFactory(new PropertyValueFactory<Clientes, String>("nombre"));
+            columFechaNac.setCellValueFactory(new PropertyValueFactory<Clientes, String>("fecha"));
+            columnGenero.setCellValueFactory(new PropertyValueFactory<Clientes, String>("genero"));
+            columEstadoCivil.setCellValueFactory(new PropertyValueFactory<Clientes, String>("estadocivil"));
+            columnRazonSocial.setCellValueFactory(new PropertyValueFactory<Clientes, String>("razonsocial"));
+            columnContacto.setCellValueFactory(new PropertyValueFactory<Clientes, String>("contacto"));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "NO EXISTE EL CLIENTE EN LA BDD", "INFORMACION", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    /*EVENTO QUE FILTRA POR CLIENTE EMPRESA*/
+    public void BuscarClienteEmpresa() {
+        try {
+            ArrayList <Clientes> deposito = new ArrayList<>();
+            ObservableList<Clientes> buscarC = FXCollections.observableArrayList(arrayclientes.getListaClientes());
+            System.out.println(buscarC.toString());
+            int contador=0;
+            for(Clientes c: buscarC ){
+                if(c.getTipo()==0){
+                    deposito.add(arrayclientes.getVerCliente(contador));
+                    contador++;
+                }else{
+                    contador++;
+                }
+            }
+            ObservableList<Clientes> contenedor = FXCollections.observableArrayList(deposito);
+            tablaClientes.setItems(contenedor);
+            columid.setCellValueFactory(new PropertyValueFactory<Clientes, Integer>("id"));
+            columnNIT.setCellValueFactory(new PropertyValueFactory<Clientes, String>("nit"));
+            columDPI.setCellValueFactory(new PropertyValueFactory<Clientes, String>("dpi"));
+            columNombre.setCellValueFactory(new PropertyValueFactory<Clientes, String>("nombre"));
+            columFechaNac.setCellValueFactory(new PropertyValueFactory<Clientes, String>("fecha"));
+            columnGenero.setCellValueFactory(new PropertyValueFactory<Clientes, String>("genero"));
+            columEstadoCivil.setCellValueFactory(new PropertyValueFactory<Clientes, String>("estadocivil"));
+            columnRazonSocial.setCellValueFactory(new PropertyValueFactory<Clientes, String>("razonsocial"));
+            columnContacto.setCellValueFactory(new PropertyValueFactory<Clientes, String>("contacto"));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "NO EXISTE EL CLIENTE EN LA BDD", "INFORMACION", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
 

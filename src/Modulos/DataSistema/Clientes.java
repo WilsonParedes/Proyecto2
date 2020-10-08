@@ -12,18 +12,20 @@ public class Clientes implements Utilerias {
     public String fecha;
     public String genero;
     public String estadocivil;
+    public int tipo;
 
     public Clientes() {
         this.id = sigIdCliente++;
     }
 
-    public Clientes(String nombre, String nit, String fecha, String genero, String estadocivil){
+    public Clientes(String nombre, String nit, String fecha, String genero, String estadocivil,int tipo){
         this();
         this.nombre = nombre;
         this.nit = nit;
         this.fecha = fecha;
         this.genero = genero;
         this.estadocivil = estadocivil;
+        this.tipo = tipo;
     }
 
     public void setNombre(String nombre) {
@@ -47,6 +49,10 @@ public class Clientes implements Utilerias {
         return nit;
     }
 
+    public int getTipo() {
+        return tipo;
+    }
+
     public String getNombre() {return nombre;}
 
     public String getFecha() {
@@ -64,7 +70,7 @@ public class Clientes implements Utilerias {
     @Override
     public String toString(){
         return "\n["+getNombreClase()+"]"+"\tID:"+id+"\nNombre Completo:" + nombre +
-                "\tNit: "+nit+"\tFecha: "+fecha+"\tGenero: "+genero+"\tEstado Civil: "+estadocivil;
+                "\tNit: "+nit+"\tFecha: "+fecha+"\tGenero: "+genero+"\tEstado Civil: "+estadocivil + "Tipo " + tipo;
     }
 
 
