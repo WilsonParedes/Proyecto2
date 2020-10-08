@@ -655,7 +655,7 @@ public class ControladorDeEventos extends VariblesFormGlobales implements Initia
         });
         return Validacion;
     }
-    
+
     /*EVENTO QUE FILTRA POR CLIENTE INDIVIDUAL*/
     public void BuscarClienteIndividual() {
         try {

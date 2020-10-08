@@ -102,7 +102,7 @@
                   </RadialGradient>
                </ripplerFill>
             </JFXButton>
-            <JFXButton fx:id="BotonIndiviualConsultaCLiente" layoutX="545.0" layoutY="33.0" onAction="#BuscarClienteIndividual" prefHeight="36.0" prefWidth="76.0" style="-fx-text-fill: #ffffff; -fx-border-color: #3fc260;" text="Individual">
+            <JFXButton fx:id="BotonIndiviualConsultaCLiente" layoutX="585.0" layoutY="22.0" onAction="#BuscarClienteIndividual" prefHeight="36.0" prefWidth="76.0" style="-fx-text-fill: #ffffff; -fx-border-color: #3fc260;" text="Individual">
                <ripplerFill>
                   <RadialGradient centerX="0.17222222222222228" centerY="0.8142857142857143" radius="0.6046511627906976">
                      <stops>
@@ -112,7 +112,7 @@
                   </RadialGradient>
                </ripplerFill>
             </JFXButton>
-            <JFXButton fx:id="BotonClienteEmpresa" layoutX="627.0" layoutY="32.0" onAction="#BuscarClienteEmpresa" prefHeight="36.0" prefWidth="76.0" style="-fx-text-fill: #ffffff; -fx-border-color: #3fc260;" text="Empresa">
+            <JFXButton fx:id="BotonClienteEmpresa" layoutX="585.0" layoutY="60.0" onAction="#BuscarClienteEmpresa" prefHeight="36.0" prefWidth="76.0" style="-fx-text-fill: #ffffff; -fx-border-color: #3fc260;" text="Empresa">
                <ripplerFill>
                   <RadialGradient centerX="0.17222222222222228" centerY="0.8142857142857143" radius="0.6046511627906976">
                      <stops>
